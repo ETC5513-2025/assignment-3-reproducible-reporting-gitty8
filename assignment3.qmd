@@ -1,0 +1,39 @@
+---
+title: "Cost of International Education"
+author: ""
+format: 
+  pdf: default
+toc: true
+---
+
+## Executive Summary
+
+## Introduction
+
+## Methodology
+
+## Results
+
+## Discussion, Conclusion & Recommendations
+
+## References
+
+**Member A- Girika**
+
+-   Sections: **Executive Summary** (max 4 sentences), **Introduction** (max 10 sentences), and **Methodology** (max 300 words with 1 figure + 1 table)
+
+-   Git branch: method (This is quite a heavy section with both writing and visuals — if needed, the rest of us can help with generating or editing the plots/tables.)
+
+**Member B- Chen lie**
+
+-   Section: **Results** (run analysis + create 1 figure or table + 200-word summary of key findings)
+
+-   Git branch: results
+
+**Member C -Jessica**
+
+-   Sections: **Discussion**, **References**, and **Slides** (create a basic slide outline; we’ll each fill in our parts later)
+
+-   Also responsible for helping **merge branches** into main later on
+
+• Git branch: discuss
