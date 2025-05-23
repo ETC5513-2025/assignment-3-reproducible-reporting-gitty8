@@ -1,6 +1,6 @@
 ---
 title: "Cost of International Education"
-author: ""
+author: "Girika, Catherine, Jessica"
 format: 
   pdf: default
 toc: true
@@ -9,6 +9,8 @@ toc: true
 ## Executive Summary
 
 ## Introduction
+
+The data set is about 
 
 ## Methodology
 
