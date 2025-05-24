@@ -1,0 +1,223 @@
+Country,City,University,Program,Level,Duration_Years,Tuition_USD,Living_Cost_Index,Rent_USD,Visa_Fee_USD,Insurance_USD,Exchange_Rate,Total_Cost_USD
+USA,Cambridge,Harvard University,Computer Science,Master,2,55400,83.5,2200,160,1500,1,109860
+UK,London,Imperial College London,Data Science,Master,1,41200,75.8,1800,485,800,0.79,64085
+Canada,Toronto,University of Toronto,Business Analytics,Master,2,38500,72.5,1600,235,900,1.35,78035
+Australia,Melbourne,University of Melbourne,Engineering,Master,2,42000,71.2,1400,450,650,1.52,76700
+Germany,Munich,Technical University of Munich,Mechanical Engineering,Master,2,500,70.5,1100,75,550,0.92,27525
+Netherlands,Amsterdam,University of Amsterdam,Artificial Intelligence,Master,1,15800,73.2,1500,180,720,0.92,34700
+France,Paris,Sorbonne University,International Relations,Master,2,4500,74.6,1400,99,650,0.92,38849
+Switzerland,Zurich,ETH Zurich,Physics,Master,2,1460,91.5,2100,88,1200,0.89,53148
+China,Beijing,Tsinghua University,Computer Engineering,Master,2.5,8900,52.3,800,140,400,7.18,33440
+South Korea,Seoul,Seoul National University,Digital Media,Master,2,7200,68.7,900,130,500,1320.5,29430
+USA,Seattle,University of Washington,Computer Science,Master,2,38900,83.4,2000,160,1500,1,88560
+UK,Glasgow,University of Glasgow,Computer Science,Master,1,33500,67.5,1100,485,800,0.79,47985
+Australia,Perth,University of Western Australia,Software Engineering,Master,2,34500,69.8,1200,450,650,1.52,64400
+Australia,Hobart,University of Tasmania,Data Science,Master,2,30800,65.4,950,450,650,1.52,54700
+Australia,Wollongong,University of Wollongong,Artificial Intelligence,Master,2,32900,67.2,1050,450,650,1.52,59200
+Australia,Townsville,James Cook University,Data Analytics,Master,2,31200,65.8,950,450,650,1.52,55100
+Australia,Armidale,University of New England,Computing Science,Master,2,30500,64.8,850,450,650,1.52,52000
+Germany,Dresden,TU Dresden,Computer Science,Master,2,500,65.8,750,75,550,0.92,19125
+Germany,Hamburg,TU Hamburg,Data Engineering,Master,2,500,71.2,950,75,550,0.92,23925
+Germany,Karlsruhe,KIT,Artificial Intelligence,Master,2,500,67.8,800,75,550,0.92,20325
+Germany,Braunschweig,TU Braunschweig,Software Systems,Master,2,500,64.5,650,75,550,0.92,16725
+Germany,Hannover,Leibniz University,Digital Engineering,Master,2,500,66.2,750,75,550,0.92,19125
+Germany,Freiburg,University of Freiburg,Robotics & AI,Master,2,500,67.5,800,75,550,0.92,20325
+USA,Philadelphia,University of Pennsylvania,Computer Science,Master,2,51900,76.8,1900,160,1500,1,99160
+USA,Chicago,University of Chicago,Data Analytics,Master,2,52400,78.9,2000,160,1500,1,102060
+USA,Durham,Duke University,Software Engineering,Master,2,51500,70.8,1500,160,1500,1,89160
+USA,Boulder,University of Colorado,Data Science,Master,2,39800,71.5,1600,160,1500,1,79860
+USA,Davis,UC Davis,Computer Engineering,Master,2,42800,73.5,1700,160,1500,1,85260
+UK,London,University College London,Computer Science,Master,1,39200,76.2,1900,485,800,0.79,63285
+UK,Warwick,University of Warwick,Data Science,Master,1,36800,67.2,1000,485,800,0.79,50085
+UK,Southampton,University of Southampton,Cybersecurity,Master,1,32400,65.9,900,485,800,0.79,44485
+UK,Cardiff,Cardiff University,Software Development,Master,1,31200,64.2,800,485,800,0.79,42085
+UK,Newcastle,Newcastle University,Data Analytics,Master,1,30800,64.6,800,485,800,0.79,41685
+Canada,London ON,Western University,Computer Science,Master,2,29800,65.8,1100,235,900,1.35,57335
+Canada,Halifax,Dalhousie University,Data Science,Master,2,28500,64.5,1200,235,900,1.35,58435
+Canada,Quebec City,Laval University,Artificial Intelligence,Master,2,21500,63.8,900,235,900,1.35,44235
+Canada,St. John's,Memorial University,Computer Science,Master,2,19800,63.2,950,235,900,1.35,43735
+Canada,Saskatoon,University of Saskatchewan,Data Analytics,Master,2,24500,62.8,1000,235,900,1.35,49635
+USA,Pittsburgh,Carnegie Mellon,Computer Science,Master,2,51200,72.4,1800,160,1500,1,96060
+USA,New York,Columbia University,Data Science,Master,2,52800,100,2500,160,1500,1,114460
+China,Shenzhen,SUSTech,Artificial Intelligence,Master,2,8200,58.4,800,140,400,7.18,27940
+Netherlands,Eindhoven,TU Eindhoven,Computer Science,Master,2,15600,69.8,950,180,720,0.92,39300
+Netherlands,Groningen,University of Groningen,Computing Science,Master,2,14800,66.8,800,180,720,0.92,34900
+Netherlands,Nijmegen,Radboud University,Software Science,Master,2,14500,66.5,800,180,720,0.92,34600
+Netherlands,Utrecht,Utrecht University,Game Technology,Master,2,15200,70.2,1000,180,720,0.92,40100
+Netherlands,Wageningen,Wageningen University,Bioinformatics,Master,2,14900,65.2,750,180,720,0.92,33800
+Netherlands,Amsterdam,VU Amsterdam,Business Analytics,Master,2,15400,73.5,1100,180,720,0.92,42700
+France,Paris,École Polytechnique,Computer Science,Master,2,15600,74.6,1500,99,650,0.92,52349
+France,Lyon,École Normale Supérieure Lyon,Data Science,Master,2,4800,68.5,850,99,650,0.92,25949
+France,Grenoble,Grenoble INP,Artificial Intelligence,Master,2,4500,66.4,800,99,650,0.92,24449
+France,Bordeaux,University of Bordeaux,Information Systems,Master,2,4200,67.8,850,99,650,0.92,25349
+France,Rennes,INSA Rennes,Cybersecurity,Master,2,4500,64.8,700,99,650,0.92,22049
+France,Montpellier,University of Montpellier,Data Engineering,Master,2,4100,65.9,750,99,650,0.92,22849
+Switzerland,Lausanne,EPFL,Computer Science,Master,2,1460,89.8,1900,88,1200,0.89,48348
+Switzerland,Bern,University of Bern,Software Engineering,Master,2,1420,85.4,1700,88,1200,0.89,43508
+Switzerland,Lugano,USI,Artificial Intelligence,Master,2,1460,84.5,1500,88,1200,0.89,38748
+Switzerland,Neuchatel,University of Neuchatel,Information Systems,Master,2,1420,84.2,1500,88,1200,0.89,38708
+Switzerland,Basel,University of Basel,Computational Science,Master,2,1440,87.5,1800,88,1200,0.89,45928
+Switzerland,Winterthur,ZHAW,Data Engineering,Master,2,1460,86.4,1700,88,1200,0.89,43548
+China,Beijing,Tsinghua University,Computer Science,Master,3,8900,51.2,800,140,400,7.15,38240
+China,Beijing,Peking University,Data Science,Master,3,8500,51.2,750,140,400,7.15,36040
+China,Shanghai,Fudan University,Software Engineering,Master,2.5,7800,48.9,700,140,400,7.15,29340
+China,Shanghai,Shanghai Jiao Tong University,Artificial Intelligence,Master,2.5,8200,48.9,720,140,400,7.15,30340
+China,Hangzhou,Zhejiang University,Computer Engineering,Master,3,7500,45.3,550,140,400,7.15,27840
+China,Nanjing,Nanjing University,Information Technology,Master,3,7200,44.1,500,140,400,7.15,25740
+China,Guangzhou,Sun Yat-sen University,Computer Science,Master,3,6900,43.8,480,140,400,7.15,24720
+China,Wuhan,Wuhan University,Software Engineering,Master,3,6500,41.2,450,140,400,7.15,23240
+China,Xi'an,Xi'an Jiaotong University,Data Science,Master,3,6300,40.5,420,140,400,7.15,21960
+China,Chengdu,Sichuan University,Computer Engineering,Master,3,6100,39.8,400,140,400,7.15,21040
+South Korea,Seoul,Seoul National University,Computer Science,Master,2,7200,85.1,950,90,800,1300,30890
+South Korea,Seoul,Korea University,Artificial Intelligence,Master,2,7000,85.1,920,90,800,1300,29970
+South Korea,Seoul,Yonsei University,Data Science,Master,2,6900,85.1,900,90,800,1300,29390
+South Korea,Seoul,Hanyang University,Software Engineering,Master,2,6500,85.1,850,90,800,1300,27790
+South Korea,Seoul,Sungkyunkwan University,Computer Engineering,Master,2,6400,85.1,840,90,800,1300,27450
+South Korea,Daejeon,KAIST,Robotics Engineering,Master,2,6800,75.4,700,90,800,1300,24490
+South Korea,Daejeon,Chungnam National University,Information Systems,Master,2,5900,75.4,650,90,800,1300,22390
+South Korea,Busan,Pusan National University,Computer Science,Master,2,5800,73.2,600,90,800,1300,21090
+South Korea,Busan,Dong-A University,Software Engineering,Master,2,5600,73.2,580,90,800,1300,20410
+South Korea,Daegu,Kyungpook National University,Data Analytics,Master,2,5500,71.8,550,90,800,1300,19590
+South Korea,Daegu,Yeungnam University,Computer Engineering,Master,2,5400,71.8,530,90,800,1300,19010
+South Korea,Gwangju,Chonnam National University,Information Technology,Master,2,5300,70.5,520,90,800,1300,18670
+South Korea,Gwangju,Chosun University,Computer Science,Master,2,5200,70.5,500,90,800,1300,18090
+South Korea,Ulsan,Ulsan National Institute of Science and Technology,AI Engineering,Master,2,6100,72.3,580,90,800,1300,20910
+South Korea,Ulsan,University of Ulsan,Software Systems,Master,2,5100,72.3,550,90,800,1300,19190
+South Korea,Pohang,POSTECH,Computer Engineering,Master,2,6300,71.2,570,90,800,1300,20870
+South Korea,Incheon,Incheon National University,Data Science,Master,2,5000,76.4,600,90,800,1300,20290
+South Korea,Suwon,Sungkyunkwan University (Suwon),Computer Systems,Master,2,5900,77.8,650,90,800,1300,22390
+South Korea,Daejeon,Hanbat National University,Information Security,Master,2,4900,75.4,540,90,800,1300,18750
+South Korea,Cheongju,Chungbuk National University,Computer Networks,Master,2,4800,70.1,520,90,800,1300,18170
+Canada,Toronto,University of Toronto,Computer Science,Master,2,28500,73.5,1800,235,600,1.35,72535
+Canada,Vancouver,University of British Columbia,Computer Science,Master,2,27900,71.2,1900,235,600,1.35,74335
+Canada,Montreal,McGill University,Computer Science,Master,2,26800,65.8,1500,235,600,1.35,63635
+Canada,Waterloo,University of Waterloo,Computer Science,Master,2,26200,62.4,1300,235,600,1.35,58235
+Canada,Montreal,University of Montreal,Computer Science,Master,2,25800,65.8,1400,235,600,1.35,60235
+Canada,Edmonton,University of Alberta,Computer Science,Master,2,24900,61.9,1200,235,600,1.35,54535
+Canada,Ottawa,University of Ottawa,Computer Science,Master,2,24500,63.5,1400,235,600,1.35,58935
+Canada,Calgary,University of Calgary,Computer Science,Master,2,24100,62.8,1300,235,600,1.35,56135
+Canada,Hamilton,McMaster University,Computer Science,Master,2,23800,64.2,1250,235,600,1.35,54635
+Canada,London,Western University,Computer Science,Master,2,23500,61.5,1200,235,600,1.35,53135
+Canada,Kingston,Queen's University,Computer Science,Master,2,23200,62.1,1300,235,600,1.35,55235
+Canada,Victoria,University of Victoria,Computer Science,Master,2,22900,64.8,1400,235,600,1.35,57335
+Canada,Halifax,Dalhousie University,Computer Science,Master,2,22600,61.2,1200,235,600,1.35,52235
+Canada,Winnipeg,University of Manitoba,Computer Science,Master,2,22300,59.8,1100,235,600,1.35,49535
+Canada,Quebec City,Laval University,Computer Science,Master,2,22000,58.5,1000,235,600,1.35,46835
+Canada,Saskatoon,University of Saskatchewan,Computer Science,Master,2,21700,58.2,950,235,600,1.35,45335
+Canada,St. John's,Memorial University,Computer Science,Master,2,21400,57.9,900,235,600,1.35,43835
+Canada,Regina,University of Regina,Computer Science,Master,2,21100,57.5,900,235,600,1.35,43535
+Canada,Sherbrooke,University of Sherbrooke,Computer Science,Master,2,20800,56.8,850,235,600,1.35,42035
+Canada,Windsor,University of Windsor,Computer Science,Master,2,20500,58.9,950,235,600,1.35,44135
+Canada,Moncton,University of New Brunswick,Computer Science,Master,2,20200,57.2,900,235,600,1.35,42635
+Canada,Trois-Rivieres,UQTR,Computer Science,Master,2,19900,56.5,850,235,600,1.35,41135
+Canada,Thunder Bay,Lakehead University,Computer Science,Master,2,19600,56.2,800,235,600,1.35,39635
+Canada,Sudbury,Laurentian University,Computer Science,Master,2,19300,55.8,800,235,600,1.35,39335
+Canada,Prince George,UNBC,Computer Science,Master,2,19000,55.5,750,235,600,1.35,37835
+Australia,Melbourne,University of Melbourne,Computer Science,Master,2,45800,72.8,1800,450,650,1.52,90100
+Australia,Sydney,University of Sydney,Computer Science,Master,2,44900,74.5,2000,450,650,1.52,94000
+Australia,Canberra,Australian National University,Computer Science,Master,2,44200,68.9,1600,450,650,1.52,83700
+Australia,Brisbane,University of Queensland,Computer Science,Master,2,43500,69.2,1500,450,650,1.52,80600
+Australia,Sydney,University of New South Wales,Computer Science,Master,2,43200,74.5,1900,450,650,1.52,89900
+Australia,Melbourne,Monash University,Computer Science,Master,2,42800,72.8,1700,450,650,1.52,84700
+Australia,Adelaide,University of Adelaide,Computer Science,Master,2,42200,67.5,1400,450,650,1.52,76900
+Australia,Perth,University of Western Australia,Computer Science,Master,2,41800,68.2,1500,450,650,1.52,78900
+Australia,Brisbane,Queensland University of Technology,Computer Science,Master,2,41200,69.2,1400,450,650,1.52,75900
+Australia,Sydney,University of Technology Sydney,Computer Science,Master,2,40800,74.5,1800,450,650,1.52,85100
+Australia,Melbourne,RMIT University,Computer Science,Master,2,40200,72.8,1600,450,650,1.52,79700
+Australia,Wollongong,University of Wollongong,Computer Science,Master,2,39800,65.8,1300,450,650,1.52,72100
+Australia,Newcastle,University of Newcastle,Computer Science,Master,2,39200,66.2,1300,450,650,1.52,71500
+Australia,Hobart,University of Tasmania,Computer Science,Master,2,38800,64.5,1200,450,650,1.52,68700
+Australia,Gold Coast,Griffith University,Computer Science,Master,2,38200,68.5,1400,450,650,1.52,72900
+Australia,Canberra,University of Canberra,Computer Science,Master,2,37800,68.9,1500,450,650,1.52,74900
+Australia,Townsville,James Cook University,Computer Science,Master,2,37200,65.2,1200,450,650,1.52,67100
+Australia,Armidale,University of New England,Computer Science,Master,2,36800,63.8,1100,450,650,1.52,64300
+Australia,Toowoomba,University of Southern Queensland,Computer Science,Master,2,36200,64.2,1100,450,650,1.52,63700
+Australia,Ballarat,Federation University,Computer Science,Master,2,35800,63.5,1000,450,650,1.52,60900
+Australia,Lismore,Southern Cross University,Computer Science,Master,2,35200,63.2,1000,450,650,1.52,60300
+USA,Boston,MIT,Computer Science,Master,2,58000,82.1,2100,160,1500,1,110060
+UK,London,Imperial College London,Data Science,Master,1,42000,75.3,1800,485,800,0.79,64885
+Germany,Munich,TU Munich,Mechanical Engineering,Master,2,0,71.5,1200,110,900,0.92,29810
+Canada,Toronto,University of Toronto,Business Analytics,Master,2,45000,73.8,1700,235,750,1.35,86785
+UK,Edinburgh,University of Edinburgh,Chemistry,Master,2,38000,67.8,1100,485,800,0.79,65685
+Canada,Vancouver,University of British Columbia,Environmental Science,Master,2,42000,71.2,1600,235,750,1.35,81385
+USA,Berkeley,UC Berkeley,Mathematics,Master,2,54000,83.2,2000,160,1500,1,103660
+Germany,Hamburg,University of Hamburg,Physics,Master,2,0,69.8,1100,110,900,0.92,27410
+Australia,Brisbane,University of Queensland,Data Science,Master,2,32000,68.7,1200,450,650,1.52,61900
+USA,New York,Columbia University,Economics,Master,2,62000,100,2500,160,1500,1,123660
+Canada,Ottawa,University of Ottawa,Artificial Intelligence,Master,2,40000,67.8,1300,235,750,1.35,72185
+Australia,Perth,University of Western Australia,Physics,Master,2,30000,67.2,1100,450,650,1.52,57500
+UK,Bristol,University of Bristol,Data Science,Master,2,36000,68.9,1200,485,800,0.79,66085
+Germany,Frankfurt,Goethe University,Computer Science,Master,2,0,72.3,1300,110,900,0.92,32210
+USA,Los Angeles,UCLA,Computer Science,Master,2,52000,79.8,2200,160,1500,1,106460
+Germany,Stuttgart,University of Stuttgart,Engineering,Master,2,0,68.7,1100,110,900,0.92,27410
+Canada,Edmonton,University of Alberta,Data Science,Master,2,37000,64.3,1100,235,750,1.35,64385
+USA,Austin,UT Austin,Mathematics,Master,2,45000,68.9,1600,160,1500,1,85060
+Canada,Halifax,Dalhousie University,Engineering,Master,2,36000,63.4,1000,235,750,1.35,60985
+Australia,Gold Coast,Griffith University,Data Science,Master,2,29000,65.4,1100,450,650,1.52,56500
+UK,Sheffield,University of Sheffield,Engineering,Master,2,33000,62.3,850,485,800,0.79,54685
+Germany,Cologne,University of Cologne,Mathematics,Master,2,0,69.8,1200,110,900,0.92,29810
+Australia,Newcastle,University of Newcastle,Chemistry,Master,2,27000,63.2,950,450,650,1.52,50900
+USA,Pittsburgh,Carnegie Mellon,Data Science,Master,2,56000,65.4,1500,160,1500,1,93660
+Germany,Bonn,University of Bonn,Engineering,Master,2,0,67.8,1100,110,900,0.92,27410
+Canada,Victoria,University of Victoria,Mathematics,Master,2,35000,64.5,1100,235,750,1.35,62385
+UK,Durham,Durham University,Engineering,Master,2,35000,63.4,900,485,800,0.79,57885
+Canada,Winnipeg,University of Manitoba,Data Science,Master,2,33000,61.2,900,235,750,1.35,55585
+USA,San Francisco,UC Berkeley Extension,Data Science,Master,2,52000,95.2,2400,160,1500,1,111260
+UK,London,King's College London,Computer Science,Master,1,39000,75.3,1900,485,800,0.79,63085
+Switzerland,Zurich,ETH Zurich,Computer Science,Master,2,1500,122.4,2000,140,1200,0.89,50840
+France,Paris,Sorbonne University,Data Analytics,Master,2,4500,84.3,1800,99,850,0.92,48649
+USA,Chicago,University of Chicago,Data Science,Master,2,58000,84.1,1900,160,1500,1,105260
+France,Lyon,University of Lyon,Data Science,Master,2,4200,75.6,1200,99,850,0.92,33949
+USA,Boston,Northeastern University,Data Analytics,Master,2,54000,82.1,2200,160,1500,1,108460
+UK,Edinburgh,Heriot-Watt University,Computer Science,Master,1,37000,67.8,1200,485,800,0.79,52685
+Switzerland,Geneva,University of Geneva,Data Science,Master,2,1500,116.5,1800,140,1200,0.89,46040
+UK,Birmingham,University of Birmingham,Computer Science,Master,1,36000,65.4,1100,485,800,0.79,50485
+Switzerland,Basel,University of Basel,Data Science,Master,2,1500,114.3,1700,140,1200,0.89,43640
+France,Bordeaux,University of Bordeaux,Data Analytics,Master,2,4300,72.1,1000,99,850,0.92,29249
+USA,Austin,UT Austin,Computer Science,Master,2,49000,68.9,1800,160,1500,1,93860
+UK,Manchester,University of Salford,Data Science,Master,1,35000,65.4,1000,485,800,0.79,48285
+Switzerland,St. Gallen,University of St. Gallen,Data Analytics,Master,2,1500,112.1,1600,140,1200,0.89,41240
+France,Nice,University of Nice,Computer Science,Master,2,4100,76.5,1300,99,850,0.92,36249
+USA,Denver,University of Denver,Data Analytics,Master,2,47000,69.8,1700,160,1500,1,89460
+Switzerland,Bern,University of Bern,Data Science,Master,2,1500,110.4,1500,140,1200,0.89,38840
+USA,Portland,Portland State University,Data Science,Master,2,45000,71.2,1600,160,1500,1,85060
+UK,Bristol,UWE Bristol,Computer Science,Master,1,33000,68.9,1100,485,800,0.79,47485
+Switzerland,Lugano,USI Lugano,Data Analytics,Master,2,1500,108.9,1400,140,1200,0.89,36440
+France,Strasbourg,University of Strasbourg,Computer Science,Master,2,4000,70.2,1000,99,850,0.92,28949
+UK,Cardiff,Cardiff University,Data Analytics,Master,1,34000,64.5,950,485,800,0.79,46685
+Switzerland,Fribourg,University of Fribourg,Computer Science,Master,2,1500,107.8,1300,140,1200,0.89,34040
+France,Grenoble,Grenoble INP,Data Science,Master,2,4100,71.5,1100,99,850,0.92,31449
+Germany,Berlin,Technical University Berlin,Mechanical Engineering,Master,2,0,68.9,1100,110,900,0.92,27410
+Germany,Hamburg,TU Hamburg,Electrical Engineering,Master,2,0,69.8,1200,110,900,0.92,29810
+Germany,Stuttgart,University of Stuttgart,Aerospace Engineering,Master,2,0,68.7,1100,110,900,0.92,27410
+Germany,Darmstadt,TU Darmstadt,Computer Engineering,Master,2,0,66.8,950,110,900,0.92,23810
+Germany,Bremen,University of Bremen,Robotics,Master,2,0,66.5,900,110,900,0.92,22610
+Germany,Aachen,RWTH Aachen,Materials Science,Master,2,0,68.9,1000,110,900,0.92,25010
+Germany,Jena,University of Jena,Photonics,Master,2,0,65.4,850,110,900,0.92,21410
+USA,Boston,Northeastern University,Data Science,Master,2,54000,82.1,2000,160,1500,1,103660
+Netherlands,Rotterdam,Erasmus University,Business Analytics,Master,2,14500,77.8,1200,171,720,0.92,44191
+USA,San Diego,UC San Diego,Biotechnology,Master,2,49000,75.6,1900,160,1500,1,96260
+Netherlands,Delft,TU Delft,Computer Science,Master,2,15500,76.5,1100,171,720,0.92,42791
+USA,Seattle,University of Washington,Computer Engineering,Master,2,51000,77.8,2100,160,1500,1,103060
+Netherlands,Eindhoven,TU Eindhoven,Artificial Intelligence,Master,2,14800,72.3,950,171,720,0.92,38491
+USA,Pittsburgh,Carnegie Mellon,Software Engineering,Master,2,56000,65.4,1500,160,1500,1,93660
+USA,Raleigh,NC State University,Computer Science,Master,2,47000,67.8,1400,160,1500,1,82260
+Netherlands,Tilburg,Tilburg University,Data Science,Master,2,14000,70.5,950,171,720,0.92,37691
+USA,Davis,UC Davis,Data Science,Master,2,48000,73.2,1600,160,1500,1,88060
+Netherlands,Wageningen,Wageningen University,Bioinformatics,Master,2,14500,69.8,900,171,720,0.92,36991
+USA,Boston,Harvard University,Artificial Intelligence,Master,2,58000,82.1,2200,160,1500,1,112460
+UK,London,Imperial College,Computer Engineering,Master,2,42000,75.3,1800,485,800,0.79,86485
+France,Paris,Sorbonne University,Computer Science,Master,2,4500,84.3,1800,99,850,0.92,48649
+France,Lyon,École Normale Supérieure,Computer Engineering,Master,2,4200,75.6,1200,99,850,0.92,33949
+USA,Berkeley,UC Berkeley,Data Science,Master,2,54000,83.2,2000,160,1500,1,103660
+UK,Oxford,University of Oxford,Software Engineering,Master,2,40000,71.5,1400,485,800,0.79,74885
+UK,Edinburgh,University of Edinburgh,Data Science,Master,2,38000,67.8,1100,485,800,0.79,65685
+France,Marseille,Aix-Marseille University,Artificial Intelligence,Master,2,4100,73.5,1100,99,850,0.92,31449
+USA,New York,Columbia University,Data Science,Master,2,62000,100,2500,160,1500,1,123660
+UK,Bristol,University of Bristol,Data Analytics,Master,2,36000,68.9,1200,485,800,0.79,66085
+France,Nice,University of Nice,Data Science,Master,2,4100,76.5,1300,99,850,0.92,36249
+USA,Chicago,University of Chicago,Artificial Intelligence,Master,2,58000,84.1,1900,160,1500,1,105260
+USA,San Francisco,Stanford University,Data Science,Master,2,55000,95.2,2400,160,1500,1,114260
+UK,Leeds,University of Leeds,Computer Engineering,Master,2,35000,63.2,900,485,800,0.79,57885
+France,Strasbourg,University of Strasbourg,Data Analytics,Master,2,4000,70.2,1000,99,850,0.92,28949
+UK,Nottingham,University of Nottingham,Data Engineering,Master,2,34000,61.2,800,485,800,0.79,54485
