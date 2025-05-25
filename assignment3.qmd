@@ -9,9 +9,11 @@ toc: true
 
 ## Executive Summary
 
+This study investigates the relationship between actual study abroad expenses and international university rankings.  We compare academic achievement with financial affordability across major study destinations using data from the 2024 and 2025 QS World University Rankings and a dataset on foreign education expenses.  The analysis focuses on nations that offer prestigious universities along with comparatively cheaper living, housing, and tuition prices.  These results provide useful information for those who intend to study abroad.
+
 ## Introduction
 
-The International education sector is growing rapidly, with more students exploring study opportunities beyond their home countries in search of both quality and affordability. The QS World University Rankings are a trusted benchmark for comparing institutions across dimensions such as academic reputation, grade employbility and sustainability. However, a university’s position in global rankings doesn’t always reflect the true cost of attending. Expenses like tuition, rent, visa fees, and insurance can significantly affect affordability. For many international students, cost is just as critical as academic quality. In this report, we examine both performance and affordability by merging QS ranking data from 2024 and 2025 with a dataset on international education costs. Our focus is on the ten countries with the highest number of universities represented in the QS dataset.
+The International education sector is growing rapidly, with more students exploring study opportunities beyond their home countries in search of both quality and affordability. The QS World University Rankings are a trusted benchmark for comparing institutions across dimensions such as academic reputation, grade employability and sustainability. However, a university’s position in global rankings doesn’t always reflect the true cost of attending. Expenses like tuition, rent, visa fees, and insurance can significantly affect affordability. For many international students, cost is just as critical as academic quality. In this report, we examine both performance and affordability by merging QS ranking data from 2024 and 2025 with a dataset on international education costs. Our focus is on the ten countries with the highest number of universities represented in the QS dataset.
 
 
 ## Methodology
