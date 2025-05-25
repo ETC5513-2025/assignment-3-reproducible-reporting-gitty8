@@ -1,0 +1,48 @@
+---
+title: "QS top filtered data"
+format: html
+editor: visual
+---
+
+```{r}
+library(dplyr)
+library(readr)
+qs_2024 <- read.csv("data/2024 QS World University Rankings 1.1 (For qs.com).csv")
+qs_2025 <- read.csv("data/qs-world-rankings-2025.csv")
+```
+
+```{r}
+qs_top100_2024 <- qs_2024 %>%
+  mutate(Rank = as.numeric(gsub("=", "", X2024.RANK))) %>%
+  filter(Rank <= 100) %>%
+  transmute(
+    Rank,
+    Institution = Institution.Name,
+    Country = Country,
+    Year = 2024
+  )
+
+qs_top100_2025 <- qs_2025 %>%
+  mutate(Rank = as.numeric(gsub("=", "", X2025.Rank))) %>%  # 同上
+  filter(Rank <= 100) %>%
+  transmute(
+    Rank,
+    Institution = Institution.Name,
+    Country = Location.Full,
+    Year = 2025
+  )
+
+qs_top100_all <- bind_rows(qs_top100_2024, qs_top100_2025)
+```
+
+```{r}
+top_countries <- qs_top100_all %>%
+  count(Country, name = "Top100_Count") %>%
+  filter(Top100_Count >= 5) %>%              
+  arrange(desc(Top100_Count))   
+```
+
+```{r}
+write_csv(top_countries, "data/top_countries.csv")
+```
+
