@@ -6,22 +6,27 @@ format:
 toc: true
 ---
 
-
-
-
-
 ## Executive Summary
+
+This study investigates the relationship between actual study abroad costs and international university rankings. We compare academic achievement with financial affordability across major study destinations using data from the 2024 and 2025 QS World University Rankings and international education cost datasets. The analysis focuses on master's degree programs in the top 10 QS ranking countries, examining tuition, living costs, visa fees, and insurance expenses. The findings reveal significant cost variations among top-ranking countries, providing valuable insights for international students seeking quality education at optimal costs.
+
 
 ## Introduction
 
+The international education sector is growing rapidly, with more students exploring study opportunities beyond their home countries in search of both quality and affordability. The QS World University Rankings serve as a trusted benchmark for comparing institutions across dimensions such as academic reputation, graduate employability, and sustainability. **While top-ranked universities typically involve higher costs, the total expense varies significantly between countries due to differences in living costs, visa requirements, and local economic conditions.** Expenses like tuition, accommodation, visa fees, and insurance can significantly impact overall affordability for international students.
 
-The International education sector is growing rapidly, with more students exploring study opportunities beyond their home countries in search of both quality and affordability. The QS World University Rankings are a trusted benchmark for comparing institutions across dimensions such as academic reputation, grade employbility and sustainability. However, a university’s position in global rankings doesn’t always reflect the true cost of attending. Expenses like tuition, rent, visa fees, and insurance can significantly affect affordability. For many international students, cost is just as critical as academic quality. In this report, we examine both performance and affordability by merging QS ranking data from 2024 and 2025 with a dataset on international education costs. Our focus is on the ten countries with the highest number of universities represented in the QS dataset.
-
-
-The data set is about 
-
+For many prospective students, cost considerations are just as critical as academic quality when making study abroad decisions. Limited research has systematically compared education costs across top-ranking university destinations. This gap in knowledge makes it difficult for students to make informed decisions about cost-effective study options. In this report, we examine both academic performance and financial affordability by merging QS ranking data from 2024 and 2025 with international education cost datasets. Our analysis focuses specifically on master's degree programs in the top 10 countries with the highest QS university rankings. The findings aim to provide practical guidance for international students seeking optimal value in their education investment.
 
 ## Methodology
+
+- **Research Design and Data Sources**
+This study uses quantitative analysis to compare education costs and university rankings. We combined QS World University Rankings 2024-2025 with Kaggle international education cost dataset. The research focuses on master's degree programs only. As shown in Figure 1, we followed a systematic approach from data collection to final analysis, focusing on the top 10 QS ranking countries.
+
+- **Data Processing Steps**
+Table 1 shows our five-stage data processing method. First, we collected both datasets and checked data quality. Second, we calculated total study cost for each country by adding tuition, rent, visa fees, and insurance. Third, we filtered data to focus on master's level programs. Fourth, we selected the top 10 QS ranking countries. Finally, we cleaned the data and merged both datasets.
+
+- **Analysis Methods and Tools**
+All analysis was done in R using the tidyverse for data processing and ggplot2 for visualization to ensure reproducibility. We calculated basic statistics like averages and standard deviations. We also performed simple correlation analysis to explore the relationship between study costs and QS rankings.
 
 ## Results
 
