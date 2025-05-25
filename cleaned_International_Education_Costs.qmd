@@ -1,0 +1,51 @@
+---
+title: "cleaned_International_Education_Costs"
+author: "chen liu"
+format: html
+editor: visual
+---
+
+clean data
+
+```{r}
+# Load data
+costs_df <- read_csv("data/International_Education_Costs.csv")
+top_countries_df <- read_csv("data/top_countries.csv")
+
+# Filter for Master’s Degree Only
+masters_df <- costs_df %>%
+  filter(Level == "Master")
+
+# Standardize country names to match top_countries.csv
+masters_df <- masters_df %>%
+  mutate(Country = recode(Country,
+    "USA" = "United States",
+    "UK" = "United Kingdom",
+    "Hong Kong" = "Hong Kong SAR",
+    "South Korea" = "South Korea",  # already matches
+    "Russia" = "Russian Federation" # not in top 11, just for safety
+  ))
+
+# Define top 11 countries manually
+top_11_countries <- c("United States", "United Kingdom", "Australia", "China (Mainland)",
+                      "Hong Kong SAR", "South Korea", "Germany", "France",
+                      "Japan", "Canada", "Switzerland")
+
+# Filter for top 11 countries
+masters_top_df <- masters_df %>%
+  filter(Country %in% top_11_countries)
+
+# Calculate total cost in USD
+masters_top_df <- masters_top_df %>%
+  mutate(Total_Cost_USD = Tuition_USD + Rent_USD + Visa_Fee_USD + Insurance_USD)
+
+# Select relevant columns
+cleaned_df <- masters_top_df %>%
+  select(Country, University, Program, Duration_Years,
+         Tuition_USD, Rent_USD, Visa_Fee_USD, Insurance_USD, Total_Cost_USD)
+
+# save cleaned data
+write_csv(cleaned_df, "data/cleaned_education_costs.csv")
+
+
+```
