@@ -24,6 +24,10 @@ The data set is about
 ## Methodology
 
 ## Results
+# Load QS Top 100 ranking count
+
+
+
 
 ## Discussion, Conclusion & Recommendations
 
@@ -35,7 +39,7 @@ The data set is about
 
 -   Git branch: method (This is quite a heavy section with both writing and visuals — if needed, the rest of us can help with generating or editing the plots/tables.)
 
-**Member B- Chen lie**
+**Member B- Chen liu**
 
 -   Section: **Results** (run analysis + create 1 figure or table + 200-word summary of key findings)
 
@@ -48,3 +52,16 @@ The data set is about
 -   Also responsible for helping **merge branches** into main later on
 
 • Git branch: discuss
+
+
+
+
+
+
+
+
+
+
+
+
+
