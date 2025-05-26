@@ -35,6 +35,9 @@ The data set is about
 
 ## References
 
+<https://www.kaggle.com/datasets/adilshamim8/cost-of-international-education>
+
+
 **Member A- Girika**
 
 -   Sections: **Executive Summary** (max 4 sentences), **Introduction** (max 10 sentences), and **Methodology** (max 300 words with 1 figure + 1 table)
