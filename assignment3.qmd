@@ -23,17 +23,73 @@ The data set is about
 
 ## Methodology
 
+
+
 ## Results
+We analyzed the average total cost of studying a Master's program across the top 10 QS-ranked countries. This included tuition, rent, visa fees, and insurance. The goal was to identify how Australia compares with other top destinations in terms of affordability.
+
+### Load and Prepare Data
+```{r}
+library(dplyr)
+library(readr)
+
+# Load data
+df <- read_csv("data/cleaned_education_costs.csv")
+qs_df <- read_csv("data/top_countries.csv")
+
+# Summarise average cost by country
+summary_df <- df %>%
+  group_by(Country) %>%
+  summarise(
+    Avg_Tuition = round(mean(Tuition_USD), 0),
+    Avg_Rent = round(mean(Rent_USD * 12 * Duration_Years), 0),
+    Avg_Total_Cost = round(mean(Total_Cost_USD), 0),
+    .groups = "drop"
+  )
+
+# Merge with QS Top 100 counts
+merged_df <- left_join(summary_df, qs_df, by = "Country")
+```
+
+
+
+### Table 1: Country Ranking by Total Study Cost
+```{r}
+kable(merged_df[order(merged_df$Avg_Total_Cost), ],
+      caption = "Table: Country Ranking by Total Study Cost and QS Top 100 Count")
+```
+As seen in Table 1, Australia ranks second highest in total study cost, placing it among the least affordable destinations for international Master’s students. This contrasts with more cost-effective options like South Korea, Germany, and China.
+
+
+
+### Figure 1: Bar Chart of Total Cost by Country
+```{r}
+ggplot(merged_df, aes(x = reorder(Country, Avg_Total_Cost), y = Avg_Total_Cost)) +
+  geom_bar(stat = "identity", fill = "skyblue") +
+  labs(
+    title = "Average Total Study Cost by Country",
+    x = "Country",
+    y = "Average Total Cost (USD)"
+  ) +
+  theme_minimal()
+```
+
+Figure 1 visually highlights this cost gap between Australia and other countries in the dataset. The results suggest that while Australia is a popular and prestigious education destination, it comes with a relatively high financial burden compared to similarly ranked alternatives.
+
+
+We analyzed the average total cost of studying a Master's degree across the top-ranking QS countries. As shown in Table 1, the United States had the highest average cost (approximately $100,200), followed by Australia ($70,477) and the United Kingdom ($57,381). In contrast, countries like South Korea, Germany, and China offered significantly lower total costs, all under $30,000.
+
+Figure 1 visualizes the variation in cost across countries. Interestingly, some countries with strong QS representation — such as Australia (18 Top 100 universities) — are also among the most expensive. However, South Korea, with 10 QS-ranked institutions, maintains the lowest average cost in the dataset.
+
+These results highlight the trade-offs between academic prestige and affordability. While top-ranked destinations offer global recognition, the financial burden varies widely and may impact students’ decision-making.
+
+
+
+
 
 ## Discussion, Conclusion & Recommendations
 
 ## References
-
-**Member A- Girika**
-
--   Sections: **Executive Summary** (max 4 sentences), **Introduction** (max 10 sentences), and **Methodology** (max 300 words with 1 figure + 1 table)
-
--   Git branch: method (This is quite a heavy section with both writing and visuals — if needed, the rest of us can help with generating or editing the plots/tables.)
 
 **Member B- Chen lie**
 
@@ -41,10 +97,3 @@ The data set is about
 
 -   Git branch: results
 
-**Member C -Jessica**
-
--   Sections: **Discussion**, **References**, and **Slides** (create a basic slide outline; we’ll each fill in our parts later)
-
--   Also responsible for helping **merge branches** into main later on
-
-• Git branch: discuss
