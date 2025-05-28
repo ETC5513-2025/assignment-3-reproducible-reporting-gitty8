@@ -42,11 +42,6 @@ merged_df <- left_join(summary_df, qs_df, by = "Country")
 
 
 
-
-
-
-
-
 ### Table 1: Country Ranking by Total Study Cost
 ```{r}
 kable(merged_df[order(merged_df$Avg_Total_Cost), ],
