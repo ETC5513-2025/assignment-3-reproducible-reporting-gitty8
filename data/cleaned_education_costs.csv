@@ -1,0 +1,205 @@
+Country,University,Program,Duration_Years,Tuition_USD,Rent_USD,Visa_Fee_USD,Insurance_USD,Total_Cost_USD
+United States,Harvard University,Computer Science,2,55400,2200,160,1500,59260
+United Kingdom,Imperial College London,Data Science,1,41200,1800,485,800,44285
+Canada,University of Toronto,Business Analytics,2,38500,1600,235,900,41235
+Australia,University of Melbourne,Engineering,2,42000,1400,450,650,44500
+Germany,Technical University of Munich,Mechanical Engineering,2,500,1100,75,550,2225
+Japan,University of Tokyo,Information Science,2,8900,1300,220,750,11170
+France,Sorbonne University,International Relations,2,4500,1400,99,650,6649
+Switzerland,ETH Zurich,Physics,2,1460,2100,88,1200,4848
+South Korea,Seoul National University,Digital Media,2,7200,900,130,500,8730
+United States,University of Washington,Computer Science,2,38900,2000,160,1500,42560
+United Kingdom,University of Glasgow,Computer Science,1,33500,1100,485,800,35885
+Japan,Kyoto University,Computer Science,2,8500,900,220,750,10370
+Japan,Tohoku University,Software Engineering,2,8200,650,220,750,9820
+Japan,Hokkaido University,Data Science,2,8100,550,220,750,9620
+Japan,Kobe University,Computer Science,2,7900,700,220,750,9570
+Japan,Hiroshima University,Information Technology,2,7600,550,220,750,9120
+Australia,University of Western Australia,Software Engineering,2,34500,1200,450,650,36800
+Australia,University of Tasmania,Data Science,2,30800,950,450,650,32850
+Australia,University of Wollongong,Artificial Intelligence,2,32900,1050,450,650,35050
+Australia,James Cook University,Data Analytics,2,31200,950,450,650,33250
+Australia,University of New England,Computing Science,2,30500,850,450,650,32450
+Germany,TU Dresden,Computer Science,2,500,750,75,550,1875
+Germany,TU Hamburg,Data Engineering,2,500,950,75,550,2075
+Germany,KIT,Artificial Intelligence,2,500,800,75,550,1925
+Germany,TU Braunschweig,Software Systems,2,500,650,75,550,1775
+Germany,Leibniz University,Digital Engineering,2,500,750,75,550,1875
+Germany,University of Freiburg,Robotics & AI,2,500,800,75,550,1925
+United States,University of Pennsylvania,Computer Science,2,51900,1900,160,1500,55460
+United States,University of Chicago,Data Analytics,2,52400,2000,160,1500,56060
+United States,Duke University,Software Engineering,2,51500,1500,160,1500,54660
+United States,University of Colorado,Data Science,2,39800,1600,160,1500,43060
+United States,UC Davis,Computer Engineering,2,42800,1700,160,1500,46160
+United Kingdom,University College London,Computer Science,1,39200,1900,485,800,42385
+United Kingdom,University of Warwick,Data Science,1,36800,1000,485,800,39085
+United Kingdom,University of Southampton,Cybersecurity,1,32400,900,485,800,34585
+United Kingdom,Cardiff University,Software Development,1,31200,800,485,800,33285
+United Kingdom,Newcastle University,Data Analytics,1,30800,800,485,800,32885
+Canada,Western University,Computer Science,2,29800,1100,235,900,32035
+Canada,Dalhousie University,Data Science,2,28500,1200,235,900,30835
+Canada,Laval University,Artificial Intelligence,2,21500,900,235,900,23535
+Canada,Memorial University,Computer Science,2,19800,950,235,900,21885
+Canada,University of Saskatchewan,Data Analytics,2,24500,1000,235,900,26635
+United States,Carnegie Mellon,Computer Science,2,51200,1800,160,1500,54660
+United States,Columbia University,Data Science,2,52800,2500,160,1500,56960
+France,École Polytechnique,Computer Science,2,15600,1500,99,650,17849
+France,École Normale Supérieure Lyon,Data Science,2,4800,850,99,650,6399
+France,Grenoble INP,Artificial Intelligence,2,4500,800,99,650,6049
+France,University of Bordeaux,Information Systems,2,4200,850,99,650,5799
+France,INSA Rennes,Cybersecurity,2,4500,700,99,650,5949
+France,University of Montpellier,Data Engineering,2,4100,750,99,650,5599
+Switzerland,EPFL,Computer Science,2,1460,1900,88,1200,4648
+Switzerland,University of Bern,Software Engineering,2,1420,1700,88,1200,4408
+Switzerland,USI,Artificial Intelligence,2,1460,1500,88,1200,4248
+Switzerland,University of Neuchatel,Information Systems,2,1420,1500,88,1200,4208
+Switzerland,University of Basel,Computational Science,2,1440,1800,88,1200,4528
+Switzerland,ZHAW,Data Engineering,2,1460,1700,88,1200,4448
+South Korea,Seoul National University,Computer Science,2,7200,950,90,800,9040
+South Korea,Korea University,Artificial Intelligence,2,7000,920,90,800,8810
+South Korea,Yonsei University,Data Science,2,6900,900,90,800,8690
+South Korea,Hanyang University,Software Engineering,2,6500,850,90,800,8240
+South Korea,Sungkyunkwan University,Computer Engineering,2,6400,840,90,800,8130
+South Korea,KAIST,Robotics Engineering,2,6800,700,90,800,8390
+South Korea,Chungnam National University,Information Systems,2,5900,650,90,800,7440
+South Korea,Pusan National University,Computer Science,2,5800,600,90,800,7290
+South Korea,Dong-A University,Software Engineering,2,5600,580,90,800,7070
+South Korea,Kyungpook National University,Data Analytics,2,5500,550,90,800,6940
+South Korea,Yeungnam University,Computer Engineering,2,5400,530,90,800,6820
+South Korea,Chonnam National University,Information Technology,2,5300,520,90,800,6710
+South Korea,Chosun University,Computer Science,2,5200,500,90,800,6590
+South Korea,Ulsan National Institute of Science and Technology,AI Engineering,2,6100,580,90,800,7570
+South Korea,University of Ulsan,Software Systems,2,5100,550,90,800,6540
+South Korea,POSTECH,Computer Engineering,2,6300,570,90,800,7760
+South Korea,Incheon National University,Data Science,2,5000,600,90,800,6490
+South Korea,Sungkyunkwan University (Suwon),Computer Systems,2,5900,650,90,800,7440
+South Korea,Hanbat National University,Information Security,2,4900,540,90,800,6330
+South Korea,Chungbuk National University,Computer Networks,2,4800,520,90,800,6210
+Canada,University of Toronto,Computer Science,2,28500,1800,235,600,31135
+Canada,University of British Columbia,Computer Science,2,27900,1900,235,600,30635
+Canada,McGill University,Computer Science,2,26800,1500,235,600,29135
+Canada,University of Waterloo,Computer Science,2,26200,1300,235,600,28335
+Canada,University of Montreal,Computer Science,2,25800,1400,235,600,28035
+Canada,University of Alberta,Computer Science,2,24900,1200,235,600,26935
+Canada,University of Ottawa,Computer Science,2,24500,1400,235,600,26735
+Canada,University of Calgary,Computer Science,2,24100,1300,235,600,26235
+Canada,McMaster University,Computer Science,2,23800,1250,235,600,25885
+Canada,Western University,Computer Science,2,23500,1200,235,600,25535
+Canada,Queen's University,Computer Science,2,23200,1300,235,600,25335
+Canada,University of Victoria,Computer Science,2,22900,1400,235,600,25135
+Canada,Dalhousie University,Computer Science,2,22600,1200,235,600,24635
+Canada,University of Manitoba,Computer Science,2,22300,1100,235,600,24235
+Canada,Laval University,Computer Science,2,22000,1000,235,600,23835
+Canada,University of Saskatchewan,Computer Science,2,21700,950,235,600,23485
+Canada,Memorial University,Computer Science,2,21400,900,235,600,23135
+Canada,University of Regina,Computer Science,2,21100,900,235,600,22835
+Canada,University of Sherbrooke,Computer Science,2,20800,850,235,600,22485
+Canada,University of Windsor,Computer Science,2,20500,950,235,600,22285
+Canada,University of New Brunswick,Computer Science,2,20200,900,235,600,21935
+Canada,UQTR,Computer Science,2,19900,850,235,600,21585
+Canada,Lakehead University,Computer Science,2,19600,800,235,600,21235
+Canada,Laurentian University,Computer Science,2,19300,800,235,600,20935
+Canada,UNBC,Computer Science,2,19000,750,235,600,20585
+Australia,University of Melbourne,Computer Science,2,45800,1800,450,650,48700
+Australia,University of Sydney,Computer Science,2,44900,2000,450,650,48000
+Australia,Australian National University,Computer Science,2,44200,1600,450,650,46900
+Australia,University of Queensland,Computer Science,2,43500,1500,450,650,46100
+Australia,University of New South Wales,Computer Science,2,43200,1900,450,650,46200
+Australia,Monash University,Computer Science,2,42800,1700,450,650,45600
+Australia,University of Adelaide,Computer Science,2,42200,1400,450,650,44700
+Australia,University of Western Australia,Computer Science,2,41800,1500,450,650,44400
+Australia,Queensland University of Technology,Computer Science,2,41200,1400,450,650,43700
+Australia,University of Technology Sydney,Computer Science,2,40800,1800,450,650,43700
+Australia,RMIT University,Computer Science,2,40200,1600,450,650,42900
+Australia,University of Wollongong,Computer Science,2,39800,1300,450,650,42200
+Australia,University of Newcastle,Computer Science,2,39200,1300,450,650,41600
+Australia,University of Tasmania,Computer Science,2,38800,1200,450,650,41100
+Australia,Griffith University,Computer Science,2,38200,1400,450,650,40700
+Australia,University of Canberra,Computer Science,2,37800,1500,450,650,40400
+Australia,James Cook University,Computer Science,2,37200,1200,450,650,39500
+Australia,University of New England,Computer Science,2,36800,1100,450,650,39000
+Australia,University of Southern Queensland,Computer Science,2,36200,1100,450,650,38400
+Australia,Federation University,Computer Science,2,35800,1000,450,650,37900
+Australia,Southern Cross University,Computer Science,2,35200,1000,450,650,37300
+United States,MIT,Computer Science,2,58000,2100,160,1500,61760
+United Kingdom,Imperial College London,Data Science,1,42000,1800,485,800,45085
+Germany,TU Munich,Mechanical Engineering,2,0,1200,110,900,2210
+Canada,University of Toronto,Business Analytics,2,45000,1700,235,750,47685
+United Kingdom,University of Edinburgh,Chemistry,2,38000,1100,485,800,40385
+Canada,University of British Columbia,Environmental Science,2,42000,1600,235,750,44585
+United States,UC Berkeley,Mathematics,2,54000,2000,160,1500,57660
+Germany,University of Hamburg,Physics,2,0,1100,110,900,2110
+Australia,University of Queensland,Data Science,2,32000,1200,450,650,34300
+United States,Columbia University,Economics,2,62000,2500,160,1500,66160
+Canada,University of Ottawa,Artificial Intelligence,2,40000,1300,235,750,42285
+Australia,University of Western Australia,Physics,2,30000,1100,450,650,32200
+United Kingdom,University of Bristol,Data Science,2,36000,1200,485,800,38485
+Germany,Goethe University,Computer Science,2,0,1300,110,900,2310
+United States,UCLA,Computer Science,2,52000,2200,160,1500,55860
+Germany,University of Stuttgart,Engineering,2,0,1100,110,900,2110
+Canada,University of Alberta,Data Science,2,37000,1100,235,750,39085
+United States,UT Austin,Mathematics,2,45000,1600,160,1500,48260
+Canada,Dalhousie University,Engineering,2,36000,1000,235,750,37985
+Australia,Griffith University,Data Science,2,29000,1100,450,650,31200
+United Kingdom,University of Sheffield,Engineering,2,33000,850,485,800,35135
+Germany,University of Cologne,Mathematics,2,0,1200,110,900,2210
+Australia,University of Newcastle,Chemistry,2,27000,950,450,650,29050
+United States,Carnegie Mellon,Data Science,2,56000,1500,160,1500,59160
+Germany,University of Bonn,Engineering,2,0,1100,110,900,2110
+Canada,University of Victoria,Mathematics,2,35000,1100,235,750,37085
+United Kingdom,Durham University,Engineering,2,35000,900,485,800,37185
+Canada,University of Manitoba,Data Science,2,33000,900,235,750,34885
+United States,UC Berkeley Extension,Data Science,2,52000,2400,160,1500,56060
+United Kingdom,King's College London,Computer Science,1,39000,1900,485,800,42185
+Switzerland,ETH Zurich,Computer Science,2,1500,2000,140,1200,4840
+France,Sorbonne University,Data Analytics,2,4500,1800,99,850,7249
+United States,University of Chicago,Data Science,2,58000,1900,160,1500,61560
+France,University of Lyon,Data Science,2,4200,1200,99,850,6349
+United States,Northeastern University,Data Analytics,2,54000,2200,160,1500,57860
+United Kingdom,Heriot-Watt University,Computer Science,1,37000,1200,485,800,39485
+Switzerland,University of Geneva,Data Science,2,1500,1800,140,1200,4640
+United Kingdom,University of Birmingham,Computer Science,1,36000,1100,485,800,38385
+Switzerland,University of Basel,Data Science,2,1500,1700,140,1200,4540
+France,University of Bordeaux,Data Analytics,2,4300,1000,99,850,6249
+United States,UT Austin,Computer Science,2,49000,1800,160,1500,52460
+United Kingdom,University of Salford,Data Science,1,35000,1000,485,800,37285
+Switzerland,University of St. Gallen,Data Analytics,2,1500,1600,140,1200,4440
+France,University of Nice,Computer Science,2,4100,1300,99,850,6349
+United States,University of Denver,Data Analytics,2,47000,1700,160,1500,50360
+Switzerland,University of Bern,Data Science,2,1500,1500,140,1200,4340
+United States,Portland State University,Data Science,2,45000,1600,160,1500,48260
+United Kingdom,UWE Bristol,Computer Science,1,33000,1100,485,800,35385
+Switzerland,USI Lugano,Data Analytics,2,1500,1400,140,1200,4240
+France,University of Strasbourg,Computer Science,2,4000,1000,99,850,5949
+United Kingdom,Cardiff University,Data Analytics,1,34000,950,485,800,36235
+Switzerland,University of Fribourg,Computer Science,2,1500,1300,140,1200,4140
+France,Grenoble INP,Data Science,2,4100,1100,99,850,6149
+Germany,Technical University Berlin,Mechanical Engineering,2,0,1100,110,900,2110
+Germany,TU Hamburg,Electrical Engineering,2,0,1200,110,900,2210
+Germany,University of Stuttgart,Aerospace Engineering,2,0,1100,110,900,2110
+Germany,TU Darmstadt,Computer Engineering,2,0,950,110,900,1960
+Germany,University of Bremen,Robotics,2,0,900,110,900,1910
+Germany,RWTH Aachen,Materials Science,2,0,1000,110,900,2010
+Germany,University of Jena,Photonics,2,0,850,110,900,1860
+United States,Northeastern University,Data Science,2,54000,2000,160,1500,57660
+United States,UC San Diego,Biotechnology,2,49000,1900,160,1500,52560
+United States,University of Washington,Computer Engineering,2,51000,2100,160,1500,54760
+United States,Carnegie Mellon,Software Engineering,2,56000,1500,160,1500,59160
+United States,NC State University,Computer Science,2,47000,1400,160,1500,50060
+United States,UC Davis,Data Science,2,48000,1600,160,1500,51260
+United States,Harvard University,Artificial Intelligence,2,58000,2200,160,1500,61860
+United Kingdom,Imperial College,Computer Engineering,2,42000,1800,485,800,45085
+France,Sorbonne University,Computer Science,2,4500,1800,99,850,7249
+France,École Normale Supérieure,Computer Engineering,2,4200,1200,99,850,6349
+United States,UC Berkeley,Data Science,2,54000,2000,160,1500,57660
+United Kingdom,University of Oxford,Software Engineering,2,40000,1400,485,800,42685
+United Kingdom,University of Edinburgh,Data Science,2,38000,1100,485,800,40385
+France,Aix-Marseille University,Artificial Intelligence,2,4100,1100,99,850,6149
+United States,Columbia University,Data Science,2,62000,2500,160,1500,66160
+United Kingdom,University of Bristol,Data Analytics,2,36000,1200,485,800,38485
+France,University of Nice,Data Science,2,4100,1300,99,850,6349
+United States,University of Chicago,Artificial Intelligence,2,58000,1900,160,1500,61560
+United States,Stanford University,Data Science,2,55000,2400,160,1500,59060
+United Kingdom,University of Leeds,Computer Engineering,2,35000,900,485,800,37185
+France,University of Strasbourg,Data Analytics,2,4000,1000,99,850,5949
+United Kingdom,University of Nottingham,Data Engineering,2,34000,800,485,800,36085
