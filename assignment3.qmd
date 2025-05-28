@@ -1,6 +1,9 @@
 ---
-title: "Cost of International Education"
-author: "Girika, Catherine, Jessica"
+title: "Analysis of International Education Costs vs. University Rankings"
+author: 
+ - name: "Girika"
+ - name: "Catherine"
+ - name: "Chang Heng-Hsieh"
 format: 
   pdf: default
 toc: true
