@@ -12,77 +12,99 @@ editor: visual
 
 ## Problem Introduction
 
--   *Growing Global Mobility*: International education sector expanding rapidly
--   *Quality vs Affordability Dilemma*: Costs vary a lot between countries, and students seek both academic excellence and financial feasibility
--   *Information Gap*: Limited systematic comparison of education costs across top-ranking university destinations ::: {.fragment}
+- 🌍 **Growing Global Mobility**: 
+International education sector expanding rapidly
 
-*Key Questions* •⁠ ⁠Do top QSrankings (higher academic quality) = higher costs? •⁠ ⁠Which countries offer best value for international students? •⁠ ⁠Goal: Compare study cost vs. QS ranking to find cost-effective options :::
+- 💰 **Quality vs Affordability Dilemma**: 
+Costs vary a lot between countries, and students seek both academic excellence and financial feasibility
+
+- 📊 **Information Gap**:  
+Limited systematic comparison of education costs across top-ranking university destinations
+
+---
+
+**Key Questions**
+
+- ❓ Do top QSrankings (higher academic quality) = higher costs?
+- ❓ Which countries offer best value for international students?
+- 🎯 Goal: Compare study cost vs. QS ranking to find cost-effective options
 
 ------------------------------------------------------------------------
 
-## Dataset description
+## Dataset Description
+#### Data Sources:
 
-### Data Sources:
+- **QS World University Rankings 2024-2025:**
 
-*QS World University Rankings 2024-2025:*
+🎓 Academic reputation, graduate employability, sustainability metrics
+🎓 Global benchmark for university comparison
 
-•⁠ ⁠Academic reputation, graduate employability, sustainability metrics
+- **Kaggle: International Education Cost Dataset:**
 
-•⁠ ⁠Global benchmark for university comparison
+💸 Comprehensive cost breakdown by country
+💸 Includes Tuition + Living + Visa + Insurance
 
-*Kaggle International Education Cost Dataset:*
 
-•⁠ ⁠Comprehensive cost breakdownc by country
+#### Focus:
 
-•⁠ ⁠Includes Tuition + Living + Visa + Insurance
+**Academic Level**: 
+- `Master's degree programs only`
+- Standardized comparison across countries
 
-::: fragment
-### Research Focus:
+**Geographic Scope:**
+- Top 10 countries with the highest QS ranking
+- Global coverage of major study destinations
 
-*Academic Level*:
+**Time Frame:**
+- QS Rankings: 2024-2025 academic yearr
 
-•⁠ ⁠\*Master's degree programs only
-
-• ⁠Standardized comparison across countries
-
-*Geographic Scope:*
-
-•⁠ ⁠Top 10 countries with the highest QS ranking
-
-•⁠ ⁠Global coverage of major study destinations
-
-*Time Frame:* •⁠ ⁠QS Rankings: 2024-2025 academic year
-:::
 
 ------------------------------------------------------------------------
 
 ## Method
+#### Analysis Processing Flowchart
 
-### Data Processing Pipeline
+```{r}
 
-⁠ {r}
+#| label: fig-methodology
+#| fig-cap: "Research methodology flowchart showing data processing steps"
+#| echo: false
+#| fig-width: 8
+#| fig-height: 6
 
-#\| label: fig-methodology #\| fig-cap: "Research methodology flowchart showing data processing steps" #\| echo: false #\| fig-width: 8 #\| fig-height: 6
+library(DiagrammeR)
+DiagrammeR::grViz("
+digraph flowchart {
+  node [fontname = Arial, shape = rectangle, style = filled, fillcolor = lightblue, fontsize = 10]
+  edge [fontname = Arial]
+  
+  A [label = 'Merge QS Rankings\\n2024 & 2025 Data']
+  B [label = 'Identify Top 10 Countries\\nfrom QS Rankings']
+  C [label = 'Filter Kaggle Dataset\\nfor These 10 Countries']
+  D [label = 'Select Master\\'s Level\\nPrograms Only']
+  E [label = 'Calculate Total Study Cost\\n(Tuition + Rent + Visa + Insurance)']
+  
+  A -> B -> C -> D -> E
+}
+")
+```
 
-library(DiagrammeR) DiagrammeR::grViz(" digraph flowchart { node \[fontname = Arial, shape = rectangle, style = filled, fillcolor = lightblue, fontsize = 10\] edge \[fontname = Arial\]
-
-A \[label = 'Merge QS Rankings\\n2024 & 2025 Data'\] B \[label = 'Identify Top 10 Countries\\nfrom QS Rankings'\] C \[label = 'Filter Kaggle Dataset\\nfor These 10 Countries'\] D \[label = 'Select Master\\'s Level\\nPrograms Only'\] E \[label = 'Calculate Total Study Cost\\n(Tuition + Rent + Visa + Insurance)'\]
-
-A -\> B -\> C -\> D -\> E } ")
-
-### Data Processing Steps
+#### Data Processing Steps
 
 In this section, I’ll walk you through how we processed the data before performing our analysis. As shown in the table, our workflow followed five main steps: 1.⁠ ⁠Merged QS 2024 and 2025 rankings 2.⁠ ⁠Identified top 10 countries by QS Top 100 presence 3.⁠ ⁠Filtered Kaggle dataset for these countries 4.⁠ ⁠Focused on Master’s level programs 5.⁠ ⁠Calculated total study cost (Tuition + Rent + Visa + Insurance)
 
 We used R functions like filter(), mutate(), and rowSums() to clean and summarize the data.
-
-#\| label: tbl-processing #\| tbl-cap: "Data processing stages and R functions used" #\| echo: false
+```{r}
+#| label: tbl-processing 
+#| tbl-cap: "Data processing stages and R functions used" 
+#| echo: false
 
 library(knitr) library(kableExtra)
 
 processing_stages \<- data.frame( Stage = c("1. Data Merging", "2. Country Selection", "3. Data Filtering", "4. Level Selection", "5. Cost Calculation"), Procedure = c("Combine QS 2024 & 2025", "Identify top 10 countries", "Filter Kaggle by countries", "Select master's programs", "Sum all cost components"), R_Functions = c("rbind(), bind_rows()", "group_by(), top_n()", "filter(), %in%", "filter()", "mutate(), rowSums()"), Output = c("Merged QS data", "Top 10 countries list", "Country-matched data", "Master's level data", "Total cost dataset") )
 
 knitr::kable(processing_stages, col.names = c("Stage", "Procedure", "R Functions", "Output"), format = "html") %\>% kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = FALSE)
+```
 
 ------------------------------------------------------------------------
 
@@ -96,7 +118,7 @@ knitr::kable(processing_stages, col.names = c("Stage", "Procedure", "R Functions
 -   Calculated averages for tuition, rent, and total study cost per country\
 -   Performed simple correlation analysis between costs and QS rankings
 
-Slide 3: Results – Cost Comparison Table \## Results – Study Cost Rankings
+Results – Cost Comparison Table \## Results – Study Cost Rankings
 
 We analyzed the average total cost of studying a Master's degree across the top QS-ranked countries. This includes tuition, rent, visa fees, and insurance.
 
