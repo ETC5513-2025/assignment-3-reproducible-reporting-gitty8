@@ -8,6 +8,12 @@ format:
     transition: slide
 editor: visual
 ---
+```{r setup, include=FALSE}
+library(dplyr)
+library(readr)
+library(ggplot2)
+library(knitr)
+```
 
 ------------------------------------------------------------------------
 
@@ -153,6 +159,25 @@ Key Results:
 - Australia: Second highest (~USD 70,477)  
 - South Korea: Lowest average cost  
 - Germany and China: Affordable options with strong QS presence
+```{r}
+library(dplyr)
+library(readr)
+
+df <- read_csv("data/cleaned_education_costs.csv")
+qs_df <- read_csv("data/top_countries.csv")
+
+summary_df <- df %>%
+  group_by(Country) %>%
+  summarise(
+    Avg_Tuition = round(mean(Tuition_USD), 0),
+    Avg_Rent = round(mean(Rent_USD * 12 * Duration_Years), 0),
+    Avg_Total_Cost = round(mean(Total_Cost_USD), 0),
+    .groups = "drop"
+  )
+
+merged_df <- left_join(summary_df, qs_df, by = "Country")
+```
+
 
 ```{r}
 #| label: table-results
