@@ -17,7 +17,7 @@ library(knitr)
 
 ------------------------------------------------------------------------
 
-## Problem Introduction
+## PROBLEM INTRODUCTION
 **Background & Motivation**
 
 -   🌍 **Growing Global Mobility**:\
@@ -28,7 +28,6 @@ library(knitr)
 
 -   📊 **Information Gap**:\
     Limited systematic comparison of total education costs across top-ranking university destinations
-
 
 ------------------------------------------------------------------------
 
@@ -43,50 +42,26 @@ library(knitr)
 
 ------------------------------------------------------------------------
 
-## Dataset Description
-
+## DATASET DESCRIPTION
 #### Data Sources:
+🎓 [`QS World University Rankings 2024-2025`](https://www.kaggle.com/datasets/darrylljk/worlds-best-universities-qs-rankings-2025):   
+A global benchmark for top universities
 
--   [`QS World University Rankings 2024-2025:`](https://www.kaggle.com/datasets/darrylljk/worlds-best-universities-qs-rankings-2025)
+💸 [`Kaggle: International Education Cost Dataset`](https://www.kaggle.com/datasets/adilshamim8/cost-of-international-education) :  
+Comprehensive study expense breakdown by country
 
-🎓 Academic reputation, graduate employability, sustainability metrics\
-🎓 Global benchmark for university comparison
+### Focus:
 
--   [`Kaggle: International Education Cost Dataset:`](https://www.kaggle.com/datasets/adilshamim8/cost-of-international-education)
+🎯 **Academic Level**: Master’s programs only, for consistent comparison
 
-💸 Comprehensive cost breakdown by country\
-💸 Includes Tuition + Living + Visa + Insurance
-
-
-
-------------------------------------------------------------------------
-
-#### Focus:
-
--   **Academic Level:**
-
-    -   Master's degree programs only
-
-    
-    -   Standardized comparison across countries
-
--   **Geographic Scope:**
-
-    -   Top 10 countries with the highest QS ranking
-
-    -   Global coverage of major study destinations
-
--   **Time Frame:**
-
-    -   QS Rankings: 2024-2025 academic year
-
+🌍 **Geographic Coverage**: Top 10 countries from QS rankings – major global study destinations
 
 ------------------------------------------------------------------------
 
-## Method
-
+## METHOD
 #### Analysis Processing Flowchart
-
+::: columns
+::: {.column width="50%"}
 ```{mermaid}
 %%{init: {"flowchart": {"htmlLabels": false}} }%%
 flowchart TD
@@ -101,64 +76,18 @@ flowchart TD
     style D fill:#add8e6,stroke:#333,stroke-width:2px
     style E fill:#add8e6,stroke:#333,stroke-width:2px
 ```
+:::
 
-----
-
-## 🔧 Data Processing Steps
-
-👣 **Step-by-step Workflow Before Analysis**
-
--    Merged QS 2024 & 2025 rankings  
--   Identified Top 10 countries based on QS Top 100 presence  
--   Filtered Kaggle dataset for these selected countries  
--   Focused on **Master’s-level programs only**  
--   Calculated **Total Study Cost** = Tuition + Rent + Visa + Insurance
-
-Used R functions like `filter()`, `mutate()`, and `rowSums()` to clean and summarize the data efficiently.
+::: {.column width="50%"}
+Used R functions like `filter()`, `mutate()`, and `rowSums()` to clean and summarize the data efficiently.  
 
 This structured processing ensured that our dataset was accurate, relevant, and ready for meaningful comparison.
-
-```{mermaid}
-#| label: tbl-processing
-#| tbl-cap: "Table: Data processing stages and R functions used"
-#| echo: false
-
-library(knitr)
-library(kableExtra)
-
-processing_stages <- data.frame(
-  Stage = c("1. Data Merging", "2. Country Selection", "3. Data Filtering", 
-            "4. Level Selection", "5. Cost Calculation"),
-  Procedure = c("Combine QS 2024 & 2025", "Identify top 10 countries", 
-                "Filter Kaggle by countries", "Select master's programs", 
-                "Sum all cost components"),
-  R_Functions = c("rbind(), bind_rows()", "group_by(), top_n()", 
-                  "filter(), %in%", "filter()", "mutate(), rowSums()"),
-  Output = c("Merged QS data", "Top 10 countries list", "Country-matched data", 
-             "Master's level data", "Total cost dataset")
-)
-
-kable(processing_stages,
-      col.names = c("Stage", "Procedure", "R Functions", "Output"),
-      format = "html") %>%
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed"),
-                full_width = FALSE)
-
-```
-
+:::
+:::
 
 ------------------------------------------------------------------------
 
-## Results – Study Cost Rankings
-
-We analyzed the average total cost of studying a Master's degree across the top QS-ranked countries.  
-This includes tuition, rent, visa fees, and insurance.
-
-Key Results:
-- United States: Highest cost (~USD 100,200)  
-- Australia: Second highest (~USD 70,477)  
-- South Korea: Lowest average cost  
-- Germany and China: Affordable options with strong QS presence
+## RESULTS – Study Cost Rankings
 
 ```{r}
 library(dplyr)
@@ -190,7 +119,7 @@ kable(merged_df[order(merged_df$Avg_Total_Cost), ],
 
 ------------------------------------------------------------------------
 
-## Results – Visual Comparison
+## RESULTS – Visual Comparison
 
 This bar chart illustrates the variation in total study cost by country.
 
@@ -207,19 +136,11 @@ ggplot(merged_df, aes(x = reorder(Country, Avg_Total_Cost), y = Avg_Total_Cost))
   ) +
   theme_minimal()
 ```
-Observation:
-
-The United States and Australia are the most expensive.
-
-South Korea, Germany, and China are significantly more affordable.
-
-There is a trade-off between academic prestige and financial accessibility.
-
 
 ------------------------------------------------------------------------
 
 
-## Discussion
+## DISCUSSION
 
 -   Our findings show that **academic prestige doesn’t guarantee affordability**.
 
@@ -233,7 +154,7 @@ There is a trade-off between academic prestige and financial accessibility.
 
 ------------------------------------------------------------------------
 
-## Study Limitations
+## STUDY LIMITATIONS
 
 -   We used **average country-level costs**, which may not reflect variation between cities or universities.
 -   **Scholarships and grants** were not considered, yet these can significantly lower actual costs.
@@ -242,7 +163,7 @@ There is a trade-off between academic prestige and financial accessibility.
 
 ------------------------------------------------------------------------
 
-## Conclusion & Recommendations
+## CONCLUSTION & RECOMMANDATIONS
 
 🧠 **Conclusion** - No direct link between QS rank and affordability. - Students can find **excellent education at lower costs** in countries like South Korea, Germany, and China. - **Affordability and quality must be balanced** when choosing a destination.
 
