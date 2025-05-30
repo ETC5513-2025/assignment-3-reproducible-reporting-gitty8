@@ -9,7 +9,8 @@
 <link href="slides_files/libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.6.42">
 
-  <title>ANALYSIS OF INTERNATIONAL EDUCATION COSTS vs.&nbsp;UNIVERSITY RANKINGS</title>
+  <meta name="author" content="Group Gitty 8 - Jessica、Catherine、Girika">
+  <title>International Education Costs vs.&nbsp;University Rankings</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -28,7 +29,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="slides_files/libs/revealjs/dist/theme/quarto-d58ca6e55452da357bd4996cb6e3aa10.css">
+  <link rel="stylesheet" href="slides_files/libs/revealjs/dist/theme/quarto-930ff2c627947ef0370a337d1a02600e.css">
   <link href="slides_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="slides_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="slides_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -120,80 +121,204 @@
       margin-right: 0; 
     }
   </style>
+  <script src="slides_files/libs/quarto-diagram/mermaid.min.js"></script>
+  <script src="slides_files/libs/quarto-diagram/mermaid-init.js"></script>
+  <link href="slides_files/libs/quarto-diagram/mermaid.css" rel="stylesheet">
 </head>
 <body class="quarto-light">
   <div class="reveal">
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">ANALYSIS OF INTERNATIONAL EDUCATION COSTS vs.&nbsp;UNIVERSITY RANKINGS</h1>
+  <h1 class="title">International Education Costs vs.&nbsp;University Rankings</h1>
 
 <div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Group Gitty 8 - Jessica、Catherine、Girika 
+</div>
+</div>
 </div>
 
 </section>
 <section id="problem-introduction" class="slide level2">
 <h2>Problem Introduction</h2>
 <ul>
-<li><em>Growing Global Mobility</em>: International education sector expanding rapidly</li>
-<li><em>Quality vs Affordability Dilemma</em>: Costs vary a lot between countries, and students seek both academic excellence and financial feasibility</li>
-<li><em>Information Gap</em>: Limited systematic comparison of education costs across top-ranking university destinations ::: {.fragment}</li>
+<li><p>🌍 <strong>Growing Global Mobility</strong>:<br>
+International education sector expanding rapidly</p></li>
+<li><p>💰 <strong>Quality vs Affordability Dilemma</strong>:<br>
+Costs vary a lot between countries, and students seek both academic excellence and financial feasibility</p></li>
+<li><p>📊 <strong>Information Gap</strong>:<br>
+Limited systematic comparison of education costs across top-ranking university destinations</p></li>
 </ul>
-<p><em>Key Questions</em> •⁠ ⁠Do top QSrankings (higher academic quality) = higher costs? •⁠ ⁠Which countries offer best value for international students? •⁠ ⁠Goal: Compare study cost vs.&nbsp;QS ranking to find cost-effective options :::</p>
+</section>
+<section class="slide level2">
+
+<p><strong>Key Questions</strong></p>
+<p>❓ Do top QS rankings (higher academic quality) = higher costs?</p>
+<p>❓ Which countries offer best value for international students?</p>
+<p>🎯 Goal: Compare study cost vs.&nbsp;QS ranking to find cost-effective options</p>
+<aside class="notes">
+<p>This brings us to our main questions: Do top QS rankings university actually equal higher costs? And which countries offer the best value for international students?</p>
+<p>Our goal is simple: we want to compare study costs with university rankings to help students find good value options.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="dataset-description" class="slide level2">
-<h2>Dataset description</h2>
-<h3 id="data-sources">Data Sources:</h3>
-<p><em>QS World University Rankings 2024-2025:</em></p>
-<p>•⁠ ⁠Academic reputation, graduate employability, sustainability metrics</p>
-<p>•⁠ ⁠Global benchmark for university comparison</p>
-<p><em>Kaggle International Education Cost Dataset:</em></p>
-<p>•⁠ ⁠Comprehensive cost breakdown c •⁠ ⁠Includes Tuition + Living + Visa + Insurance</p>
-<div class="fragment">
-<h3 id="research-focus">Research Focus:</h3>
-<p><em>Academic Level</em>: •⁠ ⁠<em>Master’s degree programs only</em> •⁠ ⁠Standardized comparison across countries</p>
-<p><em>Geographic Scope:</em> •⁠ ⁠Top 10 countries with the highest QS ranking •⁠ ⁠Global coverage of major study destinations</p>
-<p><em>Time Frame:</em> •⁠ ⁠QS Rankings: 2024-2025 academic year</p>
-</div>
+<h2>Dataset Description</h2>
+<h4 id="data-sources">Data Sources:</h4>
+<ul>
+<li><a href="https://www.kaggle.com/datasets/darrylljk/worlds-best-universities-qs-rankings-2025"><code>QS World University Rankings 2024-2025:</code></a></li>
+</ul>
+<p>🎓 Academic reputation, graduate employability, sustainability metrics<br>
+🎓 Global benchmark for university comparison</p>
+<ul>
+<li><a href="https://www.kaggle.com/datasets/adilshamim8/cost-of-international-education"><code>Kaggle: International Education Cost Dataset:</code></a></li>
+</ul>
+<p>💸 Comprehensive cost breakdown by country<br>
+💸 Includes Tuition + Living + Visa + Insurance</p>
+<aside class="notes">
+<p>To answer these questions, we used two main data sources. First, the QS World University Rankings for 2024-2025. Second, we used the International Education Cost Dataset from Kaggle. This data shows us how much it costs to study in different countries. It includes everything - tuition fees, living costs, visa fees, and insurance.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section class="slide level2">
+
+<h4 id="focus">Focus:</h4>
+<ul>
+<li><p><strong>Academic Level:</strong></p>
+<ul>
+<li>Master’s degree programs only</li>
+</ul>
+<!-- -->
+<ul>
+<li>Standardized comparison across countries</li>
+</ul></li>
+<li><p><strong>Geographic Scope:</strong></p>
+<ul>
+<li><p>Top 10 countries with the highest QS ranking</p></li>
+<li><p>Global coverage of major study destinations</p></li>
+</ul></li>
+<li><p><strong>Time Frame:</strong></p>
+<ul>
+<li>QS Rankings: 2024-2025 academic year</li>
+</ul></li>
+</ul>
+<aside class="notes">
+<p>We made our research focused. We only looked at Master’s degree programs, so we could compare fairly across countries. We picked the top 10 countries that have the highest QS rankings. This gave us a good mix of popular study destinations.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="method" class="slide level2">
 <h2>Method</h2>
-<h3 id="data-processing-pipeline">Data Processing Pipeline</h3>
-<p>⁠ {r}</p>
-<p>#| label: fig-methodology #| fig-cap: “Research methodology flowchart showing data processing steps” #| echo: false #| fig-width: 8 #| fig-height: 6</p>
-<p>library(DiagrammeR) DiagrammeR::grViz(” digraph flowchart { node [fontname = Arial, shape = rectangle, style = filled, fillcolor = lightblue, fontsize = 10] edge [fontname = Arial]</p>
-<p>A [label = ‘Merge QS Rankings\n2024 &amp; 2025 Data’] B [label = ‘Identify Top 10 Countries\nfrom QS Rankings’] C [label = ‘Filter Kaggle Dataset\nfor These 10 Countries’] D [label = ‘Select Master\’s Level\nPrograms Only’] E [label = ‘Calculate Total Study Cost\n(Tuition + Rent + Visa + Insurance)’]</p>
-<p>A -&gt; B -&gt; C -&gt; D -&gt; E } “)</p>
-<h3 id="data-processing-steps">Data Processing Steps</h3>
-<p>In this section, I’ll walk you through how we processed the data before performing our analysis. As shown in the table, our workflow followed five main steps: 1.⁠ ⁠Merged QS 2024 and 2025 rankings 2.⁠ ⁠Identified top 10 countries by QS Top 100 presence 3.⁠ ⁠Filtered Kaggle dataset for these countries 4.⁠ ⁠Focused on Master’s level programs 5.⁠ ⁠Calculated total study cost (Tuition + Rent + Visa + Insurance)</p>
-<p>We used R functions like filter(), mutate(), and rowSums() to clean and summarize the data.</p>
-<p>#| label: tbl-processing #| tbl-cap: “Data processing stages and R functions used” #| echo: false</p>
-<p>library(knitr) library(kableExtra)</p>
-<p>processing_stages &lt;- data.frame( Stage = c(“1. Data Merging”, “2. Country Selection”, “3. Data Filtering”, “4. Level Selection”, “5. Cost Calculation”), Procedure = c(“Combine QS 2024 &amp; 2025”, “Identify top 10 countries”, “Filter Kaggle by countries”, “Select master’s programs”, “Sum all cost components”), R_Functions = c(“rbind(), bind_rows()”, “group_by(), top_n()”, “filter(), %in%”, “filter()”, “mutate(), rowSums()”), Output = c(“Merged QS data”, “Top 10 countries list”, “Country-matched data”, “Master’s level data”, “Total cost dataset”) )</p>
-<p>knitr::kable(processing_stages, col.names = c(“Stage”, “Procedure”, “R Functions”, “Output”), format = “html”) %&gt;% kable_styling(bootstrap_options = c(“striped”, “hover”, “condensed”), full_width = FALSE)</p>
-</section>
-<section class="slide level2">
-
-<h3 id="analysis-tools-techniques">Analysis Tools &amp; Techniques</h3>
-<p>⁠ markdown ## Analysis Tools &amp; Techniques</p>
-<ul>
-<li>Analysis performed using <strong>R</strong> and Quarto for full reproducibility<br>
-</li>
-<li>Used <code>tidyverse</code> for data processing and cleaning<br>
-</li>
-<li>Created visualizations using <code>ggplot2</code><br>
-</li>
-<li>Calculated averages for tuition, rent, and total study cost per country<br>
-</li>
-<li>Performed simple correlation analysis between costs and QS rankings</li>
-</ul>
-<p>Slide 3: Results – Cost Comparison Table ## Results – Study Cost Rankings</p>
-<p>We analyzed the average total cost of studying a Master’s degree across the top QS-ranked countries. This includes tuition, rent, visa fees, and insurance.</p>
-<p> ⁠{r} kable(merged_df[order(merged_df$Avg_Total_Cost), ], caption = “Table 1: Total Study Cost and QS Top 100 Count by Country”)</p>
-<p>⁠ • 🇺🇸 United States: Highest cost (~USD 100,200) • 🇦🇺 Australia: Second highest (~USD 70,477) • 🇰🇷 South Korea: Lowest average cost • Lower-cost countries (Germany, China) also have strong QS presence</p>
-</section>
-<section class="slide level2">
-
+<h4 id="analysis-processing-flowchart">Analysis Processing Flowchart</h4>
+<div class="cell" data-reveal="true" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<pre class="mermaid mermaid-js">%%{init: {"flowchart": {"htmlLabels": false}} }%%
+flowchart TD
+    A["Merge QS Rankings2024 &amp; 2025 Data"] --&gt; B["Identify Top 10 Countriesfrom QS Rankings"]
+    B --&gt; C["Filter Kaggle Datasetfor These 10 Countries"]
+    C --&gt; D["Select Master's LevelPrograms Only"]
+    D --&gt; E["Calculate Total Study Cost(Tuition + Rent + Visa + Insurance)"]
+    
+    style A fill:#add8e6,stroke:#333,stroke-width:2px
+    style B fill:#add8e6,stroke:#333,stroke-width:2px
+    style C fill:#add8e6,stroke:#333,stroke-width:2px
+    style D fill:#add8e6,stroke:#333,stroke-width:2px
+    style E fill:#add8e6,stroke:#333,stroke-width:2px
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>Our method was straightforward and followed a clear process. We merged the QS ranking data from 2024 and 2025, identified the top 10 countries from these rankings, filtered the International Cost dataset for these countries, selected only Master’s level programs, and finally calculated the total study cost including tuition, rent, visa fees, and insurance in USD.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<table class="caption-top" style="width:7%;">
+<colgroup>
+<col style="width: 6%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>#### Data Processing Steps In this section, I’ll walk you through how we processed the data before performing our analysis. As shown in the table, our workflow followed five main steps: 1.⁠ ⁠Merged QS 2024 and 2025 rankings 2.⁠ ⁠Identified top 10 countries by QS Top 100 presence 3.⁠ ⁠Filtered Kaggle dataset for these countries 4.⁠ ⁠Focused on Master’s level programs 5.⁠ ⁠Calculated total study cost (Tuition + Rent + Visa + Insurance) We used R functions like filter(), mutate(), and rowSums() to clean and summarize the data.</td>
+</tr>
+<tr class="even">
+<td>### Analysis Tools &amp; Techniques</td>
+</tr>
+<tr class="odd">
+<td>⁠ markdown ## Analysis Tools &amp; Techniques</td>
+</tr>
+<tr class="even">
+<td>- Analysis performed using <strong>R</strong> and Quarto for full reproducibility<br>
+- Used <code>tidyverse</code> for data processing and cleaning<br>
+- Created visualizations using <code>ggplot2</code><br>
+- Calculated averages for tuition, rent, and total study cost per country<br>
+- Performed simple correlation analysis between costs and QS rankings</td>
+</tr>
+<tr class="odd">
+<td>Results – Cost Comparison Table ## Results – Study Cost Rankings</td>
+</tr>
+<tr class="even">
+<td>We analyzed the average total cost of studying a Master’s degree across the top QS-ranked countries. This includes tuition, rent, visa fees, and insurance.</td>
+</tr>
+<tr class="odd">
+<td> ⁠{r} kable(merged_df[order(merged_df$Avg_Total_Cost), ], caption = “Table 1: Total Study Cost and QS Top 100 Count by Country”)</td>
+</tr>
+<tr class="even">
+<td>⁠ • 🇺🇸 United States: Highest cost (~USD 100,200)</td>
+</tr>
+<tr class="odd">
+<td>• 🇦🇺 Australia: Second highest (~USD 70,477)</td>
+</tr>
+<tr class="even">
+<td>• 🇰🇷 South Korea: Lowest average cost</td>
+</tr>
+<tr class="odd">
+<td>• Lower-cost countries (Germany, China) also have strong QS presence</td>
+</tr>
+</tbody>
+</table>
 <h3 id="results-bar-chart-of-costs">Results – Bar Chart of Costs</h3>
 <p> ⁠markdown ## Results – Visual Comparison</p>
 <p>⁠ {r} ggplot(merged_df, aes(x = reorder(Country, Avg_Total_Cost), y = Avg_Total_Cost)) + geom_bar(stat = “identity”, fill = “skyblue”) + labs( title = “Figure 1: Average Total Study Cost by Country”, x = “Country”, y = “Avg Total Cost (USD)” ) + theme_minimal()  ⁠ Australia and the US are among the most expensive destinations, while South Korea, Germany, and China offer affordability with quality. This highlights a trade-off between academic prestige and financial accessibility.</p>
