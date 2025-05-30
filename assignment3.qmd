@@ -1,12 +1,15 @@
 ---
 title: "Analysis of International Education Costs vs. University Rankings"
 author: 
- - name: "Girika"
- - name: "Catherine"
- - name: "Chang Heng-Hsieh"
-format: 
-  pdf: default
-toc: true
+  - name: "Girika"
+  - name: "Catherine"
+  - name: "Chang Heng-Hsieh"
+format:
+  html:
+    toc: true
+    theme: cosmo
+    number-sections: true
+editor: visual
 ---
 
 ## Executive Summary
@@ -85,52 +88,72 @@ knitr::kable(processing_stages,
 
 
 ## Results
-# Load QS Top 100 ranking count
-=======
-We analyzed the average total cost of studying a Master's program across the top 10 QS-ranked countries. This included tuition, rent, visa fees, and insurance. The goal was to identify how Australia compares with other top destinations in terms of affordability.
+
+We analyzed the average total cost of studying a Master's program across the top 10 QS-ranked countries. This includes tuition, rent, visa fees, and insurance. The aim was to evaluate how Australia compares to other countries in terms of affordability.
+
+---
 
 ### Load and Prepare Data
+
 ```{r}
+#| label: load-data
+#| echo: false
 library(dplyr)
 library(readr)
 
-# Load data
+# Load cleaned education cost and QS ranking datasets
 df <- read_csv("data/cleaned_education_costs.csv")
 qs_df <- read_csv("data/top_countries.csv")
 
-# Summarise average cost by country
+# Summarize average costs by country
 summary_df <- df %>%
   group_by(Country) %>%
   summarise(
-    Avg_Tuition = round(mean(Tuition_USD), 0),
-    Avg_Rent = round(mean(Rent_USD * 12 * Duration_Years), 0),
-    Avg_Total_Cost = round(mean(Total_Cost_USD), 0),
+    `Average Tuition` = round(mean(Tuition_USD), 0),
+    `Average Rent` = round(mean(Rent_USD * 12 * Duration_Years), 0),
+    `Average Total Cost` = round(mean(Total_Cost_USD), 0),
     .groups = "drop"
   )
 
-# Merge with QS Top 100 counts
+# Merge cost summary with QS rankings
 merged_df <- left_join(summary_df, qs_df, by = "Country")
 ```
 
 
-
 ### Table 1: Country Ranking by Total Study Cost
 ```{r}
-kable(merged_df[order(merged_df$Avg_Total_Cost), ],
-      caption = "Table: Country Ranking by Total Study Cost and QS Top 100 Count")
+#| label: table-results
+#| echo: false
+#| results: 'asis'
+
+library(knitr)
+library(kableExtra)
+
+merged_df %>%
+  arrange(`Average Total Cost`) %>%
+  kable(caption = "Table: Country Ranking by Total Study Cost and QS Top 100 Count") %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = FALSE)
 ```
 As seen in Table 1, Australia ranks second highest in total study cost, placing it among the least affordable destinations for international Master’s students. This contrasts with more cost-effective options like South Korea, Germany, and China.
 
 
 
+
+
+
 ### Figure 1: Bar Chart of Total Cost by Country
 ```{r}
-ggplot(merged_df, aes(x = reorder(Country, Avg_Total_Cost), y = Avg_Total_Cost)) +
+#| label: barplot-costs
+#| echo: false
+
+library(ggplot2)
+
+ggplot(merged_df, aes(x = reorder(Country, `Average Total Cost`), y = `Average Total Cost`)) +
   geom_bar(stat = "identity", fill = "skyblue") +
   labs(
     title = "Average Total Study Cost by Country",
     x = "Country",
-    y = "Average Total Cost (USD)"
+    y = "Total Cost (USD)"
   ) +
   theme_minimal()
 ```
