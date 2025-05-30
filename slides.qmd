@@ -97,41 +97,6 @@ flowchart TD
 ```
 
 ----
-#### Data Processing Steps 
-In this section, I’ll walk you through how we processed the data before performing our analysis. As shown in the table, our workflow followed five main steps: 1.⁠ ⁠Merged QS 2024 and 2025 rankings 2.⁠ ⁠Identified top 10 countries by QS Top 100 presence 3.⁠ ⁠Filtered Kaggle dataset for these countries 4.⁠ ⁠Focused on Master’s level programs 5.⁠ ⁠Calculated total study cost (Tuition + Rent + Visa + Insurance) 
- We used R functions like filter(), mutate(), and rowSums() to clean and summarize the data. 
-
-### Analysis Tools & Techniques
-
-⁠ markdown \## Analysis Tools & Techniques
-
--   Analysis performed using **R** and Quarto for full reproducibility\
--   Used `tidyverse` for data processing and cleaning\
--   Created visualizations using `ggplot2`\
--   Calculated averages for tuition, rent, and total study cost per country\
--   Performed simple correlation analysis between costs and QS rankings
-
-Results – Cost Comparison Table \## Results – Study Cost Rankings
-
-We analyzed the average total cost of studying a Master's degree across the top QS-ranked countries. This includes tuition, rent, visa fees, and insurance.
-
- ⁠{r} kable(merged_df\[order(merged_df\$Avg_Total_Cost), \], caption = "Table 1: Total Study Cost and QS Top 100 Count by Country")
-
-⁠ • 🇺🇸 United States: Highest cost (\~USD 100,200)
-
-• 🇦🇺 Australia: Second highest (\~USD 70,477)
-
-• 🇰🇷 South Korea: Lowest average cost
-
-• Lower-cost countries (Germany, China) also have strong QS presence
-
-------------------------------------------------------------------------
-
-### Results – Bar Chart of Costs
-
- ⁠markdown \## Results – Visual Comparison
-
-⁠ {r} ggplot(merged_df, aes(x = reorder(Country, Avg_Total_Cost), y = Avg_Total_Cost)) + geom_bar(stat = "identity", fill = "skyblue") + labs( title = "Figure 1: Average Total Study Cost by Country", x = "Country", y = "Avg Total Cost (USD)" ) + theme_minimal()  ⁠ Australia and the US are among the most expensive destinations, while South Korea, Germany, and China offer affordability with quality. This highlights a trade-off between academic prestige and financial accessibility.
 
 ------------------------------------------------------------------------
 
