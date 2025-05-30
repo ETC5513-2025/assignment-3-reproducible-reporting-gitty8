@@ -98,7 +98,100 @@ flowchart TD
 
 ----
 
+## 🔧 Data Processing Steps
+
+👣 **Step-by-step Workflow Before Analysis**
+
+-    Merged QS 2024 & 2025 rankings  
+-   Identified Top 10 countries based on QS Top 100 presence  
+-   Filtered Kaggle dataset for these selected countries  
+-   Focused on **Master’s-level programs only**  
+-   Calculated **Total Study Cost** = Tuition + Rent + Visa + Insurance
+
+Used R functions like `filter()`, `mutate()`, and `rowSums()` to clean and summarize the data efficiently.
+
+This structured processing ensured that our dataset was accurate, relevant, and ready for meaningful comparison.
+
+```{mermaid}
+#| label: tbl-processing
+#| tbl-cap: "Table: Data processing stages and R functions used"
+#| echo: false
+
+library(knitr)
+library(kableExtra)
+
+processing_stages <- data.frame(
+  Stage = c("1. Data Merging", "2. Country Selection", "3. Data Filtering", 
+            "4. Level Selection", "5. Cost Calculation"),
+  Procedure = c("Combine QS 2024 & 2025", "Identify top 10 countries", 
+                "Filter Kaggle by countries", "Select master's programs", 
+                "Sum all cost components"),
+  R_Functions = c("rbind(), bind_rows()", "group_by(), top_n()", 
+                  "filter(), %in%", "filter()", "mutate(), rowSums()"),
+  Output = c("Merged QS data", "Top 10 countries list", "Country-matched data", 
+             "Master's level data", "Total cost dataset")
+)
+
+kable(processing_stages,
+      col.names = c("Stage", "Procedure", "R Functions", "Output"),
+      format = "html") %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"),
+                full_width = FALSE)
+
+```
+
+
 ------------------------------------------------------------------------
+
+## Results – Study Cost Rankings
+
+We analyzed the average total cost of studying a Master's degree across the top QS-ranked countries.  
+This includes tuition, rent, visa fees, and insurance.
+
+Key Results:
+- United States: Highest cost (~USD 100,200)  
+- Australia: Second highest (~USD 70,477)  
+- South Korea: Lowest average cost  
+- Germany and China: Affordable options with strong QS presence
+
+```{r}
+#| label: table-results
+#| echo: false
+kable(merged_df[order(merged_df$Avg_Total_Cost), ],
+      caption = "Table 1: Total Study Cost and QS Top 100 Count by Country")
+```
+
+
+------------------------------------------------------------------------
+
+## Results – Visual Comparison
+
+This bar chart illustrates the variation in total study cost by country.
+
+```{r}
+#| label: barplot-costs
+#| echo: false
+
+ggplot(merged_df, aes(x = reorder(Country, Avg_Total_Cost), y = Avg_Total_Cost)) +
+  geom_bar(stat = "identity") +
+  labs(
+    title = "Average Total Study Cost by Country",
+    x = "Country",
+    y = "Average Total Cost (USD)"
+  ) +
+  theme_minimal()
+```
+Observation:
+
+The United States and Australia are the most expensive.
+
+South Korea, Germany, and China are significantly more affordable.
+
+There is a trade-off between academic prestige and financial accessibility.
+
+
+------------------------------------------------------------------------
+
 
 ## Discussion
 
