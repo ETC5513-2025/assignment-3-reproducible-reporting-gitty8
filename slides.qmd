@@ -104,9 +104,9 @@ qs_df <- read_csv("data/top_countries.csv")
 summary_df <- df %>%
   group_by(Country) %>%
   summarise(
-    Avg_Tuition = round(mean(Tuition_USD), 0),
-    Avg_Rent = round(mean(Rent_USD * 12 * Duration_Years), 0),
-    Avg_Total_Cost = round(mean(Total_Cost_USD), 0),
+    `Average Tuition` = round(mean(Tuition_USD), 0),
+    `Average Rent` = round(mean(Rent_USD * 12 * Duration_Years), 0),
+    `Average Total Cost` = round(mean(Total_Cost_USD), 0),
     .groups = "drop"
   )
 
@@ -116,7 +116,10 @@ merged_df <- left_join(summary_df, qs_df, by = "Country")
 ```{r}
 #| label: table-results
 #| echo: false
-kable(merged_df[order(merged_df$Avg_Total_Cost), ],
+
+library(knitr)
+
+kable(merged_df[order(merged_df$`Average Total Cost`), ],
       caption = "Table: Country Ranking by Total Study Cost and QS Top 100 Count")
 ```
 
@@ -130,8 +133,10 @@ This bar chart illustrates the variation in total study cost by country.
 #| label: barplot-costs
 #| echo: false
 
-ggplot(merged_df, aes(x = reorder(Country, Avg_Total_Cost), y = Avg_Total_Cost)) +
-  geom_bar(stat = "identity") +
+library(ggplot2)
+
+ggplot(merged_df, aes(x = reorder(Country, `Average Total Cost`), y = `Average Total Cost`)) +
+  geom_bar(stat = "identity", fill = "skyblue") +
   labs(
     title = "Average Total Study Cost by Country",
     x = "Country",
@@ -165,7 +170,7 @@ ggplot(merged_df, aes(x = reorder(Country, Avg_Total_Cost), y = Avg_Total_Cost))
 
 ------------------------------------------------------------------------
 
-## CONCLUSTION & RECOMMANDATIONS {.smaller}
+## CONCLUSION & RECOMMANDATIONS {.smaller}
 
 🧠 **Conclusion**
 
