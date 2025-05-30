@@ -143,13 +143,14 @@ Group Gitty 8 - Jessica、Catherine、Girika
 </section>
 <section id="problem-introduction" class="slide level2">
 <h2>Problem Introduction</h2>
+<p><strong>Background &amp; Motivation</strong></p>
 <ul>
 <li><p>🌍 <strong>Growing Global Mobility</strong>:<br>
 International education sector expanding rapidly</p></li>
 <li><p>💰 <strong>Quality vs Affordability Dilemma</strong>:<br>
-Costs vary a lot between countries, and students seek both academic excellence and financial feasibility</p></li>
+Total expenses vary greatly across countries, and students seek high-quality programs and affordable study destinations.</p></li>
 <li><p>📊 <strong>Information Gap</strong>:<br>
-Limited systematic comparison of education costs across top-ranking university destinations</p></li>
+Limited systematic comparison of total education costs across top-ranking university destinations</p></li>
 </ul>
 </section>
 <section class="slide level2">
@@ -158,20 +159,6 @@ Limited systematic comparison of education costs across top-ranking university d
 <p>❓ Do top QS rankings (higher academic quality) = higher costs?</p>
 <p>❓ Which countries offer best value for international students?</p>
 <p>🎯 Goal: Compare study cost vs.&nbsp;QS ranking to find cost-effective options</p>
-<aside class="notes">
-<p>This brings us to our main questions: Do top QS rankings university actually equal higher costs? And which countries offer the best value for international students?</p>
-<p>Our goal is simple: we want to compare study costs with university rankings to help students find good value options.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 </section>
 <section id="dataset-description" class="slide level2">
 <h2>Dataset Description</h2>
@@ -186,19 +173,6 @@ Limited systematic comparison of education costs across top-ranking university d
 </ul>
 <p>💸 Comprehensive cost breakdown by country<br>
 💸 Includes Tuition + Living + Visa + Insurance</p>
-<aside class="notes">
-<p>To answer these questions, we used two main data sources. First, the QS World University Rankings for 2024-2025. Second, we used the International Education Cost Dataset from Kaggle. This data shows us how much it costs to study in different countries. It includes everything - tuition fees, living costs, visa fees, and insurance.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 </section>
 <section class="slide level2">
 
@@ -206,11 +180,8 @@ Limited systematic comparison of education costs across top-ranking university d
 <ul>
 <li><p><strong>Academic Level:</strong></p>
 <ul>
-<li>Master’s degree programs only</li>
-</ul>
-<!-- -->
-<ul>
-<li>Standardized comparison across countries</li>
+<li><p>Master’s degree programs only</p></li>
+<li><p>Standardized comparison across countries</p></li>
 </ul></li>
 <li><p><strong>Geographic Scope:</strong></p>
 <ul>
@@ -222,19 +193,6 @@ Limited systematic comparison of education costs across top-ranking university d
 <li>QS Rankings: 2024-2025 academic year</li>
 </ul></li>
 </ul>
-<aside class="notes">
-<p>We made our research focused. We only looked at Master’s degree programs, so we could compare fairly across countries. We picked the top 10 countries that have the highest QS rankings. This gave us a good mix of popular study destinations.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 </section>
 <section id="method" class="slide level2">
 <h2>Method</h2>
@@ -246,9 +204,9 @@ Limited systematic comparison of education costs across top-ranking university d
 <div>
 <pre class="mermaid mermaid-js">%%{init: {"flowchart": {"htmlLabels": false}} }%%
 flowchart TD
-    A["Merge QS Rankings2024 &amp; 2025 Data"] --&gt; B["Identify Top 10 Countriesfrom QS Rankings"]
-    B --&gt; C["Filter Kaggle Datasetfor These 10 Countries"]
-    C --&gt; D["Select Master's LevelPrograms Only"]
+    A["Merge QS Rankings2024 &amp; 2025 Data"] --&gt; B["Identify Top 10 Countries from QS Rankings"]
+    B --&gt; C["Filter Kaggle Dataset for These 10 Countries"]
+    C --&gt; D["Select Master Level Programs Only"]
     D --&gt; E["Calculate Total Study Cost(Tuition + Rent + Visa + Insurance)"]
     
     style A fill:#add8e6,stroke:#333,stroke-width:2px
@@ -262,19 +220,6 @@ flowchart TD
 </div>
 </div>
 </div>
-<aside class="notes">
-<p>Our method was straightforward and followed a clear process. We merged the QS ranking data from 2024 and 2025, identified the top 10 countries from these rankings, filtered the International Cost dataset for these countries, selected only Master’s level programs, and finally calculated the total study cost including tuition, rent, visa fees, and insurance in USD.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 <table class="caption-top" style="width:7%;">
 <colgroup>
 <col style="width: 6%">

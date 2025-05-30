@@ -23,7 +23,6 @@ editor: visual
 -   📊 **Information Gap**:\
     Limited systematic comparison of total education costs across top-ranking university destinations
 
-::: notes
 
 ------------------------------------------------------------------------
 
@@ -35,11 +34,6 @@ editor: visual
 
 🎯 Goal: Compare study cost vs. QS ranking to find cost-effective options
 
-::: notes
-This brings us to our main questions: Do top QS rankings university actually equal higher costs? And which countries offer the best value for international students?
-
-Our goal is simple: we want to compare study costs with university rankings to help   students weigh academic excellence against financial burden — and find countries where they can achieve both.
-:::
 
 ------------------------------------------------------------------------
 
@@ -57,9 +51,7 @@ Our goal is simple: we want to compare study costs with university rankings to h
 💸 Comprehensive cost breakdown by country\
 💸 Includes Tuition + Living + Visa + Insurance
 
-::: notes
-To answer these questions, we used two main data sources. First, the QS World University Rankings for 2024-2025. Second, we used the International Education Cost Dataset from Kaggle. This data shows us how much it costs to study in different countries. It includes everything - tuition fees, living costs, visa fees, and insurance.
-:::
+
 
 ------------------------------------------------------------------------
 
@@ -69,8 +61,7 @@ To answer these questions, we used two main data sources. First, the QS World Un
 
     -   Master's degree programs only
 
-    <!-- -->
-
+    
     -   Standardized comparison across countries
 
 -   **Geographic Scope:**
@@ -83,9 +74,6 @@ To answer these questions, we used two main data sources. First, the QS World Un
 
     -   QS Rankings: 2024-2025 academic year
 
-::: notes
-We made our research focused. We only looked at Master's degree programs, so we could compare fairly across countries. We picked the top 10 countries that have the highest QS rankings. This gave us a good mix of popular study destinations.
-:::
 
 ------------------------------------------------------------------------
 
@@ -108,14 +96,9 @@ flowchart TD
     style E fill:#add8e6,stroke:#333,stroke-width:2px
 ```
 
-
-::: notes
-Our method was straightforward and followed a clear process. We merged the QS ranking data from 2024 and 2025, identified the top 10 countries from these rankings, filtered the International Cost dataset for these countries, selected only Master's level programs, and finally calculated the total study cost including tuition, rent, visa fees, and insurance in USD.
-:::
-
 ----
 #### Data Processing Steps 
- In this section, I’ll walk you through how we processed the data before performing our analysis. As shown in the table, our workflow followed five main steps: 1.⁠ ⁠Merged QS 2024 and 2025 rankings 2.⁠ ⁠Identified top 10 countries by QS Top 100 presence 3.⁠ ⁠Filtered Kaggle dataset for these countries 4.⁠ ⁠Focused on Master’s level programs 5.⁠ ⁠Calculated total study cost (Tuition + Rent + Visa + Insurance) 
+In this section, I’ll walk you through how we processed the data before performing our analysis. As shown in the table, our workflow followed five main steps: 1.⁠ ⁠Merged QS 2024 and 2025 rankings 2.⁠ ⁠Identified top 10 countries by QS Top 100 presence 3.⁠ ⁠Filtered Kaggle dataset for these countries 4.⁠ ⁠Focused on Master’s level programs 5.⁠ ⁠Calculated total study cost (Tuition + Rent + Visa + Insurance) 
  We used R functions like filter(), mutate(), and rowSums() to clean and summarize the data. 
 
 ### Analysis Tools & Techniques
