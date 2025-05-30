@@ -8,6 +8,7 @@ format:
     transition: slide
 editor: visual
 ---
+
 ```{r setup, include=FALSE}
 library(dplyr)
 library(readr)
@@ -17,7 +18,8 @@ library(knitr)
 
 ------------------------------------------------------------------------
 
-## PROBLEM INTRODUCTION
+### PROBLEM INTRODUCTION
+
 **Background & Motivation**
 
 -   🌍 **Growing Global Mobility**:\
@@ -39,15 +41,16 @@ library(knitr)
 
 🎯 Goal: Compare study cost vs. QS ranking to find cost-effective options
 
-
 ------------------------------------------------------------------------
 
-## DATASET DESCRIPTION
+### DATASET DESCRIPTION
+
 #### Data Sources:
-🎓 [`QS World University Rankings 2024-2025`](https://www.kaggle.com/datasets/darrylljk/worlds-best-universities-qs-rankings-2025):   
+
+🎓 [`QS World University Rankings 2024-2025`](https://www.kaggle.com/datasets/darrylljk/worlds-best-universities-qs-rankings-2025):\
 A global benchmark for top universities
 
-💸 [`Kaggle: International Education Cost Dataset`](https://www.kaggle.com/datasets/adilshamim8/cost-of-international-education) :  
+💸 [`Kaggle: International Education Cost Dataset`](https://www.kaggle.com/datasets/adilshamim8/cost-of-international-education) :\
 Comprehensive study expense breakdown by country
 
 ### Focus:
@@ -58,9 +61,11 @@ Comprehensive study expense breakdown by country
 
 ------------------------------------------------------------------------
 
-## METHOD
+### METHOD
+
 #### Analysis Processing Flowchart
-::: columns
+
+::::: columns
 ::: {.column width="50%"}
 ```{mermaid}
 %%{init: {"flowchart": {"htmlLabels": false}} }%%
@@ -79,15 +84,15 @@ flowchart TD
 :::
 
 ::: {.column width="50%"}
-Used R functions like `filter()`, `mutate()`, and `rowSums()` to clean and summarize the data efficiently.  
+Used R functions like `filter()`, `mutate()`, and `rowSums()` to clean and summarize the data efficiently.
 
 This structured processing ensured that our dataset was accurate, relevant, and ready for meaningful comparison.
 :::
-:::
+:::::
 
 ------------------------------------------------------------------------
 
-## RESULTS – Study Cost Rankings
+### RESULTS – Study Cost Rankings
 
 ```{r}
 library(dplyr)
@@ -108,7 +113,6 @@ summary_df <- df %>%
 merged_df <- left_join(summary_df, qs_df, by = "Country")
 ```
 
-
 ```{r}
 #| label: table-results
 #| echo: false
@@ -116,10 +120,9 @@ kable(merged_df[order(merged_df$Avg_Total_Cost), ],
       caption = "Table: Country Ranking by Total Study Cost and QS Top 100 Count")
 ```
 
-
 ------------------------------------------------------------------------
 
-## RESULTS – Visual Comparison
+### RESULTS – Visual Comparison
 
 This bar chart illustrates the variation in total study cost by country.
 
@@ -139,8 +142,7 @@ ggplot(merged_df, aes(x = reorder(Country, Avg_Total_Cost), y = Avg_Total_Cost))
 
 ------------------------------------------------------------------------
 
-
-## DISCUSSION
+### DISCUSSION
 
 -   Our findings show that **academic prestige doesn’t guarantee affordability**.
 
@@ -154,7 +156,7 @@ ggplot(merged_df, aes(x = reorder(Country, Avg_Total_Cost), y = Avg_Total_Cost))
 
 ------------------------------------------------------------------------
 
-## STUDY LIMITATIONS
+### STUDY LIMITATIONS
 
 -   We used **average country-level costs**, which may not reflect variation between cities or universities.
 -   **Scholarships and grants** were not considered, yet these can significantly lower actual costs.
@@ -163,8 +165,20 @@ ggplot(merged_df, aes(x = reorder(Country, Avg_Total_Cost), y = Avg_Total_Cost))
 
 ------------------------------------------------------------------------
 
-## CONCLUSTION & RECOMMANDATIONS
+### CONCLUSTION & RECOMMANDATIONS
 
-🧠 **Conclusion** - No direct link between QS rank and affordability. - Students can find **excellent education at lower costs** in countries like South Korea, Germany, and China. - **Affordability and quality must be balanced** when choosing a destination.
+🧠 **Conclusion**
 
-✅ **Recommendations** - **Students**: Look beyond rankings — evaluate total cost of attendance. - **Institutions & policymakers**: Be more transparent; offer **more financial support**. - **Future researchers**: Include job outcomes, immigration pathways, and scholarships for a full picture.
+-   No direct link between QS rank and affordability.
+
+-   Students can find **excellent education at lower costs** in countries like South Korea, Germany, and China.
+
+-   **Affordability and quality must be balanced** when choosing a destination.
+
+✅ **Recommendations**
+
+-   **Students**: Look beyond rankings — evaluate total cost of attendance.
+
+-   **Institutions & policymakers**: Be more transparent; offer **more financial support**.
+
+-   **Future researchers**: Include job outcomes, immigration pathways, and scholarships for a full picture.
