@@ -158,7 +158,7 @@ Key Results:
 #| label: table-results
 #| echo: false
 kable(merged_df[order(merged_df$Avg_Total_Cost), ],
-      caption = "Table 1: Total Study Cost and QS Top 100 Count by Country")
+      caption = "Table: Country Ranking by Total Study Cost and QS Top 100 Count")
 ```
 
 
