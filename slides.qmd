@@ -1,6 +1,6 @@
 ---
 title: "International Education Costs vs. University Rankings "
-author: "Group Gitty 8 - Jessica、Catherine、Girika"
+author: "Group Gitty 8 - HengHsieh Chang、Chen Liu、Girika"
 format: 
   revealjs:
     theme: serif
@@ -92,7 +92,7 @@ This structured processing ensured that our dataset was accurate, relevant, and 
 
 ------------------------------------------------------------------------
 
-### RESULTS – Study Cost Rankings
+## RESULTS – Study Cost Rankings {.smaller}
 
 ```{r}
 library(dplyr)
@@ -165,20 +165,16 @@ ggplot(merged_df, aes(x = reorder(Country, Avg_Total_Cost), y = Avg_Total_Cost))
 
 ------------------------------------------------------------------------
 
-### CONCLUSTION & RECOMMANDATIONS
+## CONCLUSTION & RECOMMANDATIONS {.smaller}
 
 🧠 **Conclusion**
 
 -   No direct link between QS rank and affordability.
-
--   Students can find **excellent education at lower costs** in countries like South Korea, Germany, and China.
-
+-   Students can find **excellent education at lower costs** in countries like South Korea, Germany, and China
 -   **Affordability and quality must be balanced** when choosing a destination.
 
 ✅ **Recommendations**
 
 -   **Students**: Look beyond rankings — evaluate total cost of attendance.
-
 -   **Institutions & policymakers**: Be more transparent; offer **more financial support**.
-
 -   **Future researchers**: Include job outcomes, immigration pathways, and scholarships for a full picture.
