@@ -159,6 +159,7 @@ Key Results:
 - Australia: Second highest (~USD 70,477)  
 - South Korea: Lowest average cost  
 - Germany and China: Affordable options with strong QS presence
+
 ```{r}
 library(dplyr)
 library(readr)
