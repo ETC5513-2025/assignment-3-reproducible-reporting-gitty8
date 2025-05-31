@@ -165,7 +165,9 @@ ggplot(merged_df, aes(x = reorder(Country, `Average Total Cost`), y = `Average T
 
 -   We used **average country-level costs**, which may not reflect variation between cities or universities.
 -   **Scholarships and grants** were not considered, yet these can significantly lower actual costs.
+
 -   **Exchange rates** fluctuate over time, which could impact affordability.
+
 -   Language, cultural preferences, and long-term goals (e.g., migration, job prospects) were also **not included**, though they’re critical for many students.
 
 ------------------------------------------------------------------------
