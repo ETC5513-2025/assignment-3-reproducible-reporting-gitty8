@@ -97,16 +97,20 @@ We analyzed the average total cost of studying a Master's program across the top
 ### Load and Prepare Data
 
 ```{r}
+### Load and Prepare Data
+
+```{r}
 #| label: load-data
 #| echo: false
+#| message: false
+#| warning: false
+
 library(dplyr)
 library(readr)
 
-# Load cleaned education cost and QS ranking datasets
 df <- read_csv("data/cleaned_education_costs.csv")
 qs_df <- read_csv("data/top_countries.csv")
 
-# Summarize average costs by country
 summary_df <- df %>%
   group_by(Country) %>%
   summarise(
@@ -116,7 +120,6 @@ summary_df <- df %>%
     .groups = "drop"
   )
 
-# Merge cost summary with QS rankings
 merged_df <- left_join(summary_df, qs_df, by = "Country")
 ```
 
