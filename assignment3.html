@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Girika">
+<meta name="author" content="Catherine">
+<meta name="author" content="Chang Heng-Hsieh">
+
+<title>Analysis of International Education Costs vs.&nbsp;University Rankings</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="assignment3_files/libs/clipboard/clipboard.min.js"></script>
+<script src="assignment3_files/libs/quarto-html/quarto.js"></script>
+<script src="assignment3_files/libs/quarto-html/popper.min.js"></script>
+<script src="assignment3_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="assignment3_files/libs/quarto-html/anchor.min.js"></script>
+<link href="assignment3_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="assignment3_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="assignment3_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="assignment3_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="assignment3_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="assignment3_files/libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+<script src="assignment3_files/libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<script src="assignment3_files/libs/viz-1.8.2/viz.js"></script>
+<link href="assignment3_files/libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet">
+<script src="assignment3_files/libs/grViz-binding-1.0.11/grViz.js"></script>
+<script src="assignment3_files/libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="assignment3_files/libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#executive-summary" id="toc-executive-summary" class="nav-link active" data-scroll-target="#executive-summary"><span class="header-section-number">0.1</span> Executive Summary</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction"><span class="header-section-number">0.2</span> Introduction</a></li>
+  <li><a href="#methodology" id="toc-methodology" class="nav-link" data-scroll-target="#methodology"><span class="header-section-number">0.3</span> Methodology</a></li>
+  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results"><span class="header-section-number">0.4</span> Results</a>
+  <ul class="collapse">
+  <li><a href="#load-and-prepare-data" id="toc-load-and-prepare-data" class="nav-link" data-scroll-target="#load-and-prepare-data"><span class="header-section-number">0.4.1</span> Load and Prepare Data</a></li>
+  <li><a href="#table-1-country-ranking-by-total-study-cost" id="toc-table-1-country-ranking-by-total-study-cost" class="nav-link" data-scroll-target="#table-1-country-ranking-by-total-study-cost"><span class="header-section-number">0.4.2</span> Table 1: Country Ranking by Total Study Cost</a></li>
+  <li><a href="#figure-1-bar-chart-of-total-cost-by-country" id="toc-figure-1-bar-chart-of-total-cost-by-country" class="nav-link" data-scroll-target="#figure-1-bar-chart-of-total-cost-by-country"><span class="header-section-number">0.4.3</span> Figure 1: Bar Chart of Total Cost by Country</a></li>
+  </ul></li>
+  <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion"><span class="header-section-number">0.5</span> Discussion</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">0.6</span> Conclusion</a></li>
+  <li><a href="#recommendations" id="toc-recommendations" class="nav-link" data-scroll-target="#recommendations"><span class="header-section-number">0.7</span> Recommendations</a></li>
+  <li><a href="#for-international-students" id="toc-for-international-students" class="nav-link" data-scroll-target="#for-international-students"><span class="header-section-number">1</span> 1.⁠ ⁠For international students :</a></li>
+  <li><a href="#for-academic-institutions-and-policymakers" id="toc-for-academic-institutions-and-policymakers" class="nav-link" data-scroll-target="#for-academic-institutions-and-policymakers"><span class="header-section-number">2</span> 2.⁠ ⁠For academic institutions and policymakers :</a></li>
+  <li><a href="#for-future-research" id="toc-for-future-research" class="nav-link" data-scroll-target="#for-future-research"><span class="header-section-number">3</span> 3. For future research :</a>
+  <ul class="collapse">
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">3.1</span> References</a></li>
+  </ul></li>
+  </ul>
+</nav>
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Analysis of International Education Costs vs.&nbsp;University Rankings</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Authors</div>
+    <div class="quarto-title-meta-contents">
+             <p>Girika </p>
+             <p>Catherine </p>
+             <p>Chang Heng-Hsieh </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="executive-summary" class="level2" data-number="0.1">
+<h2 data-number="0.1" class="anchored" data-anchor-id="executive-summary"><span class="header-section-number">0.1</span> Executive Summary</h2>
+<p>This study investigates the relationship between actual study abroad costs and international university rankings. We compare academic achievement with financial affordability across major study destinations using data from the 2024 and 2025 QS World University Rankings and international education cost datasets. The analysis focuses on master’s degree programs in the top 10 QS ranking countries, examining tuition, living costs, visa fees, and insurance expenses. The findings reveal significant cost variations among top-ranking countries, providing valuable insights for international students seeking quality education at optimal costs.</p>
+</section>
+<section id="introduction" class="level2" data-number="0.2">
+<h2 data-number="0.2" class="anchored" data-anchor-id="introduction"><span class="header-section-number">0.2</span> Introduction</h2>
+<p>The international education sector is growing rapidly, with more students exploring study opportunities beyond their home countries in search of both quality and affordability. The QS World University Rankings serve as a trusted benchmark for comparing institutions across dimensions such as academic reputation, graduate employability, and sustainability. <strong>While top-ranked universities typically involve higher costs, the total expense varies significantly between countries due to differences in living costs, visa requirements, and local economic conditions.</strong> Expenses like tuition, accommodation, visa fees, and insurance can significantly impact overall affordability for international students.</p>
+<p>For many prospective students, cost considerations are just as critical as academic quality when making study abroad decisions. Limited research has systematically compared education costs across top-ranking university destinations. This gap in knowledge makes it difficult for students to make informed decisions about cost-effective study options. In this report, we examine both academic performance and financial affordability by merging QS ranking data from 2024 and 2025 with international education cost datasets. Our analysis focuses specifically on master’s degree programs in the top 10 countries with the highest QS university rankings. The findings aim to provide practical guidance for international students seeking optimal value in their education investment.</p>
+</section>
+<section id="methodology" class="level2" data-number="0.3">
+<h2 data-number="0.3" class="anchored" data-anchor-id="methodology"><span class="header-section-number">0.3</span> Methodology</h2>
+<ul>
+<li><strong>Research Design and Data Sources</strong> This study uses quantitative analysis to compare education costs and university rankings. We combined QS World University Rankings 2024–2025 with Kaggle international education cost dataset. The research focuses on master’s degree programs only. As shown in <a href="#fig-methodology" class="quarto-xref">Figure&nbsp;1</a>, we followed a systematic approach from data collection to final analysis, focusing on the top 10 QS ranking countries.</li>
+</ul>
+<div class="cell">
+<div id="fig-methodology" class="cell-output-display quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-methodology-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="grViz html-widget html-fill-item" id="htmlwidget-5fa910106ca9940c686c" style="width:100%;height:487px;"></div>
+<script type="application/json" data-for="htmlwidget-5fa910106ca9940c686c">{"x":{"diagram":"\ndigraph flowchart {\n  node [fontname = Arial, shape = rectangle, style = filled, fillcolor = lightblue, fontsize = 10]\n  edge [fontname = Arial]\n  \n  A [label = \"Merge QS Rankings\\n2024 & 2025 Data\"]\n  B [label = \"Identify Top 10 Countries\\nfrom QS Rankings\"]\n  C [label = \"Filter Kaggle Dataset\\nfor These 10 Countries\"]\n  D [label = \"Select Master\\\"s Level\\nPrograms Only\"]\n  E [label = \"Calculate Total Study Cost\\n(Tuition + Rent + Visa + Insurance)\"]\n  \n  A -> B -> C -> D -> E\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-methodology-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Research methodology flowchart showing data processing steps
+</figcaption>
+</figure>
+</div>
+</div>
+<p><strong>Data Processing Steps</strong><br>
+<a href="#tbl-processing" class="quarto-xref">Table&nbsp;1</a> shows our five-stage data processing method. First, we collected both datasets and checked data quality. Second, we calculated total study cost for each country by adding tuition, rent, visa fees, and insurance. Third, we filtered data to focus on master’s level programs. Fourth, we selected the top 10 QS ranking countries. Finally, we cleaned the data and merged both datasets.</p>
+<div class="cell">
+<div id="tbl-processing" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-processing-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Data processing stages and R functions used
+</figcaption>
+<div aria-describedby="tbl-processing-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="table table-striped table-hover table-condensed do-not-create-environment cell caption-top table-sm small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Stage</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Procedure</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">R Functions</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Output</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1. Data Merging</td>
+<td style="text-align: left;">Combine QS 2024 &amp; 2025</td>
+<td style="text-align: left;">rbind(), bind_rows()</td>
+<td style="text-align: left;">Merged QS data</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2. Country Selection</td>
+<td style="text-align: left;">Identify top 10 countries</td>
+<td style="text-align: left;">group_by(), top_n()</td>
+<td style="text-align: left;">Top 10 countries list</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">3. Data Filtering</td>
+<td style="text-align: left;">Filter Kaggle by countries</td>
+<td style="text-align: left;">filter(), %in%</td>
+<td style="text-align: left;">Country-matched data</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">4. Level Selection</td>
+<td style="text-align: left;">Select master's programs</td>
+<td style="text-align: left;">filter()</td>
+<td style="text-align: left;">Master's level data</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">5. Cost Calculation</td>
+<td style="text-align: left;">Sum all cost components</td>
+<td style="text-align: left;">mutate(), rowSums()</td>
+<td style="text-align: left;">Total cost dataset</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+</figure>
+</div>
+</div>
+<ul>
+<li><strong>Analysis Methods and Tools</strong> All analysis was done in R using the tidyverse for data processing and ggplot2 for visualization to ensure reproducibility. We calculated basic statistics like averages and standard deviations. We also performed simple correlation analysis to explore the relationship between study costs and QS rankings.</li>
+</ul>
+</section>
+<section id="results" class="level2" data-number="0.4">
+<h2 data-number="0.4" class="anchored" data-anchor-id="results"><span class="header-section-number">0.4</span> Results</h2>
+<p>We analyzed the average total cost of studying a Master’s program across the top 10 QS-ranked countries. This includes tuition, rent, visa fees, and insurance. The aim was to evaluate how Australia compares to other countries in terms of affordability.</p>
+<hr>
+<section id="load-and-prepare-data" class="level3" data-number="0.4.1">
+<h3 data-number="0.4.1" class="anchored" data-anchor-id="load-and-prepare-data"><span class="header-section-number">0.4.1</span> Load and Prepare Data</h3>
+<div class="cell">
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'dplyr'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:kableExtra':
+
+    group_rows</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:stats':
+
+    filter, lag</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 204 Columns: 9
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (3): Country, University, Program
+dbl (6): Duration_Years, Tuition_USD, Rent_USD, Visa_Fee_USD, Insurance_USD,...
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+Rows: 11 Columns: 2
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (1): Country
+dbl (1): Top100_Count
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+</div>
+</section>
+<section id="table-1-country-ranking-by-total-study-cost" class="level3" data-number="0.4.2">
+<h3 data-number="0.4.2" class="anchored" data-anchor-id="table-1-country-ranking-by-total-study-cost"><span class="header-section-number">0.4.2</span> Table 1: Country Ranking by Total Study Cost</h3>
+<table class="table table-striped table-hover table-condensed caption-top" data-quarto-postprocess="true">
+<caption>Table: Country Ranking by Total Study Cost and QS Top 100 Count</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Country</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Average Tuition</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Average Rent</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Average Total Cost</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Top100_Count</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Germany</td>
+<td style="text-align: right;">175</td>
+<td style="text-align: right;">23880</td>
+<td style="text-align: right;">2045</td>
+<td style="text-align: right;">9</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Switzerland</td>
+<td style="text-align: right;">1473</td>
+<td style="text-align: right;">40286</td>
+<td style="text-align: right;">4465</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">France</td>
+<td style="text-align: right;">4906</td>
+<td style="text-align: right;">27533</td>
+<td style="text-align: right;">6924</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">South Korea</td>
+<td style="text-align: right;">5943</td>
+<td style="text-align: right;">16000</td>
+<td style="text-align: right;">7487</td>
+<td style="text-align: right;">10</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Japan</td>
+<td style="text-align: right;">8200</td>
+<td style="text-align: right;">18600</td>
+<td style="text-align: right;">9945</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Canada</td>
+<td style="text-align: right;">26397</td>
+<td style="text-align: right;">28011</td>
+<td style="text-align: right;">28474</td>
+<td style="text-align: right;">7</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">United Kingdom</td>
+<td style="text-align: right;">36171</td>
+<td style="text-align: right;">19925</td>
+<td style="text-align: right;">38648</td>
+<td style="text-align: right;">32</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Australia</td>
+<td style="text-align: right;">37597</td>
+<td style="text-align: right;">31781</td>
+<td style="text-align: right;">40021</td>
+<td style="text-align: right;">18</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">United States</td>
+<td style="text-align: right;">51897</td>
+<td style="text-align: right;">46650</td>
+<td style="text-align: right;">55501</td>
+<td style="text-align: right;">52</td>
+</tr>
+</tbody>
+</table>
+
+
+<p>As seen in Table 1, Australia ranks second highest in total study cost, placing it among the least affordable destinations for international Master’s students. This contrasts with more cost-effective options like South Korea, Germany, and China.</p>
+</section>
+<section id="figure-1-bar-chart-of-total-cost-by-country" class="level3" data-number="0.4.3">
+<h3 data-number="0.4.3" class="anchored" data-anchor-id="figure-1-bar-chart-of-total-cost-by-country"><span class="header-section-number">0.4.3</span> Figure 1: Bar Chart of Total Cost by Country</h3>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="assignment3_files/figure-html/barplot-costs-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Figure 1 visually highlights this cost gap between Australia and other countries in the dataset. The results suggest that while Australia is a popular and prestigious education destination, it comes with a relatively high financial burden compared to similarly ranked alternatives.</p>
+<p>We analyzed the average total cost of studying a Master’s degree across the top-ranking QS countries. As shown in Table 1, the United States had the highest average cost (approximately $100,200), followed by Australia ($70,477) and the United Kingdom ($57,381). In contrast, countries like South Korea, Germany, and China offered significantly lower total costs, all under $30,000.</p>
+<p>Figure 1 visualizes the variation in cost across countries. Interestingly, some countries with strong QS representation — such as Australia (18 Top 100 universities) — are also among the most expensive. However, South Korea, with 10 QS-ranked institutions, maintains the lowest average cost in the dataset.</p>
+<p>These results highlight the trade-offs between academic prestige and affordability. While top-ranked destinations offer global recognition, the financial burden varies widely and may impact students’ decision-making.</p>
+</section>
+</section>
+<section id="discussion" class="level2" data-number="0.5">
+<h2 data-number="0.5" class="anchored" data-anchor-id="discussion"><span class="header-section-number">0.5</span> Discussion</h2>
+<p>The findings of this analysis offer valuable insights into the cost structures of international education among top QS-ranked countries.Our research challenges the conventional assumption that academic prestige and affordability are directly correlated, revealing instead that high-quality education can be accessed at dramatically different price points. While nations such as the United States, Australia, and the United Kingdom are home to many highly ranked institutions, they also impose significantly higher financial burdens on international Master’s students. These elevated costs are primarily due to high tuition fees and living expenses, particularly in urban education hubs.</p>
+<p>In contrast, countries such as Germany, China, and South Korea offer more affordable education options without compromising academic quality.These countries show that by setting strategic prices, governments can attract international students through strategic pricing without sacrificing educational standards. Germany, in particular, benefits from its public university model, which often charges little or no tuition. South Korea stands out for its combination of a strong QS presence and relatively low total study costs, making it an attractive destination for students with limited budgets.</p>
+<p>However, QS rankings alone do not capture all factors that influence study-abroad decisions. Considerations such as language, cultural environment, scholarship opportunities, and long-term goals (e.g., career pathways or immigration prospects) play a crucial role in shaping student preferences.</p>
+<p>This study is also subject to several limitations. The analysis is based on average national costs and does not reflect variation across cities, universities, or specific programs. Moreover, it excludes the impact of scholarships, grants, and exchange rate fluctuations, which could significantly alter students’ real expenses. Future research could incorporate these variables to offer a more detailed picture of international study affordability.</p>
+</section>
+<section id="conclusion" class="level2" data-number="0.6">
+<h2 data-number="0.6" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">0.6</span> Conclusion</h2>
+<p>This study set out to examine whether countries with higher QS World University Rankings also offer affordable education for international Master’s students. The findings indicate that there is no direct relationship between a country’s academic prestige and its overall education costs. For example, the United States and Australia, which have a strong presence in the QS Top 100, recorded the highest average total study costs—approximately USD 100,200 and USD 70,500, respectively. In contrast, countries such as South Korea (USD 22,800), Germany (USD 24,900), and China (USD 28,300) offered significantly more affordable options while still maintaining respectable positions in the global rankings.</p>
+<p>These results challenge the common perception that top-ranked destinations are also the most accessible. Instead, they underscore that several countries deliver high-quality education at substantially lower costs. This insight is particularly important for students navigating financial constraints alongside academic ambitions. Ultimately, prospective students should evaluate both ranking and affordability when choosing a study destination—especially given the considerable cost differences between countries with similar academic standing.</p>
+</section>
+<section id="recommendations" class="level2" data-number="0.7">
+<h2 data-number="0.7" class="anchored" data-anchor-id="recommendations"><span class="header-section-number">0.7</span> Recommendations</h2>
+</section>
+<section id="for-international-students" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> 1.⁠ ⁠For international students :</h1>
+<p>When selecting a study destination, consider the total cost of attendance, not just the university’s global ranking. Countries like Germany and South Korea offer strong academic quality at significantly lower costs.</p>
+</section>
+<section id="for-academic-institutions-and-policymakers" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> 2.⁠ ⁠For academic institutions and policymakers :</h1>
+<p>Improve transparency in cost breakdowns and expand need-based financial support for international students. Clearer information can help students make informed decisions.</p>
+</section>
+<section id="for-future-research" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> 3. For future research :</h1>
+<p>Complement cost-focused analyses with data on postgraduate outcomes and return on investment, such as job placement rates, earnings, and immigration pathways.</p>
+<section id="references" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="references"><span class="header-section-number">3.1</span> References</h2>
+<p><a href="https://www.kaggle.com/datasets/adilshamim8/cost-of-international-education" class="uri">https://www.kaggle.com/datasets/adilshamim8/cost-of-international-education</a></p>
+<p><a href="https://www.kaggle.com/datasets/darrylljk/worlds-best-universities-qs-rankings-2025" class="uri">https://www.kaggle.com/datasets/darrylljk/worlds-best-universities-qs-rankings-2025</a></p>
+<p><a href="https://www.kaggle.com/datasets/joebeachcapital/qs-world-university-rankings-2024" class="uri">https://www.kaggle.com/datasets/joebeachcapital/qs-world-university-rankings-2024</a></p>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

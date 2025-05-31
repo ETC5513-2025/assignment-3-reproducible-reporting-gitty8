@@ -82,6 +82,7 @@ knitr::kable(processing_stages,
                 full_width = FALSE)
 ```
 
+
 -   **Analysis Methods and Tools** All analysis was done in R using the tidyverse for data processing and ggplot2 for visualization to ensure reproducibility. We calculated basic statistics like averages and standard deviations. We also performed simple correlation analysis to explore the relationship between study costs and QS rankings.
 
 
