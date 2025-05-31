@@ -42,7 +42,7 @@ Our analysis follows a systematic 5-step process:
 4. Program Focus: Select Master's level programs only
 5. Cost Calculation: Calculate total study cost (Tuition + Rent + Visa + Insurance)
 
-📁 Project Structure
+**Project Structure**
 project/
 ├── data/
 │   ├── raw/

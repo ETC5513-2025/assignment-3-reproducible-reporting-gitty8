@@ -132,6 +132,7 @@ As shown in <a href="#fig-methodology" class="quarto-xref">Figure&nbsp;1</a>, we
 <div id="fig-methodology" class="cell-output-display quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-methodology-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<<<<<<< HEAD
 <div class="grViz html-widget html-widget-output shiny-report-size html-fill-item" id="
 digraph flowchart {
   node [fontname = Arial, 
@@ -150,6 +151,10 @@ digraph flowchart {
   A -> B -> C -> D -> E
 }
 " style="width:100%;height:400px;"></div>
+=======
+<div class="grViz html-widget html-fill-item" id="htmlwidget-b66cfbd7ce06c5f9051d" style="width:100%;height:487px;"></div>
+<script type="application/json" data-for="htmlwidget-b66cfbd7ce06c5f9051d">{"x":{"diagram":"\ndigraph flowchart {\n  node [fontname = Arial, shape = rectangle, style = filled, fillcolor = lightblue, fontsize = 10]\n  edge [fontname = Arial]\n  \n  A [label = \"Merge QS Rankings\\n2024 & 2025 Data\"]\n  B [label = \"Identify Top 10 Countries\\nfrom QS Rankings\"]\n  C [label = \"Filter Kaggle Dataset\\nfor These 10 Countries\"]\n  D [label = \"Select Master\\\"s Level\\nPrograms Only\"]\n  E [label = \"Calculate Total Study Cost\\n(Tuition + Rent + Visa + Insurance)\"]\n  \n  A -> B -> C -> D -> E\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+>>>>>>> origin/main
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-methodology-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1: Research methodology flowchart showing data processing steps
@@ -228,6 +233,73 @@ Table&nbsp;1: Data processing stages and R functions used
 <hr>
 <section id="load-and-prepare-data" class="level3" data-number="4.1">
 <h3 data-number="4.1" class="anchored" data-anchor-id="load-and-prepare-data"><span class="header-section-number">4.1</span> Load and Prepare Data</h3>
+<<<<<<< HEAD
+=======
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Load and Prepare Data</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: load-data</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'dplyr'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:kableExtra':
+
+    group_rows</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:stats':
+
+    filter, lag</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/cleaned_education_costs.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 204 Columns: 9</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (3): Country, University, Program
+dbl (6): Duration_Years, Tuition_USD, Rent_USD, Visa_Fee_USD, Insurance_USD,...
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>qs_df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/top_countries.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 11 Columns: 2
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (1): Country
+dbl (1): Top100_Count
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>summary_df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Country) <span class="sc">%&gt;%</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Average Tuition</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">round</span>(<span class="fu">mean</span>(Tuition_USD), <span class="dv">0</span>),</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Average Rent</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">round</span>(<span class="fu">mean</span>(Rent_USD <span class="sc">*</span> <span class="dv">12</span> <span class="sc">*</span> Duration_Years), <span class="dv">0</span>),</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Average Total Cost</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">round</span>(<span class="fu">mean</span>(Total_Cost_USD), <span class="dv">0</span>),</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">.groups =</span> <span class="st">"drop"</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>merged_df <span class="ot">&lt;-</span> <span class="fu">left_join</span>(summary_df, qs_df, <span class="at">by =</span> <span class="st">"Country"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+>>>>>>> origin/main
 </section>
 <section id="table-2-country-ranking-by-total-study-cost" class="level3" data-number="4.2">
 <h3 data-number="4.2" class="anchored" data-anchor-id="table-2-country-ranking-by-total-study-cost"><span class="header-section-number">4.2</span> Table 2: Country Ranking by Total Study Cost</h3>
