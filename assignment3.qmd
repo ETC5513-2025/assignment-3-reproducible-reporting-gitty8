@@ -152,11 +152,11 @@ ggplot(merged_df, aes(x = reorder(Country, `Average Total Cost`), y = `Average T
   theme_minimal()
 ```
 
-Figure 1 visually highlights this cost gap between Australia and other countries in the dataset. The results suggest that while Australia is a popular and prestigious education destination, it comes with a relatively high financial burden compared to similarly ranked alternatives.
+`Figure 1` visually highlights this cost gap between Australia and other countries in the dataset. The results suggest that while Australia is a popular and prestigious education destination, it comes with a relatively high financial burden compared to similarly ranked alternatives.
 
 We analyzed the average total cost of studying a Master's degree across the top-ranking QS countries. As shown in Table 1, the United States had the highest average cost (approximately \$100,200), followed by Australia (\$70,477) and the United Kingdom (\$57,381). In contrast, countries like South Korea, Germany, and China offered significantly lower total costs, all under \$30,000.
 
-Figure 1 visualizes the variation in cost across countries. Interestingly, some countries with strong QS representation — such as Australia (18 Top 100 universities) — are also among the most expensive. However, South Korea, with 10 QS-ranked institutions, maintains the lowest average cost in the dataset.
+`Figure 1` visualizes the variation in cost across countries. Interestingly, some countries with strong QS representation — such as Australia (18 Top 100 universities) — are also among the most expensive. However, South Korea, with 10 QS-ranked institutions, maintains the lowest average cost in the dataset.
 
 These results highlight the trade-offs between academic prestige and affordability. While top-ranked destinations offer global recognition, the financial burden varies widely and may impact students’ decision-making.
 
@@ -178,19 +178,17 @@ These results challenge the common perception that top-ranked destinations are a
 
 ## Recommendations
 
-- ⁠For international students :
+- **⁠For international students :**
 
 When selecting a study destination, consider the total cost of attendance, not just the university's global ranking. Countries like Germany and South Korea offer strong academic quality at significantly lower costs. 
 
 
-
-- ⁠For academic institutions and policymakers :
+- **⁠For academic institutions and policymakers **:
 
 Improve transparency in cost breakdowns and expand need-based financial support for international students. Clearer information can help students make informed decisions.
 
 
-
-- For future research :
+- **For future research :**
 
 Complement cost-focused analyses with data on postgraduate outcomes and return on investment, such as job placement rates, earnings, and immigration pathways.
 
