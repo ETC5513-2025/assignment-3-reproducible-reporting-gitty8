@@ -22,7 +22,6 @@ The international education sector is growing rapidly, with more students explor
 
 For many prospective students, cost considerations are just as critical as academic quality when making study abroad decisions. Limited research has systematically compared education costs across top-ranking university destinations. This gap in knowledge makes it difficult for students to make informed decisions about cost-effective study options. In this report, we examine both academic performance and financial affordability by merging QS ranking data from 2024 and 2025 with international education cost datasets. Our analysis focuses specifically on master's degree programs in the top 10 countries with the highest QS university rankings. The findings aim to provide practical guidance for international students seeking optimal value in their education investment.
 
-
 ## Methodology
 
 -   **Research Design and Data Sources** This study uses quantitative analysis to compare education costs and university rankings. We combined QS World University Rankings 2024–2025 with Kaggle international education cost dataset. The research focuses on master's degree programs only. As shown in @fig-methodology, we followed a systematic approach from data collection to final analysis, focusing on the top 10 QS ranking countries.
@@ -51,9 +50,8 @@ digraph flowchart {
 ")
 ```
 
-**Data Processing Steps**  
+**Data Processing Steps**\
 @tbl-processing shows our five-stage data processing method. First, we collected both datasets and checked data quality. Second, we calculated total study cost for each country by adding tuition, rent, visa fees, and insurance. Third, we filtered data to focus on master's level programs. Fourth, we selected the top 10 QS ranking countries. Finally, we cleaned the data and merged both datasets.
-
 
 ```{r}
 #| label: tbl-processing
@@ -82,24 +80,19 @@ knitr::kable(processing_stages,
                 full_width = FALSE)
 ```
 
-
 -   **Analysis Methods and Tools** All analysis was done in R using the tidyverse for data processing and ggplot2 for visualization to ensure reproducibility. We calculated basic statistics like averages and standard deviations. We also performed simple correlation analysis to explore the relationship between study costs and QS rankings.
-
-
-
 
 ## Results
 
 We analyzed the average total cost of studying a Master's program across the top 10 QS-ranked countries. This includes tuition, rent, visa fees, and insurance. The aim was to evaluate how Australia compares to other countries in terms of affordability.
 
----
+------------------------------------------------------------------------
 
 ### Load and Prepare Data
 
 ```{r}
 ### Load and Prepare Data
 
-```{r}
 #| label: load-data
 #| echo: false
 #| message: false
@@ -123,8 +116,8 @@ summary_df <- df %>%
 merged_df <- left_join(summary_df, qs_df, by = "Country")
 ```
 
-
 ### Table 1: Country Ranking by Total Study Cost
+
 ```{r}
 #| label: table-results
 #| echo: false
@@ -138,14 +131,11 @@ merged_df %>%
   kable(caption = "Table: Country Ranking by Total Study Cost and QS Top 100 Count") %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = FALSE)
 ```
+
 As seen in Table 1, Australia ranks second highest in total study cost, placing it among the least affordable destinations for international Master’s students. This contrasts with more cost-effective options like South Korea, Germany, and China.
 
-
-
-
-
-
 ### Figure 1: Bar Chart of Total Cost by Country
+
 ```{r}
 #| label: barplot-costs
 #| echo: false
@@ -164,15 +154,11 @@ ggplot(merged_df, aes(x = reorder(Country, `Average Total Cost`), y = `Average T
 
 Figure 1 visually highlights this cost gap between Australia and other countries in the dataset. The results suggest that while Australia is a popular and prestigious education destination, it comes with a relatively high financial burden compared to similarly ranked alternatives.
 
-
-We analyzed the average total cost of studying a Master's degree across the top-ranking QS countries. As shown in Table 1, the United States had the highest average cost (approximately $100,200), followed by Australia ($70,477) and the United Kingdom ($57,381). In contrast, countries like South Korea, Germany, and China offered significantly lower total costs, all under $30,000.
+We analyzed the average total cost of studying a Master's degree across the top-ranking QS countries. As shown in Table 1, the United States had the highest average cost (approximately \$100,200), followed by Australia (\$70,477) and the United Kingdom (\$57,381). In contrast, countries like South Korea, Germany, and China offered significantly lower total costs, all under \$30,000.
 
 Figure 1 visualizes the variation in cost across countries. Interestingly, some countries with strong QS representation — such as Australia (18 Top 100 universities) — are also among the most expensive. However, South Korea, with 10 QS-ranked institutions, maintains the lowest average cost in the dataset.
 
 These results highlight the trade-offs between academic prestige and affordability. While top-ranked destinations offer global recognition, the financial burden varies widely and may impact students’ decision-making.
-
-
-
 
 ## Discussion
 
@@ -184,36 +170,34 @@ However, QS rankings alone do not capture all factors that influence study-abroa
 
 This study is also subject to several limitations. The analysis is based on average national costs and does not reflect variation across cities, universities, or specific programs. Moreover, it excludes the impact of scholarships, grants, and exchange rate fluctuations, which could significantly alter students’ real expenses. Future research could incorporate these variables to offer a more detailed picture of international study affordability.
 
-
-
-## Conclusion 
+## Conclusion
 
 This study set out to examine whether countries with higher QS World University Rankings also offer affordable education for international Master’s students. The findings indicate that there is no direct relationship between a country's academic prestige and its overall education costs. For example, the United States and Australia, which have a strong presence in the QS Top 100, recorded the highest average total study costs—approximately USD 100,200 and USD 70,500, respectively. In contrast, countries such as South Korea (USD 22,800), Germany (USD 24,900), and China (USD 28,300) offered significantly more affordable options while still maintaining respectable positions in the global rankings.
 
 These results challenge the common perception that top-ranked destinations are also the most accessible. Instead, they underscore that several countries deliver high-quality education at substantially lower costs. This insight is particularly important for students navigating financial constraints alongside academic ambitions. Ultimately, prospective students should evaluate both ranking and affordability when choosing a study destination—especially given the considerable cost differences between countries with similar academic standing.
 
-
 ## Recommendations
 
-# 1.⁠ ⁠For international students :
+- ⁠For international students :
 
-When selecting a study destination, consider the total cost of attendance, not just the university's global ranking. Countries like Germany and South Korea offer strong academic quality at significantly lower costs.
+When selecting a study destination, consider the total cost of attendance, not just the university's global ranking. Countries like Germany and South Korea offer strong academic quality at significantly lower costs. 
 
-# 2.⁠ ⁠For academic institutions and policymakers :
+
+
+- ⁠For academic institutions and policymakers :
 
 Improve transparency in cost breakdowns and expand need-based financial support for international students. Clearer information can help students make informed decisions.
 
-# 3. For future research :
+
+
+- For future research :
 
 Complement cost-focused analyses with data on postgraduate outcomes and return on investment, such as job placement rates, earnings, and immigration pathways.
 
-
 ## References
-
 
 <https://www.kaggle.com/datasets/adilshamim8/cost-of-international-education>
 
 <https://www.kaggle.com/datasets/darrylljk/worlds-best-universities-qs-rankings-2025>
 
 <https://www.kaggle.com/datasets/joebeachcapital/qs-world-university-rankings-2024>
-
