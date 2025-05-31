@@ -12,6 +12,14 @@ format:
 editor: visual
 ---
 
+```{r setup, include=FALSE}
+#| warning: false
+#| error: false
+#| message: false
+knitr::opts_chunk$set(echo = TRUE) 
+```
+
+
 ## Executive Summary
 
 This study investigates the relationship between actual study abroad costs and international university rankings. We compare academic achievement with financial affordability across major study destinations using data from the 2024 and 2025 QS World University Rankings and international education cost datasets. The analysis focuses on master's degree programs in the top 10 QS ranking countries, examining tuition, living costs, visa fees, and insurance expenses. The findings reveal significant cost variations among top-ranking countries, providing valuable insights for international students seeking quality education at optimal costs.
@@ -92,11 +100,10 @@ We analyzed the average total cost of studying a Master's program across the top
 
 ```{r}
 ### Load and Prepare Data
-
-#| label: load-data
-#| echo: false
 #| message: false
 #| warning: false
+#| label: load-data
+#| echo: false
 
 library(dplyr)
 library(readr)
@@ -122,6 +129,8 @@ merged_df <- left_join(summary_df, qs_df, by = "Country")
 #| label: table-results
 #| echo: false
 #| results: 'asis'
+#| message: false
+#| warning: false
 
 library(knitr)
 library(kableExtra)
