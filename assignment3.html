@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.42">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -32,24 +32,17 @@ ul.task-list li input[type="checkbox"] {
 <script src="assignment3_files/libs/quarto-html/tippy.umd.min.js"></script>
 <script src="assignment3_files/libs/quarto-html/anchor.min.js"></script>
 <link href="assignment3_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="assignment3_files/libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="assignment3_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="assignment3_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="assignment3_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="assignment3_files/libs/bootstrap/bootstrap-32162a2fca7cb0439643f2faaab1edf3.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="assignment3_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <link href="assignment3_files/libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
-
 <script src="assignment3_files/libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
-
 <script src="assignment3_files/libs/viz-1.8.2/viz.js"></script>
-
 <link href="assignment3_files/libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet">
-
 <script src="assignment3_files/libs/grViz-binding-1.0.11/grViz.js"></script>
-
 <script src="assignment3_files/libs/kePrint-0.0.1/kePrint.js"></script>
-
 <link href="assignment3_files/libs/lightable-0.0.1/lightable.css" rel="stylesheet">
-
 
 
 </head>
@@ -132,7 +125,6 @@ As shown in <a href="#fig-methodology" class="quarto-xref">Figure&nbsp;1</a>, we
 <div id="fig-methodology" class="cell-output-display quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-methodology-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<<<<<<< HEAD
 <div class="grViz html-widget html-widget-output shiny-report-size html-fill-item" id="
 digraph flowchart {
   node [fontname = Arial, 
@@ -151,10 +143,6 @@ digraph flowchart {
   A -> B -> C -> D -> E
 }
 " style="width:100%;height:400px;"></div>
-=======
-<div class="grViz html-widget html-fill-item" id="htmlwidget-b66cfbd7ce06c5f9051d" style="width:100%;height:487px;"></div>
-<script type="application/json" data-for="htmlwidget-b66cfbd7ce06c5f9051d">{"x":{"diagram":"\ndigraph flowchart {\n  node [fontname = Arial, shape = rectangle, style = filled, fillcolor = lightblue, fontsize = 10]\n  edge [fontname = Arial]\n  \n  A [label = \"Merge QS Rankings\\n2024 & 2025 Data\"]\n  B [label = \"Identify Top 10 Countries\\nfrom QS Rankings\"]\n  C [label = \"Filter Kaggle Dataset\\nfor These 10 Countries\"]\n  D [label = \"Select Master\\\"s Level\\nPrograms Only\"]\n  E [label = \"Calculate Total Study Cost\\n(Tuition + Rent + Visa + Insurance)\"]\n  \n  A -> B -> C -> D -> E\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
->>>>>>> origin/main
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-methodology-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1: Research methodology flowchart showing data processing steps
@@ -229,77 +217,11 @@ Table&nbsp;1: Data processing stages and R functions used
 </section>
 <section id="results" class="level2" data-number="4">
 <h2 data-number="4" class="anchored" data-anchor-id="results"><span class="header-section-number">4</span> Results</h2>
-<p>We analyzed the average total cost of studying a Master’s program across the top 10 QS-ranked countries. This includes tuition, rent, visa fees, and insurance. The aim was to evaluate how Australia compares to other countries in terms of affordability.</p>
+<p>We analyzed the average total cost of studying a Master’s program across the top 10 QS-ranked countries. This includes tuition, rent, visa fees, and insurance.</p>
 <hr>
 <section id="load-and-prepare-data" class="level3" data-number="4.1">
 <h3 data-number="4.1" class="anchored" data-anchor-id="load-and-prepare-data"><span class="header-section-number">4.1</span> Load and Prepare Data</h3>
-<<<<<<< HEAD
-=======
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Load and Prepare Data</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: load-data</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>
-Attaching package: 'dplyr'</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following object is masked from 'package:kableExtra':
-
-    group_rows</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following objects are masked from 'package:stats':
-
-    filter, lag</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following objects are masked from 'package:base':
-
-    intersect, setdiff, setequal, union</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/cleaned_education_costs.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Rows: 204 Columns: 9</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>── Column specification ────────────────────────────────────────────────────────
-Delimiter: ","
-chr (3): Country, University, Program
-dbl (6): Duration_Years, Tuition_USD, Rent_USD, Visa_Fee_USD, Insurance_USD,...
-
-ℹ Use `spec()` to retrieve the full column specification for this data.
-ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>qs_df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/top_countries.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Rows: 11 Columns: 2
-── Column specification ────────────────────────────────────────────────────────
-Delimiter: ","
-chr (1): Country
-dbl (1): Top100_Count
-
-ℹ Use `spec()` to retrieve the full column specification for this data.
-ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>summary_df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Country) <span class="sc">%&gt;%</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Average Tuition</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">round</span>(<span class="fu">mean</span>(Tuition_USD), <span class="dv">0</span>),</span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Average Rent</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">round</span>(<span class="fu">mean</span>(Rent_USD <span class="sc">*</span> <span class="dv">12</span> <span class="sc">*</span> Duration_Years), <span class="dv">0</span>),</span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Average Total Cost</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">round</span>(<span class="fu">mean</span>(Total_Cost_USD), <span class="dv">0</span>),</span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">.groups =</span> <span class="st">"drop"</span></span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>merged_df <span class="ot">&lt;-</span> <span class="fu">left_join</span>(summary_df, qs_df, <span class="at">by =</span> <span class="st">"Country"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
->>>>>>> origin/main
+<p>We loaded two datasets — one from QS Rankings and another from Kaggle on education costs. The data was cleaned, aggregated, and merged using R to create a summarized table of average tuition, rent, and total cost by country.</p>
 </section>
 <section id="table-2-country-ranking-by-total-study-cost" class="level3" data-number="4.2">
 <h3 data-number="4.2" class="anchored" data-anchor-id="table-2-country-ranking-by-total-study-cost"><span class="header-section-number">4.2</span> Table 2: Country Ranking by Total Study Cost</h3>
@@ -390,7 +312,7 @@ Table&nbsp;2: Table: Country Ranking by Total Study Cost and QS Top 100 Count
 </div>
 </figure>
 </div>
-<p>As seen in <a href="#tbl-results" class="quarto-xref">Table&nbsp;2</a> , Australia ranks second highest in total study cost, placing it among the least affordable destinations for international Master’s students. This contrasts with more cost-effective options like South Korea, Germany, and China.</p>
+<p>As seen in <a href="#tbl-results" class="quarto-xref">Table&nbsp;2</a> , Australia ranks second-highest in cost, placing it among the least affordable options for international Master’s students.</p>
 </section>
 <section id="figure-2-bar-chart-of-total-cost-by-country" class="level3" data-number="4.3">
 <h3 data-number="4.3" class="anchored" data-anchor-id="figure-2-bar-chart-of-total-cost-by-country"><span class="header-section-number">4.3</span> Figure 2: Bar Chart of Total Cost by Country</h3>
@@ -408,10 +330,8 @@ Figure&nbsp;2
 </div>
 </div>
 </div>
-<p><a href="#fig-costs" class="quarto-xref">Figure&nbsp;2</a> visually highlights this cost gap between Australia and other countries in the dataset. The results suggest that while Australia is a popular and prestigious education destination, it comes with a relatively high financial burden compared to similarly ranked alternatives.</p>
-<p>We analyzed the average total cost of studying a Master’s degree across the top-ranking QS countries. As shown in <a href="#tbl-results" class="quarto-xref">Table&nbsp;2</a>, the United States had the highest average cost (approximately $100,200), followed by Australia ($70,477) and the United Kingdom ($57,381). In contrast, countries like South Korea, Germany, and China offered significantly lower total costs, all under $30,000.</p>
-<p><a href="#fig-costs" class="quarto-xref">Figure&nbsp;2</a> visualizes the variation in cost across countries. Interestingly, some countries with strong QS representation — such as Australia (18 Top 100 universities) — are also among the most expensive. However, South Korea, with 10 QS-ranked institutions, maintains the lowest average cost in the dataset.</p>
-<p>These results highlight the trade-offs between academic prestige and affordability. While top-ranked destinations offer global recognition, the financial burden varies widely and may impact students’ decision-making.</p>
+<p><a href="#fig-costs" class="quarto-xref">Figure&nbsp;2</a> visually reinforces these findings, showing a clear cost gap between countries. Notably, South Korea, despite having 10 QS Top 100 universities, maintains the lowest average total cost. This suggests that strong academic presence does not always equate to high expenses, making South Korea an appealing option for students seeking both quality and affordability.</p>
+<p>These results highlight the trade-off between academic prestige and affordability. While countries like Australia offer global recognition, they may come with higher financial burdens—an important consideration for students balancing cost with academic goals.</p>
 </section>
 </section>
 <section id="discussion" class="level2" data-number="5">
@@ -532,6 +452,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -642,6 +564,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
+      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
