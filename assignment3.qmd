@@ -144,20 +144,16 @@ All statistical analysis was conducted using R programming language, utilizing t
 
 We analyzed the average total cost of studying a Master's program across the top 10 QS-ranked countries. This includes tuition, rent, visa fees, and insurance. 
 
-------------------------------------------------------------------------
-
 ### Load and Prepare Data
 
 We loaded two datasets — one from QS Rankings and another from Kaggle on education costs. The data was cleaned, aggregated, and merged using R to create a summarized table of average tuition, rent, and total cost by country.
 ```{r}
-### Load and Prepare Data
-
 #| message: false
 #| warning: false
 #| echo: false
 
-df <- read_csv("data/cleaned_education_costs.csv")
-qs_df <- read_csv("data/top_countries.csv")
+df <- read_csv("data/cleaned_education_costs.csv", show_col_types = FALSE)
+qs_df <- read_csv("data/top_countries.csv", show_col_types = FALSE)
 
 summary_df <- df %>%
   group_by(Country) %>%
@@ -243,11 +239,14 @@ Complement cost-focused analyses with data on postgraduate outcomes and return o
 
 ## References
 
-1. *Kaggle. (2024). Cost of International Education Dataset.* Retrieved from
+1. *Kaggle. (2024). Cost of International Education Dataset.* Retrieved from  
+
 <https://www.kaggle.com/datasets/adilshamim8/cost-of-international-education>
 
-2. *QS World University Rankings 2024.* Retrieved from
+2. *QS World University Rankings 2024.* Retrieved from  
+
 <https://www.kaggle.com/datasets/darrylljk/worlds-best-universities-qs-rankings-2025>
 
-3.  *QS World University Rankings 2025.* Retrieved from
+3.  *QS World University Rankings 2025.* Retrieved from  
+
 <https://www.kaggle.com/datasets/joebeachcapital/qs-world-university-rankings-2024>
