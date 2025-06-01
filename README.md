@@ -90,18 +90,12 @@ install.packages(c("tidyverse", "readr", "ggplot2", "DiagrammeR", "quarto"))
 
 5. Generate presentation: quarto render presentation/slides.qmd
 
-**Key Findings**
-[This section will be filled after completing the analysis]
-
-Finding 1: [To be added]
-Finding 2: [To be added]
-Finding 3: [To be added]
 
 **Group Members**
 
-[Your Name]: Data collection, methodology design, problem analysis
-[Team Member 2]: Data analysis, statistical modeling
-[Team Member 3]: Visualization, results interpretation
+[Chang Heng-Hsieh]: Data collection, methodology design, problem introduction
+[Chen Liu]: Data analysis, results interpretation
+[Girika]: Conclusion, discussion
 
 **References**
 

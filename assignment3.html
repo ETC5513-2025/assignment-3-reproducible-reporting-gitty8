@@ -23,6 +23,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -35,12 +69,16 @@ ul.task-list li input[type="checkbox"] {
 <link href="assignment3_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="assignment3_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="assignment3_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<<<<<<< Updated upstream
 <link href="assignment3_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <link href="assignment3_files/libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
 <script src="assignment3_files/libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
 <script src="assignment3_files/libs/viz-1.8.2/viz.js"></script>
 <link href="assignment3_files/libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet">
 <script src="assignment3_files/libs/grViz-binding-1.0.11/grViz.js"></script>
+=======
+<link href="assignment3_files/libs/bootstrap/bootstrap-32162a2fca7cb0439643f2faaab1edf3.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+>>>>>>> Stashed changes
 <script src="assignment3_files/libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="assignment3_files/libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 
@@ -68,9 +106,9 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">6</span> Conclusion</a></li>
   <li><a href="#recommendations" id="toc-recommendations" class="nav-link" data-scroll-target="#recommendations"><span class="header-section-number">7</span> Recommendations</a>
   <ul class="collapse">
-  <li><a href="#for-international-students" id="toc-for-international-students" class="nav-link" data-scroll-target="#for-international-students"><span class="header-section-number">7.1</span> 1. For international students :</a></li>
-  <li><a href="#for-academic-institutions-and-policymakers" id="toc-for-academic-institutions-and-policymakers" class="nav-link" data-scroll-target="#for-academic-institutions-and-policymakers"><span class="header-section-number">7.2</span> 2.⁠ ⁠For academic institutions and policymakers :</a></li>
-  <li><a href="#for-future-research" id="toc-for-future-research" class="nav-link" data-scroll-target="#for-future-research"><span class="header-section-number">7.3</span> 3. For future research :</a></li>
+  <li><a href="#for-international-students" id="toc-for-international-students" class="nav-link" data-scroll-target="#for-international-students"><span class="header-section-number">7.1</span> For international students :</a></li>
+  <li><a href="#for-academic-institutions-and-policymakers" id="toc-for-academic-institutions-and-policymakers" class="nav-link" data-scroll-target="#for-academic-institutions-and-policymakers"><span class="header-section-number">7.2</span> ⁠For academic institutions and policymakers :</a></li>
+  <li><a href="#for-future-research" id="toc-for-future-research" class="nav-link" data-scroll-target="#for-future-research"><span class="header-section-number">7.3</span> For future research :</a></li>
   </ul></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">8</span> References</a></li>
   </ul>
@@ -107,23 +145,24 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="executive-summary" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="executive-summary"><span class="header-section-number">1</span> Executive Summary</h2>
-<p>This study investigates the relationship between actual study abroad costs and international university rankings. We compare academic achievement with financial affordability across major study destinations using data from the 2024 and 2025 QS World University Rankings and international education cost datasets. The analysis focuses on master’s degree programs in the top 10 QS ranking countries, examining tuition, living costs, visa fees, and insurance expenses. The findings reveal significant cost variations among top-ranking countries, providing valuable insights for international students seeking quality education at optimal costs.</p>
+<p>This comprehensive study examines the relationship between international education costs and university rankings across the top 10 QS-ranked countries for Master’s degree programs. Our analysis reveals no direct correlation between academic prestige and affordability, challenging common assumptions about premium education pricing.</p>
 </section>
 <section id="introduction" class="level2" data-number="2">
 <h2 data-number="2" class="anchored" data-anchor-id="introduction"><span class="header-section-number">2</span> Introduction</h2>
-<p>The international education sector is growing rapidly, with more students exploring study opportunities beyond their home countries in search of both quality and affordability. The QS World University Rankings serve as a trusted benchmark for comparing institutions across dimensions such as academic reputation, graduate employability, and sustainability. <strong>While top-ranked universities typically involve higher costs, the total expense varies significantly between countries due to differences in living costs, visa requirements, and local economic conditions.</strong> Expenses like tuition, accommodation, visa fees, and insurance can significantly impact overall affordability for international students.</p>
-<p>For many prospective students, cost considerations are just as critical as academic quality when making study abroad decisions. Limited research has systematically compared education costs across top-ranking university destinations. This gap in knowledge makes it difficult for students to make informed decisions about cost-effective study options. In this report, we examine both academic performance and financial affordability by merging QS ranking data from 2024 and 2025 with international education cost datasets. Our analysis focuses specifically on master’s degree programs in the top 10 countries with the highest QS university rankings. The findings aim to provide practical guidance for international students seeking optimal value in their education investment.</p>
+<p>The international education sector is growing rapidly, with more students exploring study opportunities beyond their home countries in search of both quality and affordability. The QS World University Rankings serve as a trusted benchmark for comparing institutions across dimensions such as academic reputation, graduate employability, and sustainability. <strong>While top-ranked universities typically involve higher costs, the total expense varies significantly between countries due to differences in living costs, visa requirements, and local economic conditions.</strong></p>
+<p>For many prospective students, cost considerations are just as critical as academic quality when making study abroad decisions. However, limited research has systematically compared education costs across top-ranking university destinations, making it difficult for students to make informed decisions about cost-effective study options. This study addresses this knowledge gap by examining both academic performance and financial affordability through merging QS ranking data from 2024 and 2025 with international education cost datasets. Our analysis focuses specifically on master’s degree programs in the top 10 countries with the highest QS university rankings. We calculate total study costs including tuition, accommodation, visa fees, and insurance to provide comprehensive cost comparisons. The findings aim to provide practical guidance for international students seeking optimal value in their education investment.</p>
 </section>
 <section id="methodology" class="level2" data-number="3">
 <h2 data-number="3" class="anchored" data-anchor-id="methodology"><span class="header-section-number">3</span> Methodology</h2>
-<ul>
-<li><strong>Research Design and Data Sources</strong><br>
-This study uses <code>quantitative analysis</code> to compare education costs and university rankings. We combined <strong>QS World University Rankings 2024–2025</strong> with <strong>Kaggle international education cost dataset</strong>. The research focuses on master’s degree programs only.<br>
-As shown in <a href="#fig-methodology" class="quarto-xref">Figure&nbsp;1</a>, we followed a systematic approach from data collection to final analysis, focusing on the top 10 QS ranking countries.</li>
-</ul>
+<p><strong>Research Design and Data Sources</strong></p>
+<p>This study uses <code>quantitative analysis</code> to examine the relationship between international education costs and university rankings. We integrated <strong>QS World University Rankings data from 2024-2025</strong> with the <strong>Kaggle International Education Cost dataset</strong>, focusing exclusively on Master’s degree programs across the top 10 QS-ranked countries.</p>
+<p><strong>Data Processing Frameworks</strong></p>
+<p>As illustrated in <a href="#fig-methodology-flowchart" class="quarto-xref">Figure&nbsp;1</a>, our research methodology follows a systematic five-stage approach from initial data collection through final analysis. The comprehensive framework ensures data quality and analytical rigor while maintaining focus on the top-performing QS ranking countries.</p>
 <div class="cell">
-<div id="fig-methodology" class="cell-output-display quarto-float quarto-figure quarto-figure-center anchored">
+<div class="cell-output-display">
+<div id="fig-methodology-flowchart" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
+<<<<<<< Updated upstream
 <div aria-describedby="fig-methodology-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="grViz html-widget html-widget-output shiny-report-size html-fill-item" id="
 digraph flowchart {
@@ -143,67 +182,71 @@ digraph flowchart {
   A -> B -> C -> D -> E
 }
 " style="width:100%;height:400px;"></div>
+=======
+<div aria-describedby="fig-methodology-flowchart-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assignment3_files/figure-html/fig-methodology-flowchart-1.png" class="img-fluid figure-img" width="672">
+>>>>>>> Stashed changes
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-methodology-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: Research methodology flowchart showing data processing steps
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-methodology-flowchart-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Five-Stage Data Processing Framework for International Education Cost Analysis
 </figcaption>
 </figure>
 </div>
 </div>
-<ul>
-<li><strong>Data Processing Steps</strong><br>
-<a href="#tbl-processing" class="quarto-xref">Table&nbsp;1</a> shows our five-stage data processing method. First, we collected both datasets and checked data quality. Second, we calculated total study cost for each country by adding tuition, rent, visa fees, and insurance. Third, we filtered data to focus on master’s level programs. Fourth, we selected the top 10 QS ranking countries. Finally, we cleaned the data and merged both datasets.</li>
-</ul>
+</div>
+<p><a href="#tbl-processing" class="quarto-xref">Table&nbsp;1</a> presents the detailed data processing pipeline, outlining each stage’s specific procedures, R functions employed, and expected outputs. This structured approach enables reproducible analysis and transparent methodology. The five stages progress logically from data merging and country selection through cost calculation, ensuring comprehensive coverage of all relevant variables for international education cost analysis.</p>
 <div class="cell">
 <div id="tbl-processing" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-processing-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;1: Data processing stages and R functions used
+Table&nbsp;1: Data Processing Pipeline: Detailed Breakdown of Analysis Stages, R Functions, and Outputs
 </figcaption>
 <div aria-describedby="tbl-processing-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
+<div class="table-responsive">
 <table class="table table-striped table-hover table-condensed do-not-create-environment cell caption-top table-sm small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th">Stage</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">Procedure</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">R Functions</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">Output</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; font-weight: bold; color: white !important; background-color: rgba(52, 58, 64, 255) !important;">Stage</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; font-weight: bold; color: white !important; background-color: rgba(52, 58, 64, 255) !important;">Procedure</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; font-weight: bold; color: white !important; background-color: rgba(52, 58, 64, 255) !important;">R Functions</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; font-weight: bold; color: white !important; background-color: rgba(52, 58, 64, 255) !important;">Output</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">1. Data Merging</td>
-<td style="text-align: left;">Combine QS 2024 &amp; 2025</td>
-<td style="text-align: left;">rbind(), bind_rows()</td>
-<td style="text-align: left;">Merged QS data</td>
+<td style="text-align: left; font-weight: bold; color: black !important; background-color: rgba(240, 240, 240, 255) !important;">1. Data Merging</td>
+<td style="text-align: left; width: 25%;">Combine QS 2024 &amp; 2025</td>
+<td style="text-align: left; width: 25%; font-family: monospace; background-color: rgba(248, 249, 250, 255) !important;">rbind(), bind_rows()</td>
+<td style="text-align: left; width: 25%;">Merged QS data</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">2. Country Selection</td>
-<td style="text-align: left;">Identify top 10 countries</td>
-<td style="text-align: left;">group_by(), top_n()</td>
-<td style="text-align: left;">Top 10 countries list</td>
+<td style="text-align: left; font-weight: bold; color: black !important; background-color: rgba(240, 240, 240, 255) !important;">2. Country Selection</td>
+<td style="text-align: left; width: 25%;">Identify top 10 countries</td>
+<td style="text-align: left; width: 25%; font-family: monospace; background-color: rgba(248, 249, 250, 255) !important;">group_by(), top_n()</td>
+<td style="text-align: left; width: 25%;">Top 10 countries list</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">3. Data Filtering</td>
-<td style="text-align: left;">Filter Kaggle by countries</td>
-<td style="text-align: left;">filter(), %in%</td>
-<td style="text-align: left;">Country-matched data</td>
+<td style="text-align: left; font-weight: bold; color: black !important; background-color: rgba(240, 240, 240, 255) !important;">3. Data Filtering</td>
+<td style="text-align: left; width: 25%;">Filter Kaggle by countries</td>
+<td style="text-align: left; width: 25%; font-family: monospace; background-color: rgba(248, 249, 250, 255) !important;">filter(), %in%</td>
+<td style="text-align: left; width: 25%;">Country-matched data</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">4. Level Selection</td>
-<td style="text-align: left;">Select master's programs</td>
-<td style="text-align: left;">filter()</td>
-<td style="text-align: left;">Master's level data</td>
+<td style="text-align: left; font-weight: bold; color: black !important; background-color: rgba(240, 240, 240, 255) !important;">4. Level Selection</td>
+<td style="text-align: left; width: 25%;">Select master's programs</td>
+<td style="text-align: left; width: 25%; font-family: monospace; background-color: rgba(248, 249, 250, 255) !important;">filter()</td>
+<td style="text-align: left; width: 25%;">Master's level data</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">5. Cost Calculation</td>
-<td style="text-align: left;">Sum all cost components</td>
-<td style="text-align: left;">mutate(), rowSums()</td>
-<td style="text-align: left;">Total cost dataset</td>
+<td style="text-align: left; font-weight: bold; color: black !important; background-color: rgba(240, 240, 240, 255) !important;">5. Cost Calculation</td>
+<td style="text-align: left; width: 25%;">Sum all cost components</td>
+<td style="text-align: left; width: 25%; font-family: monospace; background-color: rgba(248, 249, 250, 255) !important;">mutate(), rowSums()</td>
+<td style="text-align: left; width: 25%;">Total cost dataset</td>
 </tr>
 </tbody>
 </table>
+</div>
 
 
 </div>
@@ -212,8 +255,9 @@ Table&nbsp;1: Data processing stages and R functions used
 </div>
 </div>
 <ul>
-<li><strong>Analysis Methods and Tools</strong> All analysis was done in R using the tidyverse for data processing and ggplot2 for visualization to ensure reproducibility. We calculated basic statistics like averages and standard deviations. We also performed simple correlation analysis to explore the relationship between study costs and QS rankings.</li>
+<li><strong>Analysis Methods and Tools</strong></li>
 </ul>
+<p>All statistical analysis was conducted using R programming language, utilizing the <code>tidyverse package</code> for data manipulation and <code>ggplot2</code> for visualization to ensure reproducibility. We calculated descriptive statistics including means and standard deviations, and performed correlation analysis to explore relationships between study costs and QS rankings. Total study costs encompassed tuition fees, accommodation expenses, visa fees, and insurance costs to provide comprehensive financial comparisons across countries.</p>
 </section>
 <section id="results" class="level2" data-number="4">
 <h2 data-number="4" class="anchored" data-anchor-id="results"><span class="header-section-number">4</span> Results</h2>
@@ -221,14 +265,80 @@ Table&nbsp;1: Data processing stages and R functions used
 <hr>
 <section id="load-and-prepare-data" class="level3" data-number="4.1">
 <h3 data-number="4.1" class="anchored" data-anchor-id="load-and-prepare-data"><span class="header-section-number">4.1</span> Load and Prepare Data</h3>
+<<<<<<< Updated upstream
 <p>We loaded two datasets — one from QS Rankings and another from Kaggle on education costs. The data was cleaned, aggregated, and merged using R to create a summarized table of average tuition, rent, and total cost by country.</p>
+=======
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Load and Prepare Data</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'dplyr'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:kableExtra':
+
+    group_rows</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:stats':
+
+    filter, lag</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/cleaned_education_costs.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 204 Columns: 9</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (3): Country, University, Program
+dbl (6): Duration_Years, Tuition_USD, Rent_USD, Visa_Fee_USD, Insurance_USD,...
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>qs_df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/top_countries.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 11 Columns: 2
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (1): Country
+dbl (1): Top100_Count
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>summary_df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Country) <span class="sc">%&gt;%</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Average Tuition</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">round</span>(<span class="fu">mean</span>(Tuition_USD), <span class="dv">0</span>),</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Average Rent</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">round</span>(<span class="fu">mean</span>(Rent_USD <span class="sc">*</span> <span class="dv">12</span> <span class="sc">*</span> Duration_Years), <span class="dv">0</span>),</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Average Total Cost</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">round</span>(<span class="fu">mean</span>(Total_Cost_USD), <span class="dv">0</span>),</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">.groups =</span> <span class="st">"drop"</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>merged_df <span class="ot">&lt;-</span> <span class="fu">left_join</span>(summary_df, qs_df, <span class="at">by =</span> <span class="st">"Country"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+>>>>>>> Stashed changes
 </section>
 <section id="table-2-country-ranking-by-total-study-cost" class="level3" data-number="4.2">
 <h3 data-number="4.2" class="anchored" data-anchor-id="table-2-country-ranking-by-total-study-cost"><span class="header-section-number">4.2</span> Table 2: Country Ranking by Total Study Cost</h3>
 <div id="tbl-results" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-results-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;2: Table: Country Ranking by Total Study Cost and QS Top 100 Count
+Table&nbsp;2: Country Ranking by Total Study Cost and QS Top 100 Count
 </figcaption>
 <div aria-describedby="tbl-results-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="table table-striped table-hover table-condensed cell caption-top table-sm small" data-quarto-postprocess="true">
@@ -318,13 +428,13 @@ Table&nbsp;2: Table: Country Ranking by Total Study Cost and QS Top 100 Count
 <h3 data-number="4.3" class="anchored" data-anchor-id="figure-2-bar-chart-of-total-cost-by-country"><span class="header-section-number">4.3</span> Figure 2: Bar Chart of Total Cost by Country</h3>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-costs" class="quarto-float quarto-figure quarto-figure-center anchored" width="672">
+<div id="fig-costs" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-costs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="assignment3_files/figure-html/fig-costs-1.png" id="fig-costs" class="img-fluid figure-img" width="672">
+<img src="assignment3_files/figure-html/fig-costs-1.png" class="img-fluid figure-img" width="672">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-costs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-costs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Average total cost of studying Master’s degree across the top-ranking QS countries
 </figcaption>
 </figure>
 </div>
@@ -349,23 +459,25 @@ Figure&nbsp;2
 <section id="recommendations" class="level2" data-number="7">
 <h2 data-number="7" class="anchored" data-anchor-id="recommendations"><span class="header-section-number">7</span> Recommendations</h2>
 <section id="for-international-students" class="level3" data-number="7.1">
-<h3 data-number="7.1" class="anchored" data-anchor-id="for-international-students"><span class="header-section-number">7.1</span> 1. For international students :</h3>
+<h3 data-number="7.1" class="anchored" data-anchor-id="for-international-students"><span class="header-section-number">7.1</span> For international students :</h3>
 <p>When selecting a study destination, consider the total cost of attendance, not just the university’s global ranking. Countries like Germany and South Korea offer strong academic quality at significantly lower costs.</p>
 </section>
 <section id="for-academic-institutions-and-policymakers" class="level3" data-number="7.2">
-<h3 data-number="7.2" class="anchored" data-anchor-id="for-academic-institutions-and-policymakers"><span class="header-section-number">7.2</span> 2.⁠ ⁠For academic institutions and policymakers :</h3>
+<h3 data-number="7.2" class="anchored" data-anchor-id="for-academic-institutions-and-policymakers"><span class="header-section-number">7.2</span> ⁠For academic institutions and policymakers :</h3>
 <p>Improve transparency in cost breakdowns and expand need-based financial support for international students. Clearer information can help students make informed decisions.</p>
 </section>
 <section id="for-future-research" class="level3" data-number="7.3">
-<h3 data-number="7.3" class="anchored" data-anchor-id="for-future-research"><span class="header-section-number">7.3</span> 3. For future research :</h3>
+<h3 data-number="7.3" class="anchored" data-anchor-id="for-future-research"><span class="header-section-number">7.3</span> For future research :</h3>
 <p>Complement cost-focused analyses with data on postgraduate outcomes and return on investment, such as job placement rates, earnings, and immigration pathways.</p>
 </section>
 </section>
 <section id="references" class="level2" data-number="8">
 <h2 data-number="8" class="anchored" data-anchor-id="references"><span class="header-section-number">8</span> References</h2>
-<p><a href="https://www.kaggle.com/datasets/adilshamim8/cost-of-international-education" class="uri">https://www.kaggle.com/datasets/adilshamim8/cost-of-international-education</a></p>
-<p><a href="https://www.kaggle.com/datasets/darrylljk/worlds-best-universities-qs-rankings-2025" class="uri">https://www.kaggle.com/datasets/darrylljk/worlds-best-universities-qs-rankings-2025</a></p>
-<p><a href="https://www.kaggle.com/datasets/joebeachcapital/qs-world-university-rankings-2024" class="uri">https://www.kaggle.com/datasets/joebeachcapital/qs-world-university-rankings-2024</a></p>
+<ol type="1">
+<li><p><em>Kaggle. (2024). Cost of International Education Dataset.</em> Retrieved from <a href="https://www.kaggle.com/datasets/adilshamim8/cost-of-international-education" class="uri">https://www.kaggle.com/datasets/adilshamim8/cost-of-international-education</a></p></li>
+<li><p><em>QS World University Rankings 2024.</em> Retrieved from <a href="https://www.kaggle.com/datasets/darrylljk/worlds-best-universities-qs-rankings-2025" class="uri">https://www.kaggle.com/datasets/darrylljk/worlds-best-universities-qs-rankings-2025</a></p></li>
+<li><p><em>QS World University Rankings 2025.</em> Retrieved from <a href="https://www.kaggle.com/datasets/joebeachcapital/qs-world-university-rankings-2024" class="uri">https://www.kaggle.com/datasets/joebeachcapital/qs-world-university-rankings-2024</a></p></li>
+</ol>
 </section>
 
 </main>

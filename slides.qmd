@@ -84,7 +84,7 @@ flowchart TD
 :::
 
 ::: {.column width="50%"}
-Used R functions like `filter()`, `mutate()`, and `rowSums()` to clean and summarize the data efficiently.
+Used R functions like `filter()`, `mutate()`, and `rowSums()` to clean and summarize the data efficiently.  
 
 This structured processing ensured that our dataset was accurate, relevant, and ready for meaningful comparison.
 :::

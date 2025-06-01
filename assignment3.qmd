@@ -29,84 +29,116 @@ library(kableExtra)
 
 ## Executive Summary
 
-This study investigates the relationship between actual study abroad costs and international university rankings. We compare academic achievement with financial affordability across major study destinations using data from the 2024 and 2025 QS World University Rankings and international education cost datasets. The analysis focuses on master's degree programs in the top 10 QS ranking countries, examining tuition, living costs, visa fees, and insurance expenses. The findings reveal significant cost variations among top-ranking countries, providing valuable insights for international students seeking quality education at optimal costs.
+This comprehensive study examines the relationship between international education costs and university rankings across the top 10 QS-ranked countries for Master's degree programs. Our analysis reveals no direct correlation between academic prestige and affordability, challenging common assumptions about premium education pricing.
 
 ## Introduction
 
-The international education sector is growing rapidly, with more students exploring study opportunities beyond their home countries in search of both quality and affordability. The QS World University Rankings serve as a trusted benchmark for comparing institutions across dimensions such as academic reputation, graduate employability, and sustainability. **While top-ranked universities typically involve higher costs, the total expense varies significantly between countries due to differences in living costs, visa requirements, and local economic conditions.** Expenses like tuition, accommodation, visa fees, and insurance can significantly impact overall affordability for international students.
+The international education sector is growing rapidly, with more students exploring study opportunities beyond their home countries in search of both quality and affordability. The QS World University Rankings serve as a trusted benchmark for comparing institutions across dimensions such as academic reputation, graduate employability, and sustainability. **While top-ranked universities typically involve higher costs, the total expense varies significantly between countries due to differences in living costs, visa requirements, and local economic conditions.** 
 
-For many prospective students, cost considerations are just as critical as academic quality when making study abroad decisions. Limited research has systematically compared education costs across top-ranking university destinations. This gap in knowledge makes it difficult for students to make informed decisions about cost-effective study options. In this report, we examine both academic performance and financial affordability by merging QS ranking data from 2024 and 2025 with international education cost datasets. Our analysis focuses specifically on master's degree programs in the top 10 countries with the highest QS university rankings. The findings aim to provide practical guidance for international students seeking optimal value in their education investment.
-
+For many prospective students, cost considerations are just as critical as academic quality when making study abroad decisions. However, limited research has systematically compared education costs across top-ranking university destinations, making it difficult for students to make informed decisions about cost-effective study options. This study addresses this knowledge gap by examining both academic performance and financial affordability through merging QS ranking data from 2024 and 2025 with international education cost datasets. Our analysis focuses specifically on master's degree programs in the top 10 countries with the highest QS university rankings. We calculate total study costs including tuition, accommodation, visa fees, and insurance to provide comprehensive cost comparisons. The findings aim to provide practical guidance for international students seeking optimal value in their education investment.
 
 ## Methodology
 
--   **Research Design and Data Sources**   
-This study uses `quantitative analysis` to compare education costs and university rankings. We combined **QS World University Rankings 2024–2025** with **Kaggle international education cost dataset**. The research focuses on master's degree programs only.  
-As shown in @fig-methodology, we followed a systematic approach from data collection to final analysis, focusing on the top 10 QS ranking countries.
+**Research Design and Data Sources**   
+
+This study uses `quantitative analysis` to examine the relationship between international education costs and university rankings. We integrated **QS World University Rankings data from 2024-2025** with the **Kaggle International Education Cost dataset**, focusing exclusively on Master's degree programs across the top 10 QS-ranked countries.
+
+
+**Data Processing Frameworks**  
+
+As illustrated in @fig-methodology-flowchart, our research methodology follows a systematic five-stage approach from initial data collection through final analysis. The comprehensive framework ensures data quality and analytical rigor while maintaining focus on the top-performing QS ranking countries.
 
 
 ```{r}
-#| label: fig-methodology
-#| fig-cap: "Research methodology flowchart showing data processing steps"
+#| label: fig-methodology-flowchart
+#| fig-cap: "Five-Stage Data Processing Framework for International Education Cost Analysis"
+#| warning: false
+#| error: false
 #| echo: false
-#| fig-width: 8
-#| fig-height: 6
+#| message: false
 
-library(DiagrammeR)
+par(mar = c(2, 2, 4, 2))
+plot(0, 0, type = "n", xlim = c(0, 10), ylim = c(0, 20), 
+     xlab = "", ylab = "", axes = FALSE)
+box_color <- "skyblue"
 
-DiagrammeR::grVizOutput("
-digraph flowchart {
-  node [fontname = Arial, 
-  shape = rectangle, 
-  style = filled, 
-  fillcolor = lightblue, 
-  fontsize = 10]
-  edge [fontname = Arial]
-  
-  A [label = 'Merge QS Rankings\\n2024 & 2025 Data']
-  B [label = 'Identify Top 10 Countries\\nfrom QS Rankings']
-  C [label = 'Filter Kaggle Dataset\\nfor These 10 Countries']
-  D [label = 'Select Masters Level\\nPrograms Only']
-  E [label = 'Calculate Total Study Cost\\n(Tuition + Rent + Visa + Insurance)']
-  
-  A -> B -> C -> D -> E
-}
-")
+rect(1, 16, 9, 19.5, col = box_color, border = "black", lwd = 2)
+text(5, 17.75, "Step 1\nMerge QS Rankings 2024 & 2025 Data", 
+     cex = 1.3, font = 2, adj = 0.5)
+
+rect(1, 12, 9, 15.5, col = box_color, border = "black", lwd = 2)
+text(5, 13.75, "Step 2\nIdentify Top 10 Countries from QS Rankings", 
+     cex = 1.3, font = 2, adj = 0.5)
+
+rect(1, 8, 9, 11.5, col = box_color, border = "black", lwd = 2)
+text(5, 9.75, "Step 3\nFilter Kaggle Dataset for These 10 Countries", 
+     cex = 1.3, font = 2, adj = 0.5)
+
+rect(1, 4, 9, 7.5, col = box_color, border = "black", lwd = 2)
+text(5, 5.75, "Step 4\nSelect Master Level Programs Only", 
+     cex = 1.3, font = 2, adj = 0.5)
+
+rect(1, 0, 9, 3.5, col = box_color, border = "black", lwd = 2)
+text(5, 1.75, "Step 5\nCalculate Total Study Cost", 
+     cex = 1.3, font = 2, adj = 0.5)
+
+arrows(5, 16, 5, 15.5, length = 0.15, lwd = 3, col = "darkblue")
+arrows(5, 12, 5, 11.5, length = 0.15, lwd = 3, col = "darkblue")
+arrows(5, 8, 5, 7.5, length = 0.15, lwd = 3, col = "darkblue")
+arrows(5, 4, 5, 3.5, length = 0.15, lwd = 3, col = "darkblue")
 ```
 
 
+@tbl-processing presents the detailed data processing pipeline, outlining each stage's specific procedures, R functions employed, and expected outputs. This structured approach enables reproducible analysis and transparent methodology. The five stages progress logically from data merging and country selection through cost calculation, ensuring comprehensive coverage of all relevant variables for international education cost analysis.
 
-- **Data Processing Steps**\
-@tbl-processing shows our five-stage data processing method. First, we collected both datasets and checked data quality. Second, we calculated total study cost for each country by adding tuition, rent, visa fees, and insurance. Third, we filtered data to focus on master's level programs. Fourth, we selected the top 10 QS ranking countries. Finally, we cleaned the data and merged both datasets.
 
 ```{r}
 #| label: tbl-processing
-#| tbl-cap: "Data processing stages and R functions used"
+#| tbl-cap: "Data Processing Pipeline:\nDetailed Breakdown of Analysis Stages, R Functions, and Outputs"
 #| echo: false
 
 library(knitr)
 library(kableExtra)
 
-processing_stages <- data.frame(
-  Stage = c("1. Data Merging", "2. Country Selection", "3. Data Filtering", 
-            "4. Level Selection", "5. Cost Calculation"),
-  Procedure = c("Combine QS 2024 & 2025", "Identify top 10 countries", 
-                "Filter Kaggle by countries", "Select master's programs", 
-                "Sum all cost components"),
-  R_Functions = c("rbind(), bind_rows()", "group_by(), top_n()", 
-                  "filter(), %in%", "filter()", "mutate(), rowSums()"),
-  Output = c("Merged QS data", "Top 10 countries list", "Country-matched data", 
-             "Master's level data", "Total cost dataset")
+methodology_table <- data.frame(
+  Stage = c("1. Data Merging", 
+           "2. Country Selection", 
+           "3. Data Filtering", 
+           "4. Level Selection", 
+           "5. Cost Calculation"),
+  Procedure = c("Combine QS 2024 & 2025", 
+               "Identify top 10 countries", 
+               "Filter Kaggle by countries", 
+               "Select master's programs", 
+               "Sum all cost components"),
+  `R Functions` = c("rbind(), bind_rows()", 
+                   "group_by(), top_n()", 
+                   "filter(), %in%", 
+                   "filter()", 
+                   "mutate(), rowSums()"),
+  Output = c("Merged QS data", 
+            "Top 10 countries list", 
+            "Country-matched data", 
+            "Master's level data", 
+            "Total cost dataset")
 )
 
-knitr::kable(processing_stages, 
-             col.names = c("Stage", "Procedure", "R Functions", "Output"),
-             format = "html") %>%
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed"),
-                full_width = FALSE)
+methodology_table %>%
+  kable(col.names = c("Stage", "Procedure", "R Functions", "Output"),
+        align = c("l", "l", "l", "l")) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"),
+                full_width = FALSE,
+                position = "center") %>%
+  column_spec(1, bold = TRUE, color = "black", background = "#f0f0f0") %>%
+  column_spec(2, width = "25%") %>%
+  column_spec(3, width = "25%", monospace = TRUE, background = "#f8f9fa") %>%
+  column_spec(4, width = "25%") %>%
+  row_spec(0, bold = TRUE, color = "white", background = "#343a40")
 ```
 
--   **Analysis Methods and Tools** All analysis was done in R using the tidyverse for data processing and ggplot2 for visualization to ensure reproducibility. We calculated basic statistics like averages and standard deviations. We also performed simple correlation analysis to explore the relationship between study costs and QS rankings.
+-   **Analysis Methods and Tools**  
+
+All statistical analysis was conducted using R programming language, utilizing the `tidyverse package` for data manipulation and `ggplot2` for visualization to ensure reproducibility. We calculated descriptive statistics including means and standard deviations, and performed correlation analysis to explore relationships between study costs and QS rankings. Total study costs encompassed tuition fees, accommodation expenses, visa fees, and insurance costs to provide comprehensive financial comparisons across countries.
 
 ## Results
 
@@ -118,9 +150,10 @@ We analyzed the average total cost of studying a Master's program across the top
 
 We loaded two datasets — one from QS Rankings and another from Kaggle on education costs. The data was cleaned, aggregated, and merged using R to create a summarized table of average tuition, rent, and total cost by country.
 ```{r}
+### Load and Prepare Data
+
 #| message: false
 #| warning: false
-#| label: load-data
 #| echo: false
 
 df <- read_csv("data/cleaned_education_costs.csv")
@@ -149,7 +182,7 @@ merged_df <- left_join(summary_df, qs_df, by = "Country")
 
 merged_df %>%
   arrange(`Average Total Cost`) %>%
-  kable(caption = "Table: Country Ranking by Total Study Cost and QS Top 100 Count") %>%
+  kable(caption = "Country Ranking by Total Study Cost and QS Top 100 Count") %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = FALSE)
 ```
 
@@ -159,6 +192,7 @@ As seen in @tbl-results , Australia ranks second-highest in cost, placing it amo
 
 ```{r}
 #| label: fig-costs
+#| fig-cap: "Average total cost of studying Master's degree across the top-ranking QS countries"
 #| echo: false
 
 library(ggplot2)
@@ -195,22 +229,25 @@ These results challenge the common perception that top-ranked destinations are a
 
 ## Recommendations
 
-### 1. For international students :
+### For international students :
 
 When selecting a study destination, consider the total cost of attendance, not just the university's global ranking. Countries like Germany and South Korea offer strong academic quality at significantly lower costs.
 
-### 2.⁠ ⁠For academic institutions and policymakers :
+### ⁠For academic institutions and policymakers :
 
 Improve transparency in cost breakdowns and expand need-based financial support for international students. Clearer information can help students make informed decisions.
 
-### 3. For future research :
+### For future research :
 
 Complement cost-focused analyses with data on postgraduate outcomes and return on investment, such as job placement rates, earnings, and immigration pathways.
 
 ## References
 
+1. *Kaggle. (2024). Cost of International Education Dataset.* Retrieved from
 <https://www.kaggle.com/datasets/adilshamim8/cost-of-international-education>
 
+2. *QS World University Rankings 2024.* Retrieved from
 <https://www.kaggle.com/datasets/darrylljk/worlds-best-universities-qs-rankings-2025>
 
+3.  *QS World University Rankings 2025.* Retrieved from
 <https://www.kaggle.com/datasets/joebeachcapital/qs-world-university-rankings-2024>
