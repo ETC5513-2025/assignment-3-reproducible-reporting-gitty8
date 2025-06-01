@@ -19,6 +19,11 @@ editor: visual
 #| error: false
 #| message: false
 knitr::opts_chunk$set(echo = TRUE) 
+library(dplyr)
+library(readr)
+library(ggplot2)
+library(knitr)
+library(kableExtra)
 ```
 
 
@@ -118,9 +123,6 @@ We loaded two datasets — one from QS Rankings and another from Kaggle on educa
 #| label: load-data
 #| echo: false
 
-library(dplyr)
-library(readr)
-
 df <- read_csv("data/cleaned_education_costs.csv")
 qs_df <- read_csv("data/top_countries.csv")
 
@@ -144,9 +146,6 @@ merged_df <- left_join(summary_df, qs_df, by = "Country")
 #| results: 'asis'
 #| message: false
 #| warning: false
-
-library(knitr)
-library(kableExtra)
 
 merged_df %>%
   arrange(`Average Total Cost`) %>%
