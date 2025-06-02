@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.42">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -52,28 +52,17 @@ div.csl-indent {
 <script src="assignment3_files/libs/quarto-html/tippy.umd.min.js"></script>
 <script src="assignment3_files/libs/quarto-html/anchor.min.js"></script>
 <link href="assignment3_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="assignment3_files/libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="assignment3_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="assignment3_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="assignment3_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="assignment3_files/libs/bootstrap/bootstrap-32162a2fca7cb0439643f2faaab1edf3.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="assignment3_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script src="assignment3_files/libs/kePrint-0.0.1/kePrint.js"></script>
-
 <link href="assignment3_files/libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 
-</head><body>\usepackage{fontspec}
-\setmainfont{TeX Gyre Termes}
-\usepackage{xcolor}
-\usepackage{sectsty}
-\sectionfont{\color{olive}\Large}
-\subsectionfont{\color{teal}}
-\usepackage{setspace}
-\setstretch{1.15}
-\usepackage{parskip}
 
+</head>
 
-
-
-
+<body>
 
 <div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
 <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
@@ -372,19 +361,8 @@ Figure&nbsp;2: Average total cost of studying Master’s degree across the top-r
 </section>
 <section id="references" class="level2" data-number="8">
 <h2 data-number="8" class="anchored" data-anchor-id="references"><span class="header-section-number">8</span> References</h2>
-<p>We used data from Kaggle <span class="citation" data-cites="edu_cost_2024">(<a href="#ref-edu_cost_2024" role="doc-biblioref">Kaggle 2024</a>)</span> and rankings from QS <span class="citation" data-cites="qs2024 qs2025">(<a href="#ref-qs2024" role="doc-biblioref"><span>“QS World University Rankings 2024”</span> 2024</a>; <a href="#ref-qs2025" role="doc-biblioref"><span>“QS World University Rankings 2025”</span> 2025</a>)</span>.</p>
-<ol type="1">
-<li><em>Kaggle. (2024). Cost of International Education Dataset.</em> Retrieved from</li>
-</ol>
-<p><a href="https://www.kaggle.com/datasets/adilshamim8/cost-of-international-education" class="uri">https://www.kaggle.com/datasets/adilshamim8/cost-of-international-education</a></p>
-<ol start="2" type="1">
-<li><em>QS World University Rankings 2024.</em> Retrieved from</li>
-</ol>
-<p><a href="https://www.kaggle.com/datasets/darrylljk/worlds-best-universities-qs-rankings-2025" class="uri">https://www.kaggle.com/datasets/darrylljk/worlds-best-universities-qs-rankings-2025</a></p>
-<ol start="3" type="1">
-<li><em>QS World University Rankings 2025.</em> Retrieved from</li>
-</ol>
-<p><a href="https://www.kaggle.com/datasets/joebeachcapital/qs-world-university-rankings-2024" class="uri">https://www.kaggle.com/datasets/joebeachcapital/qs-world-university-rankings-2024</a></p>
+<p>We used data from Kaggle <span class="citation" data-cites="edu_cost_2024">(<a href="#ref-edu_cost_2024" role="doc-biblioref">Kaggle 2024</a>)</span></p>
+<p>Rankings from QS <span class="citation" data-cites="qs2024 qs2025">(<a href="#ref-qs2024" role="doc-biblioref"><span>“QS World University Rankings 2024”</span> 2024</a>; <a href="#ref-qs2025" role="doc-biblioref"><span>“QS World University Rankings 2025”</span> 2025</a>)</span>.</p>
 
 </section>
 
@@ -482,6 +460,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -592,6 +572,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
+      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {

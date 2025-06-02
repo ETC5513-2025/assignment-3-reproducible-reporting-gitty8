@@ -80,17 +80,15 @@
 \makesavenoteenv{longtable}
 \usepackage{graphicx}
 \makeatletter
-\newsavebox\pandoc@box
-\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
-  \sbox\pandoc@box{#1}%
-  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
-  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
-  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
-  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
-  \else\usebox{\pandoc@box}%
-  \fi%
-}
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
 % Set default figure placement to htbp
+\makeatletter
 \def\fps@figure{htbp}
 \makeatother
 
@@ -151,6 +149,11 @@
 \@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
 \makeatother
 
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage[]{biblatex}
+\addbibresource{references.bib}
 \usepackage{bookmark}
 
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
@@ -177,7 +180,7 @@ Rankings}
 \renewcommand*\contentsname{Table of contents}
 {
 \hypersetup{linkcolor=}
-\setcounter{tocdepth}{2}
+\setcounter{tocdepth}{3}
 \tableofcontents
 }
 
@@ -239,7 +242,7 @@ top-performing QS ranking countries.
 
 \centering{
 
-\pandocbounded{\includegraphics[keepaspectratio]{assignment3_files/figure-pdf/fig-methodology-flowchart-1.pdf}}
+\includegraphics{assignment3_files/figure-pdf/fig-methodology-flowchart-1.pdf}
 
 }
 
@@ -342,7 +345,7 @@ Country}\label{figure-2-bar-chart-of-total-cost-by-country}
 
 \centering{
 
-\pandocbounded{\includegraphics[keepaspectratio]{assignment3_files/figure-pdf/fig-costs-1.pdf}}
+\includegraphics{assignment3_files/figure-pdf/fig-costs-1.pdf}
 
 }
 
@@ -448,36 +451,12 @@ immigration pathways.
 
 \section{References}\label{references}
 
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  \emph{Kaggle. (2024). Cost of International Education Dataset.}
-  Retrieved from
-\end{enumerate}
+We used data from Kaggle \autocite{edu_cost_2024}
 
-\url{https://www.kaggle.com/datasets/adilshamim8/cost-of-international-education}
+Rankings from QS \autocite{qs2024,qs2025}.
 
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{1}
-\tightlist
-\item
-  \emph{QS World University Rankings 2024.} Retrieved from
-\end{enumerate}
 
-\url{https://www.kaggle.com/datasets/darrylljk/worlds-best-universities-qs-rankings-2025}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{2}
-\tightlist
-\item
-  \emph{QS World University Rankings 2025.} Retrieved from
-\end{enumerate}
-
-\url{https://www.kaggle.com/datasets/joebeachcapital/qs-world-university-rankings-2024}
-
+\printbibliography
 
 
 
