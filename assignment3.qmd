@@ -50,7 +50,7 @@ For many prospective students, cost considerations are just as critical as acade
 This study uses `quantitative analysis` to examine the relationship between international education costs and university rankings. We integrated **QS World University Rankings data from 2024-2025** with the **Kaggle International Education Cost dataset**, focusing exclusively on Master's degree programs across the top 10 QS-ranked countries.
 
 
-### Data Processing Frameworks   
+### Data Processing Framework     
 
 As illustrated in @fig-methodology-flowchart, our research methodology follows a systematic five-stage approach from initial data collection through final analysis. The comprehensive framework ensures data quality and analytical rigor while maintaining focus on the top-performing QS ranking countries.
 
@@ -183,11 +183,11 @@ merged_df <- left_join(summary_df, qs_df, by = "Country")
 
 merged_df %>%
   arrange(`Average Total Cost`) %>%
-  kable(caption = "Country Ranking by Total Study Cost and QS Top 100 Count") %>%
+  kable(caption = "Comparison of Study Expenses and QS Top 100 Institutions") %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = FALSE)
 ```
 
-As seen in @tbl-results , Australia ranks second-highest in cost, placing it among the least affordable options for international Master’s students.
+As seen in @tbl-results , Australia ranks second-highest in total cost, placing it among the least affordable options for international Master’s students.
 
 ### Figure 2: Bar Chart of Total Cost by Country
 
@@ -219,7 +219,7 @@ These results highlight the trade-off between academic prestige and affordabilit
 
 The findings of this analysis offer valuable insights into the cost structures of international education among top QS-ranked countries.Our research challenges the conventional assumption that academic prestige and affordability are directly correlated, revealing instead that high-quality education can be accessed at dramatically different price points. While nations such as the United States, Australia, and the United Kingdom are home to many highly ranked institutions, they also impose significantly higher financial burdens on international Master’s students. These elevated costs are primarily due to high tuition fees and living expenses, particularly in urban education hubs.
 
-In contrast, countries such as Germany, China, and South Korea offer more affordable education options without compromising academic quality.These countries show that by setting strategic prices, governments can attract international students through strategic pricing without sacrificing educational standards. Germany, in particular, benefits from its public university model, which often charges little or no tuition. South Korea stands out for its combination of a strong QS presence and relatively low total study costs, making it an attractive destination for students with limited budgets.
+In contrast, countries such as Germany, China, and South Korea offer more affordable education options without compromising academic quality.These countries show that governments can attract international students through strategic pricing without sacrificing educational standards. Germany, in particular, benefits from its public university model, which often charges little or no tuition. South Korea stands out for its combination of a strong QS presence and relatively low total study costs, making it an attractive destination for students with limited budgets.
 
 However, QS rankings alone do not capture all factors that influence study-abroad decisions. Considerations such as language, cultural environment, scholarship opportunities, and long-term goals (e.g., career pathways or immigration prospects) play a crucial role in shaping student preferences.
 
@@ -227,21 +227,21 @@ This study is also subject to several limitations. The analysis is based on aver
 
 ## Conclusion
 
-This study set out to examine whether countries with higher QS World University Rankings also offer affordable education for international Master’s students. The findings indicate that there is no direct relationship between a country's academic prestige and its overall education costs. For example, the United States and Australia, which have a strong presence in the QS Top 100, recorded the highest average total study costs—approximately USD 100,200 and USD 70,500, respectively. In contrast, countries such as South Korea (USD 22,800), Germany (USD 24,900), and China (USD 28,300) offered significantly more affordable options while still maintaining respectable positions in the global rankings.
+This study set out to examine whether countries with higher QS World University Rankings also offer affordable education for international Master’s students. The findings indicate that there is no direct relationship between a country's academic prestige and its overall education costs. For example, the United States and Australia, which have a strong presence in the QS Top 100, recorded among the highest average total study costs—approximately USD 100,200 and USD 70,000, respectively. In contrast, countries such as South Korea (USD 22,800), Germany (USD 24,900), and China (USD 28,300) offered significantly more affordable options while still maintaining respectable positions in the global rankings.
 
 These results challenge the common perception that top-ranked destinations are also the most accessible. Instead, they underscore that several countries deliver high-quality education at substantially lower costs. This insight is particularly important for students navigating financial constraints alongside academic ambitions. Ultimately, prospective students should evaluate both ranking and affordability when choosing a study destination—especially given the considerable cost differences between countries with similar academic standing.
 
 ## Recommendations
 
-### For international students :
+### For international students:  
 
 When selecting a study destination, consider the total cost of attendance, not just the university's global ranking. Countries like Germany and South Korea offer strong academic quality at significantly lower costs.
 
-### ⁠For academic institutions and policymakers :
+### ⁠For academic institutions and policymakers: 
 
 Improve transparency in cost breakdowns and expand need-based financial support for international students. Clearer information can help students make informed decisions.
 
-### For future research :
+### For future research:  
 
 Complement cost-focused analyses with data on postgraduate outcomes and return on investment, such as job placement rates, earnings, and immigration pathways.
 

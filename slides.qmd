@@ -1,6 +1,6 @@
 ---
 title: "International Education Costs vs. University Rankings "
-author: "Group Gitty 8 - HengHsieh Chang、Chen Liu、Girika"
+author: "Group Gitty 8 - Chang Heng-Hsieh、Chen Liu、Girika"
 format: 
   revealjs:
     theme: serif
