@@ -132,7 +132,7 @@ methodology_table <- data.frame(
   Output = c("Merged QS data", "Top 10 countries list", "Country-matched data", "Master's level data", "Total cost dataset")
 )
 
-kable(methodology_table, format = "latex", booktabs = TRUE, caption = "Data Processing Pipeline", label = "tbl-processing")
+kable(methodology_table, format = "latex", booktabs = TRUE)
 ```
 
 ### Analysis Methods and Tools  
