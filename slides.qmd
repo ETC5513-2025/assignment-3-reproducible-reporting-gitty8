@@ -70,7 +70,7 @@ Comprehensive study expense breakdown by country
 ```{mermaid}
 %%{init: {"flowchart": {"htmlLabels": false}} }%%
 flowchart TD
-    A["Merge QS Rankings2024 & 2025 Data"] --> B["Identify Top 10 Countries from QS Rankings"]
+    A["Merge QS Rankings 2024-2025 Data"] --> B["Identify Top 10 Countries from QS Rankings"]
     B --> C["Filter Kaggle Dataset for These 10 Countries"]
     C --> D["Select Master Level Programs Only"]
     D --> E["Calculate Total Study Cost(Tuition + Rent + Visa + Insurance)"]

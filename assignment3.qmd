@@ -5,6 +5,12 @@ author:
   - name: "Chen Liu"
   - name: "Chang Heng-Hsieh"
 format:
+  html:
+    toc: true
+    number-sections: true
+    code-fold: true
+    code-tools: true
+    df-print: paged
   pdf:
     toc: true
     number-sections: true
@@ -199,7 +205,10 @@ ggplot(merged_df, aes(x = reorder(Country, `Average Total Cost`), y = `Average T
     x = "Country",
     y = "Total Cost (USD)"
   ) +
-  theme_minimal()
+  theme_minimal()+
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1)
+  )
 ```
 
 @fig-costs visually reinforces these findings, showing a clear cost gap between countries. Notably, South Korea, despite having 10 QS Top 100 universities, maintains the lowest average total cost. This suggests that strong academic presence does not always equate to high expenses, making South Korea an appealing option for students seeking both quality and affordability.
