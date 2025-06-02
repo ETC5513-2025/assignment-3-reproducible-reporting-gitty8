@@ -10,9 +10,15 @@ format:
     theme: cosmo
     number-sections: true
     self-contained: false
-  pdf: default  
-engine: knitr
+  pdf:
+    toc: true
+    number-sections: true
+    documentclass: scrartcl
+    cite-method: biblatex
+bibliography: references.bib
+link-citations: true
 editor: visual
+engine: knitr
 ---
 
 ```{r setup, include=FALSE}
@@ -241,14 +247,13 @@ Complement cost-focused analyses with data on postgraduate outcomes and return o
 
 ## References
 
-1. *Kaggle. (2024). Cost of International Education Dataset.* Retrieved from  
+We used data from Kaggle [@edu_cost_2024]  
 
-<https://www.kaggle.com/datasets/adilshamim8/cost-of-international-education>
+Rankings from QS [@qs2024; @qs2025].
 
-2. *QS World University Rankings 2024.* Retrieved from  
 
-<https://www.kaggle.com/datasets/darrylljk/worlds-best-universities-qs-rankings-2025>
 
-3.  *QS World University Rankings 2025.* Retrieved from  
 
-<https://www.kaggle.com/datasets/joebeachcapital/qs-world-university-rankings-2024>
+
+
+

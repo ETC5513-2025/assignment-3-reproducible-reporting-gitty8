@@ -23,7 +23,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="assignment3_files/libs/clipboard/clipboard.min.js"></script>
@@ -341,6 +361,7 @@ Figure&nbsp;2: Average total cost of studying Master’s degree across the top-r
 </section>
 <section id="references" class="level2" data-number="8">
 <h2 data-number="8" class="anchored" data-anchor-id="references"><span class="header-section-number">8</span> References</h2>
+<p>We used data from Kaggle <span class="citation" data-cites="edu_cost_2024">(<a href="#ref-edu_cost_2024" role="doc-biblioref">Kaggle 2024</a>)</span> and rankings from QS <span class="citation" data-cites="qs2024 qs2025">(<a href="#ref-qs2024" role="doc-biblioref"><span>“QS World University Rankings 2024”</span> 2024</a>; <a href="#ref-qs2025" role="doc-biblioref"><span>“QS World University Rankings 2025”</span> 2025</a>)</span>.</p>
 <ol type="1">
 <li><em>Kaggle. (2024). Cost of International Education Dataset.</em> Retrieved from</li>
 </ol>
@@ -353,9 +374,20 @@ Figure&nbsp;2: Average total cost of studying Master’s degree across the top-r
 <li><em>QS World University Rankings 2025.</em> Retrieved from</li>
 </ol>
 <p><a href="https://www.kaggle.com/datasets/joebeachcapital/qs-world-university-rankings-2024" class="uri">https://www.kaggle.com/datasets/joebeachcapital/qs-world-university-rankings-2024</a></p>
+
 </section>
 
-</main>
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-edu_cost_2024" class="csl-entry" role="listitem">
+Kaggle. 2024. <span>“Cost of International Education Dataset.”</span> <a href="https://www.kaggle.com/datasets/adilshamim8/cost-of-international-education" class="uri">https://www.kaggle.com/datasets/adilshamim8/cost-of-international-education</a>.
+</div>
+<div id="ref-qs2024" class="csl-entry" role="listitem">
+<span>“QS World University Rankings 2024.”</span> 2024. <a href="https://www.kaggle.com/datasets/darrylljk/worlds-best-universities-qs-rankings-2025" class="uri">https://www.kaggle.com/datasets/darrylljk/worlds-best-universities-qs-rankings-2025</a>.
+</div>
+<div id="ref-qs2025" class="csl-entry" role="listitem">
+<span>“QS World University Rankings 2025.”</span> 2025. <a href="https://www.kaggle.com/datasets/joebeachcapital/qs-world-university-rankings-2024" class="uri">https://www.kaggle.com/datasets/joebeachcapital/qs-world-university-rankings-2024</a>.
+</div>
+</div></section></div></main>
 <!-- /main column -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
