@@ -1,15 +1,10 @@
 ---
 title: "Analysis of International Education Costs vs. University Rankings"
-author: 
+author:
   - name: "Girika"
   - name: "Chen Liu"
   - name: "Chang Heng-Hsieh"
 format:
-  html: 
-    toc: true
-    theme: cosmo
-    number-sections: true
-    self-contained: false
   pdf:
     toc: true
     number-sections: true
@@ -17,15 +12,13 @@ format:
     cite-method: biblatex
 bibliography: references.bib
 link-citations: true
-editor: visual
 engine: knitr
 ---
 
 ```{r setup, include=FALSE}
-#| warning: false
-#| error: false
-#| message: false
-knitr::opts_chunk$set(echo = TRUE) 
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+options(kableExtra.latex.load_packages = TRUE)
+
 library(dplyr)
 library(readr)
 library(ggplot2)
@@ -46,12 +39,12 @@ For many prospective students, cost considerations are just as critical as acade
 
 ## Methodology
 
-**Research Design and Data Sources**   
+### Research Design and Data Sources  
 
 This study uses `quantitative analysis` to examine the relationship between international education costs and university rankings. We integrated **QS World University Rankings data from 2024-2025** with the **Kaggle International Education Cost dataset**, focusing exclusively on Master's degree programs across the top 10 QS-ranked countries.
 
 
-**Data Processing Frameworks**  
+### Data Processing Frameworks   
 
 As illustrated in @fig-methodology-flowchart, our research methodology follows a systematic five-stage approach from initial data collection through final analysis. The comprehensive framework ensures data quality and analytical rigor while maintaining focus on the top-performing QS ranking countries.
 
@@ -73,27 +66,27 @@ box_color <- "skyblue"
 # Step 1 - 高度拉長兩倍 (40個單位高)
 rect(0.5, 315, 9.5, 355, col = box_color, border = "black", lwd = 2)
 text(5, 335, "Step 1\nMerge QS Rankings 2024 & 2025 Data", 
-     cex = 0.8, font = 2, adj = 0.5)
+     cex = 0.6, font = 2, adj = 0.5)
 
 # Step 2
 rect(0.5, 245, 9.5, 285, col = box_color, border = "black", lwd = 2)
 text(5, 265, "Step 2\nIdentify Top 10 Countries from QS Rankings", 
-     cex = 0.8, font = 2, adj = 0.5)
+     cex = 0.6, font = 2, adj = 0.5)
 
 # Step 3
 rect(0.5, 175, 9.5, 215, col = box_color, border = "black", lwd = 2)
 text(5, 195, "Step 3\nFilter Kaggle Dataset for These 10 Countries", 
-     cex = 0.8, font = 2, adj = 0.5)
+     cex = 0.6, font = 2, adj = 0.5)
 
 # Step 4
 rect(0.5, 105, 9.5, 145, col = box_color, border = "black", lwd = 2)
 text(5, 125, "Step 4\nSelect Master Level Programs Only", 
-     cex = 0.8, font = 2, adj = 0.5)
+     cex = 0.6, font = 2, adj = 0.5)
 
 # Step 5
 rect(0.5, 35, 9.5, 75, col = box_color, border = "black", lwd = 2)
 text(5, 55, "Step 5\nCalculate Total Study Cost", 
-     cex = 0.8, font = 2, adj = 0.5)
+     cex = 0.6, font = 2, adj = 0.5)
 
 # 長箭頭連接各步驟 - 配合新的方框高度和間距
 arrows(5, 310, 5, 290, length = 0.1, lwd = 2, col = "darkblue")
@@ -137,21 +130,18 @@ methodology_table <- data.frame(
             "Total cost dataset")
 )
 
-methodology_table %>%
-  kable(col.names = c("Stage", "Procedure", "R Functions", "Output"),
-        align = c("l", "l", "l", "l")) %>%
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"),
-                full_width = FALSE,
-                position = "center") %>%
-  column_spec(1, bold = TRUE, color = "black", background = "#f0f0f0") %>%
-  column_spec(2, width = "25%") %>%
-  column_spec(3, width = "25%", monospace = TRUE, background = "#f8f9fa") %>%
-  column_spec(4, width = "25%") %>%
-  row_spec(0, bold = TRUE, color = "white", background = "#343a40")
+methodology_table <- data.frame(
+  Stage = c("1. Data Merging", "2. Country Selection", "3. Data Filtering", "4. Level Selection", "5. Cost Calculation"),
+  Procedure = c("Combine QS 2024 & 2025", "Identify top 10 countries", "Filter Kaggle by countries",
+                "Select master's programs", "Sum all cost components"),
+  R_Functions = c("rbind()", "group_by(), top_n()", "filter(), %in%", "filter()", "mutate(), rowSums()"),
+  Output = c("Merged QS data", "Top 10 countries list", "Country-matched data", "Master's level data", "Total cost dataset")
+)
 
+kable(methodology_table, format = "latex", booktabs = TRUE, caption = "Data Processing Pipeline")
 ```
 
--   **Analysis Methods and Tools**  
+### Analysis Methods and Tools  
 
 All statistical analysis was conducted using R programming language, utilizing the `tidyverse package` for data manipulation and `ggplot2` for visualization to ensure reproducibility. We calculated descriptive statistics including means and standard deviations, and performed correlation analysis to explore relationships between study costs and QS rankings. Total study costs encompassed tuition fees, accommodation expenses, visa fees, and insurance costs to provide comprehensive financial comparisons across countries.
 
