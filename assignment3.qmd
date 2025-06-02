@@ -65,34 +65,41 @@ As illustrated in @fig-methodology-flowchart, our research methodology follows a
 #| message: false
 
 par(mar = c(2, 2, 4, 2))
-plot(0, 0, type = "n", xlim = c(0, 10), ylim = c(0, 20), 
+plot(0, 0, type = "n", xlim = c(0, 10), ylim = c(0, 350), 
      xlab = "", ylab = "", axes = FALSE)
+
 box_color <- "skyblue"
 
-rect(1, 16, 9, 19.5, col = box_color, border = "black", lwd = 2)
-text(5, 17.75, "Step 1\nMerge QS Rankings 2024 & 2025 Data", 
-     cex = 1.3, font = 2, adj = 0.5)
+# Step 1 - 高度拉長兩倍 (40個單位高)
+rect(0.5, 315, 9.5, 355, col = box_color, border = "black", lwd = 2)
+text(5, 335, "Step 1\nMerge QS Rankings 2024 & 2025 Data", 
+     cex = 0.8, font = 2, adj = 0.5)
 
-rect(1, 12, 9, 15.5, col = box_color, border = "black", lwd = 2)
-text(5, 13.75, "Step 2\nIdentify Top 10 Countries from QS Rankings", 
-     cex = 1.3, font = 2, adj = 0.5)
+# Step 2
+rect(0.5, 245, 9.5, 285, col = box_color, border = "black", lwd = 2)
+text(5, 265, "Step 2\nIdentify Top 10 Countries from QS Rankings", 
+     cex = 0.8, font = 2, adj = 0.5)
 
-rect(1, 8, 9, 11.5, col = box_color, border = "black", lwd = 2)
-text(5, 9.75, "Step 3\nFilter Kaggle Dataset for These 10 Countries", 
-     cex = 1.3, font = 2, adj = 0.5)
+# Step 3
+rect(0.5, 175, 9.5, 215, col = box_color, border = "black", lwd = 2)
+text(5, 195, "Step 3\nFilter Kaggle Dataset for These 10 Countries", 
+     cex = 0.8, font = 2, adj = 0.5)
 
-rect(1, 4, 9, 7.5, col = box_color, border = "black", lwd = 2)
-text(5, 5.75, "Step 4\nSelect Master Level Programs Only", 
-     cex = 1.3, font = 2, adj = 0.5)
+# Step 4
+rect(0.5, 105, 9.5, 145, col = box_color, border = "black", lwd = 2)
+text(5, 125, "Step 4\nSelect Master Level Programs Only", 
+     cex = 0.8, font = 2, adj = 0.5)
 
-rect(1, 0, 9, 3.5, col = box_color, border = "black", lwd = 2)
-text(5, 1.75, "Step 5\nCalculate Total Study Cost", 
-     cex = 1.3, font = 2, adj = 0.5)
+# Step 5
+rect(0.5, 35, 9.5, 75, col = box_color, border = "black", lwd = 2)
+text(5, 55, "Step 5\nCalculate Total Study Cost", 
+     cex = 0.8, font = 2, adj = 0.5)
 
-arrows(5, 16, 5, 15.5, length = 0.15, lwd = 3, col = "darkblue")
-arrows(5, 12, 5, 11.5, length = 0.15, lwd = 3, col = "darkblue")
-arrows(5, 8, 5, 7.5, length = 0.15, lwd = 3, col = "darkblue")
-arrows(5, 4, 5, 3.5, length = 0.15, lwd = 3, col = "darkblue")
+# 長箭頭連接各步驟 - 配合新的方框高度和間距
+arrows(5, 310, 5, 290, length = 0.1, lwd = 2, col = "darkblue")
+arrows(5, 240, 5, 220, length = 0.1, lwd = 2, col = "darkblue")  
+arrows(5, 170, 5, 150, length = 0.1, lwd = 2, col = "darkblue")
+arrows(5, 100, 5, 80, length = 0.1, lwd = 2, col = "darkblue")
 ```
 
 

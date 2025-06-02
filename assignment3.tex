@@ -151,6 +151,8 @@
 \@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
 \makeatother
 
+\usepackage[]{biblatex}
+\addbibresource{references.bib}
 \usepackage{bookmark}
 
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
@@ -177,7 +179,7 @@ Rankings}
 \renewcommand*\contentsname{Table of contents}
 {
 \hypersetup{linkcolor=}
-\setcounter{tocdepth}{2}
+\setcounter{tocdepth}{3}
 \tableofcontents
 }
 
@@ -448,36 +450,12 @@ immigration pathways.
 
 \section{References}\label{references}
 
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  \emph{Kaggle. (2024). Cost of International Education Dataset.}
-  Retrieved from
-\end{enumerate}
+We used data from Kaggle \autocite{edu_cost_2024}
 
-\url{https://www.kaggle.com/datasets/adilshamim8/cost-of-international-education}
+Rankings from QS \autocite{qs2024,qs2025}.
 
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{1}
-\tightlist
-\item
-  \emph{QS World University Rankings 2024.} Retrieved from
-\end{enumerate}
 
-\url{https://www.kaggle.com/datasets/darrylljk/worlds-best-universities-qs-rankings-2025}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{2}
-\tightlist
-\item
-  \emph{QS World University Rankings 2025.} Retrieved from
-\end{enumerate}
-
-\url{https://www.kaggle.com/datasets/joebeachcapital/qs-world-university-rankings-2024}
-
+\printbibliography
 
 
 
