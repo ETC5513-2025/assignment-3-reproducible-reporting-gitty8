@@ -63,32 +63,26 @@ plot(0, 0, type = "n", xlim = c(0, 10), ylim = c(0, 350),
 
 box_color <- "skyblue"
 
-# Step 1 - 高度拉長兩倍 (40個單位高)
 rect(0.5, 315, 9.5, 355, col = box_color, border = "black", lwd = 2)
 text(5, 335, "Step 1\nMerge QS Rankings 2024 & 2025 Data", 
      cex = 0.6, font = 2, adj = 0.5)
 
-# Step 2
 rect(0.5, 245, 9.5, 285, col = box_color, border = "black", lwd = 2)
 text(5, 265, "Step 2\nIdentify Top 10 Countries from QS Rankings", 
      cex = 0.6, font = 2, adj = 0.5)
 
-# Step 3
 rect(0.5, 175, 9.5, 215, col = box_color, border = "black", lwd = 2)
 text(5, 195, "Step 3\nFilter Kaggle Dataset for These 10 Countries", 
      cex = 0.6, font = 2, adj = 0.5)
 
-# Step 4
 rect(0.5, 105, 9.5, 145, col = box_color, border = "black", lwd = 2)
 text(5, 125, "Step 4\nSelect Master Level Programs Only", 
      cex = 0.6, font = 2, adj = 0.5)
 
-# Step 5
 rect(0.5, 35, 9.5, 75, col = box_color, border = "black", lwd = 2)
 text(5, 55, "Step 5\nCalculate Total Study Cost", 
      cex = 0.6, font = 2, adj = 0.5)
 
-# 長箭頭連接各步驟 - 配合新的方框高度和間距
 arrows(5, 310, 5, 290, length = 0.1, lwd = 2, col = "darkblue")
 arrows(5, 240, 5, 220, length = 0.1, lwd = 2, col = "darkblue")  
 arrows(5, 170, 5, 150, length = 0.1, lwd = 2, col = "darkblue")
@@ -138,7 +132,7 @@ methodology_table <- data.frame(
   Output = c("Merged QS data", "Top 10 countries list", "Country-matched data", "Master's level data", "Total cost dataset")
 )
 
-kable(methodology_table, format = "latex", booktabs = TRUE, caption = "Data Processing Pipeline")
+kable(methodology_table, format = "latex", booktabs = TRUE, caption = "Data Processing Pipeline", label = "tbl-processing")
 ```
 
 ### Analysis Methods and Tools  
