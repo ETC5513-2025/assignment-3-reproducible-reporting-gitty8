@@ -41,7 +41,7 @@
 \makeatother
 \usepackage{xcolor}
 \setlength{\emergencystretch}{3em} % prevent overfull lines
-\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\setcounter{secnumdepth}{5}
 % Make \paragraph and \subparagraph free-standing
 \makeatletter
 \ifx\paragraph\undefined\else
@@ -174,8 +174,14 @@ Rankings}
 \begin{document}
 \maketitle
 
+\renewcommand*\contentsname{Table of contents}
+{
+\hypersetup{linkcolor=}
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
 
-\subsection{Executive Summary}\label{executive-summary}
+\section{Executive Summary}\label{executive-summary}
 
 This comprehensive study examines the relationship between international
 education costs and university rankings across the top 10 QS-ranked
@@ -183,7 +189,7 @@ countries for Master's degree programs. Our analysis reveals no direct
 correlation between academic prestige and affordability, challenging
 common assumptions about premium education pricing.
 
-\subsection{Introduction}\label{introduction}
+\section{Introduction}\label{introduction}
 
 The international education sector is growing rapidly, with more
 students exploring study opportunities beyond their home countries in
@@ -210,7 +216,7 @@ comprehensive cost comparisons. The findings aim to provide practical
 guidance for international students seeking optimal value in their
 education investment.
 
-\subsection{Methodology}\label{methodology}
+\section{Methodology}\label{methodology}
 
 \textbf{Research Design and Data Sources}
 
@@ -284,20 +290,20 @@ between study costs and QS rankings. Total study costs encompassed
 tuition fees, accommodation expenses, visa fees, and insurance costs to
 provide comprehensive financial comparisons across countries.
 
-\subsection{Results}\label{results}
+\section{Results}\label{results}
 
 We analyzed the average total cost of studying a Master's program across
 the top 10 QS-ranked countries. This includes tuition, rent, visa fees,
 and insurance.
 
-\subsubsection{Load and Prepare Data}\label{load-and-prepare-data}
+\subsection{Load and Prepare Data}\label{load-and-prepare-data}
 
 We loaded two datasets --- one from QS Rankings and another from Kaggle
 on education costs. The data was cleaned, aggregated, and merged using R
 to create a summarized table of average tuition, rent, and total cost by
 country.
 
-\subsubsection{Table 2: Country Ranking by Total Study
+\subsection{Table 2: Country Ranking by Total Study
 Cost}\label{table-2-country-ranking-by-total-study-cost}
 
 \begin{longtable}[t]{lrrrr}
@@ -329,7 +335,7 @@ As seen in Table~\ref{tbl-results} , Australia ranks second-highest in
 cost, placing it among the least affordable options for international
 Master's students.
 
-\subsubsection{Figure 2: Bar Chart of Total Cost by
+\subsection{Figure 2: Bar Chart of Total Cost by
 Country}\label{figure-2-bar-chart-of-total-cost-by-country}
 
 \begin{figure}
@@ -357,7 +363,7 @@ affordability. While countries like Australia offer global recognition,
 they may come with higher financial burdens---an important consideration
 for students balancing cost with academic goals.
 
-\subsection{Discussion}\label{discussion}
+\section{Discussion}\label{discussion}
 
 The findings of this analysis offer valuable insights into the cost
 structures of international education among top QS-ranked countries.Our
@@ -394,7 +400,7 @@ significantly alter students' real expenses. Future research could
 incorporate these variables to offer a more detailed picture of
 international study affordability.
 
-\subsection{Conclusion}\label{conclusion}
+\section{Conclusion}\label{conclusion}
 
 This study set out to examine whether countries with higher QS World
 University Rankings also offer affordable education for international
@@ -417,9 +423,9 @@ prospective students should evaluate both ranking and affordability when
 choosing a study destination---especially given the considerable cost
 differences between countries with similar academic standing.
 
-\subsection{Recommendations}\label{recommendations}
+\section{Recommendations}\label{recommendations}
 
-\subsubsection{For international students
+\subsection{For international students
 :}\label{for-international-students}
 
 When selecting a study destination, consider the total cost of
@@ -427,20 +433,20 @@ attendance, not just the university's global ranking. Countries like
 Germany and South Korea offer strong academic quality at significantly
 lower costs.
 
-\subsubsection{⁠For academic institutions and policymakers
+\subsection{⁠For academic institutions and policymakers
 :}\label{for-academic-institutions-and-policymakers}
 
 Improve transparency in cost breakdowns and expand need-based financial
 support for international students. Clearer information can help
 students make informed decisions.
 
-\subsubsection{For future research :}\label{for-future-research}
+\subsection{For future research :}\label{for-future-research}
 
 Complement cost-focused analyses with data on postgraduate outcomes and
 return on investment, such as job placement rates, earnings, and
 immigration pathways.
 
-\subsection{References}\label{references}
+\section{References}\label{references}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
